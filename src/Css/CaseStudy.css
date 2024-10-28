@@ -1,0 +1,6 @@
+.client-image-slide.slick-center .client-image {
+    transform: scale(1.2);
+    /* Make the center image larger */
+    transition: transform 0.5s ease;
+    /* Smooth transition */
+}
