@@ -81,23 +81,88 @@ const Contact = () => {
                             </Typography>
 
                             {[
-                                { icon: CallIcon, title: 'Phone number', content: '+91 01204995054' },
-                                { icon: LocationOnIcon, title: 'Address', content: '3rd Floor, Bhavani Complex, Sector 27, Near Metro Station 18, Noida - 201301, Uttar Pradesh' },
-                                { icon: ChatBubbleOutlineIcon, title: 'Contact Info', content: 'info@tcspl.com' }
-                            ].map(({ icon: Icon, title, content }, index) => (
-                                <Stack key={index} py={1} direction="row" spacing={2}>
-                                    <Icon sx={{ color: theme => theme.palette.ButtonColor, backgroundColor: '#FFF', borderRadius: '50%', p: 1, fontSize: 40 }} />
-                                    <Box>
-                                        <Typography variant="h5" color="#FFF" fontWeight="bold">
-                                            {title}
-                                        </Typography>
-                                        <Typography py={1} variant="body1" fontSize={16} color="#FFF">
-                                            {content}
-                                        </Typography>
-                                    </Box>
-                                </Stack>
-                            ))}
+                                {
+                                    icon: CallIcon,
+                                    title: 'Phone number',
+                                    content: '+91 01204995054',
+                                },
+                                {
+                                    icon: LocationOnIcon,
+                                    title: 'Gujarat corporate office',
+                                    subtittles: ['office no. 47 & 48'], // Only one subtitle
+                                    contents: ['2nd floor girnar palace, aditiya circle, gidc-vapi, Gujarat pincode 396191'], // Only one content
+                                    title1: 'Development center noida',
+                                    contents1: ['3rd floor, B complex sector-27 Noida(201301), uttar pradesh'], // Only one content for title1
+                                },
+                                {
+                                    icon: ChatBubbleOutlineIcon,
+                                    title: 'Contact Info',
+                                    content: 'info@tcspl.com',
+                                },
+                            ].map(
+                                (
+                                    {
+                                        icon: Icon,
+                                        title,
+                                        subtittles = [],
+                                        contents = [],
+                                        title1,
+                                        subtittles1 = [],
+                                        contents1 = [],
+                                        content,
+                                    },
+                                    index
+                                ) => (
+                                    <Stack key={index} py={1} direction="row" spacing={2}>
+                                        <Icon
+                                            sx={{
+                                                color: (theme) => theme.palette.ButtonColor,
+                                                backgroundColor: '#FFF',
+                                                borderRadius: '50%',
+                                                p: 1,
+                                                fontSize: 40,
+                                            }}
+                                        />
+                                        <Box>
+                                            {/* First Title, Subtitles, and Contents */}
+                                            <Typography variant="h5" color="#FFF" fontWeight="bold">
+                                                {title}
+                                            </Typography>
+                                            {subtittles.map((sub, idx) => (
+                                                <Typography key={idx} py={0.5} variant="body2" fontSize={16} color="#FFF">
+                                                    {sub}
+                                                </Typography>
+                                            ))}
+                                            {contents.map((cont, idx) => (
+                                                <Typography key={idx} py={0.5} variant="body2" fontSize={16} color="#FFF">
+                                                    {cont}
+                                                </Typography>
+                                            ))}
+
+                                            {/* Second Title, Subtitles, and Contents */}
+                                            {title1 && (
+                                                <Typography variant="h5" color="#FFF" fontWeight="bold" mt={2}>
+                                                    {title1}
+                                                </Typography>
+                                            )}
+                                            {contents1.map((cont, idx) => (
+                                                <Typography key={idx} py={0.5} variant="body2" fontSize={16} color="#FFF">
+                                                    {cont}
+                                                </Typography>
+                                            ))}
+
+                                            {/* Single Content */}
+                                            {content && (
+                                                <Typography py={1} variant="body2" fontSize={16} color="#FFF">
+                                                    {content}
+                                                </Typography>
+                                            )}
+                                        </Box>
+                                    </Stack>
+                                )
+                            )}
                         </Box>
+
                     </Box>
                 </Grid>
 
