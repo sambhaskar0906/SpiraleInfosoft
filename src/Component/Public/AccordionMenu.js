@@ -102,7 +102,7 @@ const AccordionMenu = ({ onClose }) => {
                     <img
                         src={Logo}
                         alt="Logo"
-                        style={{ height: "50px", width: "140px" }}
+                        style={{ height: "50px", width: "180px" }}
                     />
                 </Box>
             </Box>

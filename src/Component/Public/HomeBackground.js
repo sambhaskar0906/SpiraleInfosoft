@@ -3,7 +3,7 @@ import HomeImg from '../../assest/homeimg.png';
 import Bubble1 from '../../assest/bubble3.png';
 import Bubble2 from '../../assest/bubble1.png';
 import Bubble3 from '../../assest/bubble2.png';
-import { Box, Button, keyframes, Stack, Typography, useTheme } from '@mui/material';
+import { Box, Button, keyframes, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 // Keyframes for moving from bottom to top-right
@@ -36,6 +36,9 @@ const Keyframe = {
 const HomeBackground = () => {
     const navigate = useNavigate();
     const theme = useTheme();
+    const isSmallScreen = useMediaQuery('(max-width:600px)'); // xs breakpoint
+    const isMediumScreen = useMediaQuery('(min-width:960px)'); // md breakpoint
+
     const backgroundStyle = {
         backgroundImage: `url(${HomeImg})`,
         backgroundSize: 'cover',
@@ -46,7 +49,7 @@ const HomeBackground = () => {
         alignItems: 'center',
         textAlign: 'center',
         position: 'relative', // To allow absolutely positioned elements
-        paddingTop: '50px'
+        paddingTop: isSmallScreen ? '20px' : isMediumScreen ? '50px' : '30px',
     };
 
     const bubbleStyle = {
@@ -67,7 +70,7 @@ const HomeBackground = () => {
     }
 
     return (
-        <div style={backgroundStyle}>
+        <div style={backgroundStyle} >
             {/* Bubble1 - Move from bottom to top-right */}
             <Box
                 component="img"

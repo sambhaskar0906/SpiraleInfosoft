@@ -12,7 +12,6 @@ const PublicLayout = () => {
             <Toolbar />
             <Toolbar />
             <Toolbar />
-            <Toolbar />
             <Outlet />
             <ScrollToTopButton />
             <Footer />

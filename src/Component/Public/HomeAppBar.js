@@ -13,7 +13,7 @@ import {
     Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo from "../../assest/tcspl.jpg";
+import Logo from "../../assest/TechLogo.png";
 import menuData from "../../Component/Public/MenuData";
 import DropdownMenu from "../Public/DropDown";
 import AccordionMenu from "../Public/AccordionMenu";
@@ -35,7 +35,7 @@ const ContactBar = ({ isVisible }) => (
         sx={{
             background: "#070B3B",
             py: 0.5,
-            px: { xs: 2, sm: 10, lg: 15 },
+            px: { xs: 2, sm: 10, lg: 14 },
             display: isVisible ? 'block' : 'none',
         }}
     >
@@ -112,8 +112,8 @@ const HomeAppBar = () => {
                             display: "flex",
                             justifyContent: "space-between",
                             alignItems: "center",
-                            py: 1,
-                            px: { xs: 2, sm: 10, lg: 15 },
+                            py: 0.5,
+                            px: { xs: 2, sm: 10, lg: 14 },
                         }}
                     >
                         {/* Logo Section */}
@@ -126,7 +126,7 @@ const HomeAppBar = () => {
                             <img
                                 src={Logo}
                                 alt="Logo"
-                                style={{ height: "50px", width: "140px", cursor: 'pointer' }}
+                                style={{ height: "50px", width: "180px", cursor: 'pointer' }}
                                 onClick={() => navigate('/')}
                             />
                         </Box>
