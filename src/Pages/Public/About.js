@@ -3,8 +3,8 @@ import React from 'react';
 import Slider from '../../Component/Public/Slider';
 import Mission from '../../assest/Client/imgs/mission1.avif';
 import Vision from '../../assest/Client/imgs/vision1.jpg';
-import Goal from '../../assest/Client/imgs/mission.jpg';
-import AboutImg from '../../assest/Client/imgs/male-female-office-workers_155003-12596.avif';
+import AboutImg from '../../assest/about.jpeg';
+import MissionImg from '../../assest/bgHome.webp'
 
 const About = () => {
     const theme = useTheme();
@@ -20,7 +20,6 @@ const About = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover', // Ensure the image covers the box while maintaining its aspect ratio
                 backgroundPosition: 'center', // Center the background image
-                backgroundAttachment: 'fixed',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -33,7 +32,7 @@ const About = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Semi-transparent black overlay
+                        backgroundColor: 'rgba(0, 0, 0, 0.3)', // Semi-transparent black overlay
                         zIndex: 1, // Ensure the overlay is on top of the background
                     }}
                 />
@@ -45,9 +44,9 @@ const About = () => {
                 </Box>
             </Box>
             {/* what we do */}
-            <Box sx={{ px: { xs: 2, md: 14, lg: 14 }, py: 3 }}>
+            <Box sx={{ px: { xs: 2, md: 14, lg: 14 } }}>
                 {/* what we do */}
-                <Grid container spacing={4}>
+                <Grid container spacing={4} sx={{ py: { xs: 2, md: 5 }, mt: 3 }}>
                     <Grid item sm={6} xs={12}>
                         <Box sx={{
                             background: `url(${Mission})`,
@@ -91,7 +90,7 @@ const About = () => {
                         <Stack spacing={1}>
                             <Typography variant='h4' color='primary.main' fontWeight={'bold'}>A perfect fusion of technology <br /> and creativity</Typography>
                             <Typography variant='body2'>
-                                Spirale Infosoft is a leading software development and service providing company since 2009, offering a wide range of software development and maintenance services across the globe.
+                                TCSPL is a leading software development and service providing company since 2009, offering a wide range of software development and maintenance services across the globe.
                             </Typography>
                             <Typography variant='body2'>
                                 The company is based in Delhi NCR (Noida), and we have catered a number of happy and satisfied customers worldwide.
@@ -103,8 +102,8 @@ const About = () => {
                     </Grid>
                 </Grid>
                 {/* what we do */}
-                <Grid container spacing={4}>
-                    <Grid item sm={6} xs={12}>
+                <Grid container spacing={4} sx={{ py: { xs: 2, md: 5 } }}>
+                    <Grid item sm={6} xs={12} my={2}>
                         <Stack spacing={1}>
                             <Typography variant='h4' color='primary.main' fontWeight={'bold'}>What we do?</Typography>
                             <Typography variant='body2'>
@@ -159,7 +158,7 @@ const About = () => {
                     </Grid>
                 </Grid>
                 {/* my teams */}
-                <Grid container spacing={4}>
+                <Grid container spacing={4} sx={{ py: { xs: 2, md: 3 } }}>
                     <Grid item sm={6} xs={12}>
                         <Stack spacing={1}>
                             <Typography variant='h4' color='primary.main' fontWeight={'bold'}>
@@ -180,7 +179,7 @@ const About = () => {
                                 Our mission
                             </Typography>
                             <Typography variant='body2'>
-                                Our team at Spirale Infosoft believes in getting better and better at the work in order to provide customer satisfaction and a delightful experience of working with us. We always keep searching for that mastery and perfection so that we can benefit our clients most with our services.
+                                Our team at TCSPL believes in getting better and better at the work in order to provide customer satisfaction and a delightful experience of working with us. We always keep searching for that mastery and perfection so that we can benefit our clients most with our services.
                             </Typography>
                             <Typography variant='body2'>
                                 In recent times, as a software development company, we have expanded a lot and have catered a good number of international clients as well. We already have launched multiple complex projects successfully.
@@ -191,7 +190,7 @@ const About = () => {
                         </Stack>
                     </Grid>
                     {/*  Services provided by us */}
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sx={{ py: { xs: 2, md: 3 } }}>
                         <Stack spacing={1}>
                             <Typography variant='h4' color='primary.main' fontWeight={'bold'} >
                                 Services provided by us
@@ -219,7 +218,7 @@ const About = () => {
                 </Typography>
 
                 {/* Grid for Mission, Vision, Goal */}
-                <Grid container spacing={2} >
+                <Grid container spacing={2} py={2}>
                     {/* Mission Section */}
                     <Grid item xs={12} sm={6} md={4}>
                         <Stack direction="row" alignItems="center" justifyContent="center" spacing={2}>
@@ -227,21 +226,24 @@ const About = () => {
                                 <Typography
                                     sx={{
                                         fontSize: '250px',
-                                        height: '300px',
-                                        background: `url(${Mission})`,
-                                        // backgroundSize: 'cover',
+                                        fontWeight: 900,
+                                        fontFamily: `'Roboto', sans-serif`, // Optional, add your font here
+                                        height: '250px',
+                                        display: 'flex', // Use flexbox
+                                        justifyContent: 'center', // Horizontally center align
+                                        alignItems: 'center',
+                                        background: `url(${MissionImg})`,
                                         objectFit: 'cover',
                                         backgroundClip: 'text',
                                         color: 'transparent',
                                         WebkitBackgroundClip: 'text',
-                                        fontWeight: 'bold',
-                                        overflow: 'hidden', // Prevents overflow if needed
-                                        textOverflow: 'ellipsis', // Adds ellipsis if text overflows
                                     }}
+                                    data-aos="fade-right"
+                                    data-aos-duration="2000"
                                 >
                                     M
                                 </Typography>
-                                <Typography variant="h4" fontWeight="bold">Our Mission</Typography>
+                                <Typography variant="h4" fontWeight="bold" textAlign={'center'} py={1}>OUR MISSION</Typography>
                                 <Typography variant="body2">
                                     To connect more businesses and strategies to the internet and enhance their web presence, which will empower youth and strengthen the country.
                                 </Typography>
@@ -259,19 +261,24 @@ const About = () => {
                                 <Typography
                                     sx={{
                                         fontSize: '250px',
-                                        height: '300px',
+                                        fontWeight: 900,
+                                        fontFamily: `'Roboto', sans-serif`, // Optional, add your font here
+                                        height: '250px',
+                                        display: 'flex', // Use flexbox
+                                        justifyContent: 'center', // Horizontally center align
+                                        alignItems: 'center',
                                         background: `url(${Vision})`,
-                                        // backgroundSize: 'cover',
                                         objectFit: 'cover',
                                         backgroundClip: 'text',
                                         color: 'transparent',
                                         WebkitBackgroundClip: 'text',
-                                        fontWeight: 'bold',
                                     }}
+                                    data-aos="fade-right"
+                                    data-aos-duration="2000"
                                 >
                                     V
                                 </Typography>
-                                <Typography variant="h4" fontWeight="bold">Our Vision</Typography>
+                                <Typography variant="h4" fontWeight="bold" textAlign={'center'} py={1}>OUR VISION</Typography>
                                 <Typography variant="body2">
                                     Our vision is to establish our brand image through excellent customer service and using secure technology.
                                 </Typography>
@@ -289,19 +296,24 @@ const About = () => {
                                 <Typography
                                     sx={{
                                         fontSize: '250px',
-                                        height: '300px',
-                                        background: `url(${Goal})`,
-                                        // backgroundSize: 'cover',
+                                        fontWeight: 900,
+                                        fontFamily: `'Roboto', sans-serif`, // Optional, add your font here
+                                        height: '250px',
+                                        display: 'flex', // Use flexbox
+                                        justifyContent: 'center', // Horizontally center align
+                                        alignItems: 'center',
+                                        background: `url(${AboutImg})`,
                                         objectFit: 'cover',
                                         backgroundClip: 'text',
                                         color: 'transparent',
                                         WebkitBackgroundClip: 'text',
-                                        fontWeight: 'bold',
                                     }}
+                                    data-aos="fade-right"
+                                    data-aos-duration="2000"
                                 >
                                     G
                                 </Typography>
-                                <Typography variant="h4" fontWeight="bold">Our Goals</Typography>
+                                <Typography variant="h4" fontWeight="bold" textAlign={'center'} py={1}>OUR GOALS</Typography>
                                 <Typography variant="body2">
                                     We want to expand our business in areas least connected to technology, synchronizing them with a new digital India.
                                 </Typography>
@@ -312,9 +324,10 @@ const About = () => {
             </Box >
 
             {/* Slider component */}
-            <Box sx={{ px: { xs: 2, md: 14, lg: 14 }, mt: 4 }}>
+            <Box sx={{ mt: 4 }
+            }>
                 <Slider />
-            </Box>
+            </Box >
         </>
     );
 };

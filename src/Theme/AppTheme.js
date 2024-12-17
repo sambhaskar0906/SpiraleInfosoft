@@ -27,10 +27,10 @@ const AppTheme = createTheme({
             default: "hsl(0, 0%, 100%)",
         },
         primary: {
-            main: colors.blue[900],
-            dark: colors.blue[700],
-            deem: colors.blue[500],
-            light: colors.blue[50],
+            main: colors.indigo[900],
+            dark: colors.indigo[700],
+            deem: colors.indigo[500],
+            light: colors.indigo[50],
         },
         secondary: {
             main: colors.orange[900],
@@ -54,9 +54,13 @@ const AppTheme = createTheme({
             dark: colors.red[900],
             light: colors.red[50],
         },
+        hoverAction: {
+            hoverDropdown: '#0071dc', // Replace with your desired hover color
+        },
 
         blue: '#131938',
-        tintBlue: '#326EE6'
+        tintBlue: '#326EE6',
+        darkBackground: '#070B3B',
     },
     shape: {
         borderRadius: 2

@@ -77,7 +77,7 @@ export default function CaseStudy() {
     };
 
     return (
-        <Box sx={{ overflow: 'hidden', width: '100%' }}>
+        <Box sx={{ overflow: 'hidden', width: '100%', py: { xs: 2, md: 5 } }}>
             <Box textAlign="center">
                 <Typography variant="h5" sx={{ color: theme.palette.ButtonColor, py: 1 }}>
                     Case Study
@@ -102,17 +102,17 @@ export default function CaseStudy() {
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     textAlign: 'center',
-                                    // px: { xs: 2, sm: 2, md: 1 },
+                                    px: { xs: 2, sm: 2, md: 1 }, // Ensure proper spacing
                                     transform: isCenter ? 'scale(1) rotateY(0deg)' : 'scale(0.8) rotateY(20deg)',
                                     transition: 'transform 0.5s',
-                                    '&:hover': { transform: 'scale(0.7)' },
+                                    '&:hover': { transform: 'scale(0.9)' }, // Adjusted hover scaling
                                 }}
                             >
                                 <Box
                                     sx={{
                                         position: 'relative',
                                         width: '100%',
-                                        maxWidth: { xs: '90%', sm: '80%', md: '100%' },
+                                        maxWidth: { xs: '100%', sm: '80%', md: '100%' }, // Full width for xs
                                         transform: isCenter ? 'rotateY(0deg)' : 'rotateY(-20deg)',
                                     }}
                                 >
@@ -122,8 +122,10 @@ export default function CaseStudy() {
                                         alt={`Client ${index + 1}`}
                                         sx={{
                                             width: '100%',
-                                            borderRadius: isCenter ? '8px' : '8px',
+                                            borderRadius: '8px',
                                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                                            objectFit: 'contain', // Ensures proper aspect ratio
+                                            display: 'block', // Center align image in flexbox
                                         }}
                                     />
                                     <Box
@@ -133,7 +135,7 @@ export default function CaseStudy() {
                                             left: 0,
                                             right: 0,
                                             bottom: 0,
-                                            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                                            backgroundColor: 'rgba(0, 0, 0, 0.3)',
                                             borderRadius: '8px',
                                             display: 'flex',
                                             alignItems: 'flex-end',

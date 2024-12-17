@@ -8,7 +8,6 @@ import Screen1 from '../../assest/Screen1.png';
 import Group from '../../assest/Group.png';
 import Group1 from '../../assest/Group1.png';
 import Group2 from '../../assest/Vector.png';
-import { useThemeContext } from '../../App';
 import OurServices from '../../Component/Public/OurServices';
 import Star from '../../assest/Star.png'
 import Boxicon from '../../assest/Boxicon.png'
@@ -28,6 +27,7 @@ import Callus from '../../assest/callus.webp'
 import callshape1 from '../../assest/callshap1.webp'
 import callshape2 from '../../assest/callshap2.webp'
 import callshape3 from '../../assest/callshap3.webp'
+import { useNavigate } from 'react-router-dom';
 
 
 // Keyframes for the left image
@@ -108,37 +108,42 @@ const values = [
 ];
 
 const Home = () => {
-    // const theme = useThemeContext();
     const theme = useTheme();
+    const navigate = useNavigate();
+
+    const handleGetaQuote = () => {
+        window.scrollTo(0, 0);
+        navigate('/contact');
+    }
 
     return (
         <>
             <HomeBackground />
             <Box sx={{ backgroundColor: theme.palette.primary.deem, py: 2, px: { xs: 2, md: 14, lg: 14 }, }}>
                 <Stack direction={'row'} alignItems={'center'} sx={{ display: { xs: 'block', md: 'flex', sm: 'block' } }}>
-                    <Typography variant='h5' fontWeight={'bold'} sx={{ color: theme.palette.info.light }}>
+                    <Typography variant='h5' fontWeight={'bold'} sx={{ color: theme.palette.info.light, mb: { xs: 1, md: 0, lg: 0 } }}>
                         Looking for a first-class career consultant?
                     </Typography>
-                    <Button size='small' variant='none' sx={{ marginLeft: 'auto', color: theme.palette.info.light, background: theme.palette.primary.main, display: 'flex', alignItems: 'center', borderRadius: '50px', p: { xs: 1, md: 1 } }} endIcon={<KeyboardArrowRightIcon />}>get a quote</Button>
+                    <Button size='small' variant='none' sx={{ marginLeft: { xs: '0px', md: 'auto', lg: 'auto' }, color: theme.palette.info.light, background: theme.palette.primary.main, display: 'flex', alignItems: 'center', borderRadius: '50px', px: { xs: 2, md: 1 }, py: { xs: 1, md: 1 } }} endIcon={<KeyboardArrowRightIcon />} onClick={handleGetaQuote}>get a quote</Button>
                 </Stack>
             </Box>
 
             {/* Most Trusted Software Development Company */}
-            <Box sx={{ py: 5, px: { xs: 2, md: 14, lg: 14 }, backgroundColor: theme.palette.primary.light }}>
-                <Typography variant='h4' fontWeight={'bold'} sx={{ textAlign: 'center', my: 1 }}>
+            <Box sx={{ py: 5, mx: { xs: 2, md: 5, lg: 5 }, my: 5, backgroundColor: theme.palette.darkBackground, borderRadius: '50px' }}>
+                <Typography variant='h4' fontWeight={'bold'} sx={{ textAlign: 'center', my: 1, color: '#FFF' }}>
                     Most Trusted Software Development Company
                 </Typography>
-                <Box sx={{ px: { xs: 2, md: 5 } }}>
-                    <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{}}>
-                        Spirale Infosoft is the most trusted and reliable Software Development Company in Delhi NCR. Our years of experience and the best team of experts and developers, enables us to offer some of the finest and prime services to our clients. The team of experts and developers is highly experienced and well certified. Till date, we have catered to a good number of happy and satisfied clients, by meeting all their requirements and expectations.
+                <Box sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
+                    <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{ color: '#FFF' }}>
+                        TCSPL is the most trusted and reliable Software Development Company in Delhi NCR. Our years of experience and the best team of experts and developers, enables us to offer some of the finest and prime services to our clients. The team of experts and developers is highly experienced and well certified. Till date, we have catered to a good number of happy and satisfied clients, by meeting all their requirements and expectations.
                     </Typography>
-                    <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{}}>
+                    <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{ color: '#FFF' }}>
                         We provide best suited and custom solutions to our clients as per their business models and requirements. The services we offer to our clients are custom made, so that we can get the best results possible. We provide the best software development services in Noida. Our team of experts and developers is evolving each day with new trends and technologies in the market, which allows us to stand out and lead the market.
                     </Typography>
-                    <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{}}>
+                    <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{ color: '#FFF' }}>
                         With our company and our services in IT, you can take your business to the new heights and dominate the market by targeting the actual audience with the help of our Ecommerce services, getting them hooked and engaged through our attractive and user friendly UI UX designs. For more scalability and versatility of the web app you can also integrate different platforms and business systems with the help of our API development services.
                     </Typography>
-                    <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{}}>
+                    <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{ color: '#FFF' }}>
                         From the initial phases of web app development services to the later on maintenance and support services, we offer them all. We are the one stop destination for IT solutions. Our team of experienced experts is always there to serve you. HIRE THE BEST.
                     </Typography>
                 </Box>
@@ -242,7 +247,7 @@ const Home = () => {
                                             <Typography variant="h6" sx={{ mb: 1 }}>
                                                 {item.title}
                                             </Typography>
-                                            <Typography variant="p" sx={{ whiteSpace: 'pre-line', fontSize: '14px' }}>{item.content}</Typography>
+                                            <Typography variant="body2" sx={{ whiteSpace: 'pre-line', fontSize: '14px' }}>{item.content}</Typography>
                                         </Box>
                                     </Stack>
                                 </Box>
@@ -300,7 +305,7 @@ const Home = () => {
                                             marginBottom: 8,
                                         }}
                                     />
-                                    <Typography variant="body1" color="#fff" mb={2}>
+                                    <Typography variant="body2" color="#fff" mb={2}>
                                         {description}
                                     </Typography>
                                     <img
@@ -323,7 +328,7 @@ const Home = () => {
                                             }}
                                         />
                                         <Box>
-                                            <Typography variant="body1" color="#fff">
+                                            <Typography variant="body2" color="#fff">
                                                 {picname}
                                             </Typography>
                                             <Typography variant="body2" color="#fff">
@@ -351,7 +356,6 @@ const Home = () => {
                 >
                     <Grid
                         container
-                        alignItems={'center'}
                         sx={{
                             display: { xs: 'block', md: 'flex', '@media (max-width:950px)': { display: 'block' } } // Custom media query for 950px
                         }}
@@ -573,7 +577,6 @@ const Home = () => {
                     height: 'auto',
                     px: { xs: 2, md: 20 },
                     py: { xs: 2, md: 5 },
-                    my: { xs: 5, md: 5 },
                     position: 'relative',
                 }}
             >
@@ -624,14 +627,15 @@ const Home = () => {
                             Call us 24/7
                         </Typography>
                         <Typography variant="h4" color="#FFF" py={1}>
-                            +91 8534967099
+                            +9101204995054
                         </Typography>
                         <Typography variant="h5" color="#FFF" py={1}>
                             Need Help? We will help you regarding your query.
                         </Typography>
                         <Button
                             variant="contained"
-                            sx={{ backgroundColor: theme.palette.ButtonColor, my: 1 }}
+                            sx={{ backgroundColor: '#0071dc', my: 1, borderRadius: '50px' }}
+                            onClick={handleGetaQuote}
                         >
                             Contact us
                         </Button>
@@ -692,7 +696,6 @@ const Home = () => {
                 height: 'auto',
                 px: { xs: 5, md: 10, lg: 15 },
                 py: { xs: 2, md: 5 },
-                my: { xs: 5, md: 5 },
             }}>
                 {/* Overlay Box */}
                 <Box
@@ -738,7 +741,6 @@ const Home = () => {
                     ))}
                 </Grid>
             </Box>
-
 
             {/* case Studt */}
             <Slider />

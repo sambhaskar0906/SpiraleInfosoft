@@ -48,7 +48,8 @@ const OurWorking = () => {
         <Box
             sx={{
                 px: { xs: 2, lg: 15, md: 10 },
-                py: { xs: 2, md: 3 },
+                py: { xs: 2, md: 5 },
+                backgroundColor: '#CCCCCC'
             }}
         >
             <Box textAlign={'center'} py={3}>
@@ -89,7 +90,7 @@ const OurWorking = () => {
                                 <Typography variant='h4' fontWeight={'bold'} py={2}>
                                     {item.title}
                                 </Typography>
-                                <Typography variant='body1'>
+                                <Typography variant='body2'>
                                     {item.description}
                                 </Typography>
                             </CardContent>

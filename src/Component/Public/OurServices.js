@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Button, Grid, Typography, useTheme } from '@mui/material';
-import { useThemeContext } from '../../App';
 import AndroidIcon from '@mui/icons-material/Android';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
@@ -9,6 +8,7 @@ import ApiIcon from '@mui/icons-material/Api';
 import AppleIcon from '@mui/icons-material/Apple';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import service from '../../assest/service.webp';
+import { useNavigate } from 'react-router-dom';
 
 const data = [
     {
@@ -19,6 +19,7 @@ const data = [
             'From asking the question whether you need a CMS or not to develop a most optimal solution, we have a trained team to take care of all that you need to run a CMS.',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
+        route: '/services/cms-development',
     },
     {
         id: 2,
@@ -28,6 +29,7 @@ const data = [
             'We believe in taking our clients online business to the next level by developing interactive, beautiful Mobile Apps and publishing it to play store. ',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
+        route: '/services/app-development',
     },
     {
         id: 3,
@@ -37,6 +39,7 @@ const data = [
             'If you are looking affordable website designing services, you are at right place. We provide custom website designing services within your budget.',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
+        route: '/services/web-development',
     },
     {
         id: 4,
@@ -46,6 +49,7 @@ const data = [
             'If you are looking affordable website designing services, you are at right place. We provide custom website designing services within your budget.',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
+        route: '/services/ecommers-service',
     },
 ];
 
@@ -58,6 +62,7 @@ const data1 = [
             'We are expert in developing and integration APIs, we have earned a tag of reliable API developer with PHP, NodeJs, etc.',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
+        route: '/services/api-service',
     },
     {
         id: 2,
@@ -67,6 +72,7 @@ const data1 = [
             'With our expert iOS developers and experts, we have developed 100+ iOS apps and published on app store.',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
+        route: '/services/app-development/native-ios',
     },
     {
         id: 3,
@@ -76,6 +82,7 @@ const data1 = [
             'React native is a hot technology which is used to create cross platform applications with beautiful, fast and responsive UIs.',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
+        route: '/services/app-development/react-native',
     },
     {
         id: 4,
@@ -85,12 +92,19 @@ const data1 = [
             'React native is a hot technology which is used to create cross platform applications with beautiful, fast and responsive UIs.',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
+        route: '/services/web-development/reactjs',
     },
 ];
 
 const OurServices = () => {
     // const theme = useThemeContext();
     const theme = useTheme();
+    const navigate = useNavigate();
+
+    const handleNavigate = (route) => {
+        navigate(route); // Use navigate function
+    };
+
     return (
         <>
             <Box
@@ -182,7 +196,7 @@ const OurServices = () => {
                                     <item.icon sx={{ fontSize: 60, color: theme.palette.primary.deem }} />
                                 </Box>
                                 <Typography variant="h4">{item.content}</Typography>
-                                <Typography variant="body1" sx={{ marginTop: 1, whiteSpace: 'pre-line' }}>
+                                <Typography variant="body2" sx={{ marginTop: 1, whiteSpace: 'pre-line' }}>
                                     {item.subContent}
                                 </Typography>
                                 <Box sx={{ display: 'flex', mt: 2 }}>
@@ -190,6 +204,7 @@ const OurServices = () => {
                                         variant="text"
                                         sx={{ fontWeight: 'bold', color: '#000', p: 0 }}
                                         endIcon={<item.buttonIcon />}
+                                        onClick={() => handleNavigate(item.route)}
                                     >
                                         {item.buttonText}
                                     </Button>
@@ -257,7 +272,7 @@ const OurServices = () => {
                                     <item.icon sx={{ fontSize: 60, color: theme.palette.primary.deem }} />
                                 </Box>
                                 <Typography variant="h4">{item.content}</Typography>
-                                <Typography variant="body1" sx={{ marginTop: 1, whiteSpace: 'pre-line' }}>
+                                <Typography variant="body2" sx={{ marginTop: 1, whiteSpace: 'pre-line' }}>
                                     {item.subContent}
                                 </Typography>
                                 <Box sx={{ display: 'flex', mt: 2 }}>
@@ -265,6 +280,7 @@ const OurServices = () => {
                                         variant="text"
                                         sx={{ fontWeight: 'bold', color: '#000', p: 0 }}
                                         endIcon={<item.buttonIcon />}
+                                        onClick={() => handleNavigate(item.route)}
                                     >
                                         {item.buttonText}
                                     </Button>
