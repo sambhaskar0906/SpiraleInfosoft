@@ -3,7 +3,7 @@ import { Remove, Add } from "@mui/icons-material";
 import { Box, Divider, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import menuData from "../Public/MenuData";
-import Logo from "../../assest/tcspl.jpg";
+import Logo from "../../assest/TechLogo.png";
 
 const AccordionMenu = ({ onClose }) => {
     const [openMenus, setOpenMenus] = useState({});
