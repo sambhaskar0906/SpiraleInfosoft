@@ -7,25 +7,27 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useThemeContext } from '../../App';
 
-import amar from '../../assest/Client/1.jpg';
-import azad from '../../assest/Client/2.jpg';
-import ae from '../../assest/Client/3.jpg';
-import bvg from '../../assest/Client/4.jpg';
-import gad from '../../assest/Client/5.jpg';
-import amar1 from '../../assest/Client/6.jpg';
-import amar2 from '../../assest/Client/7.jpg';
-import amar3 from '../../assest/Client/8.jpg';
+import amar from '../../assest/Client/amar.avif';
+import shrinivas from '../../assest/Client/shrinivas.png';
+import meditest from '../../assest/Client/meditest.jpg';
+import mediforte from '../../assest/Client/mediforte.jpg';
+import shree from '../../assest/Client/shree.jpg';
+import bvg from '../../assest/Client/bvg.avif';
+import puzzolana from '../../assest/Client/puzzolana.jpg';
+import azad from '../../assest/Client/azad.png';
+import felix from '../../assest/Client/felix.jpg';
 
 // Image sources and their corresponding texts array
 const clientImages = [
-    { src: amar, text: "Client 1 - Software Development" },
-    { src: azad, text: "Client 2 - Web Development" },
-    { src: ae, text: "Client 3 - Mobile Applications" },
-    { src: bvg, text: "Client 4 - UI/UX Design" },
-    { src: gad, text: "Client 5 - Database Management" },
-    { src: amar1, text: "Client 6 - IT Consulting" },
-    { src: amar2, text: "Client 7 - System Integration" },
-    { src: amar3, text: "Client 8 - Cloud Solutions" }
+    { src: amar, text: "Amar Hospital - We Treat he cures" },
+    { src: shrinivas, text: "Shrinivas Hospital - Best Care || Best People" },
+    { src: meditest, text: "Meditest Diagonostic - Pathology: The science behind the cure" },
+    { src: mediforte, text: "Mediforte Hospital - skill to heal Passion to care" },
+    { src: shree, text: "Shree Medicine Hospital - Health & Care Center" },
+    { src: bvg, text: "BVG - Huminity Ahead" },
+    { src: puzzolana, text: "Puzzolana - Delivering Excellence" },
+    { src: azad, text: "Azad - We Manufacture Complex" },
+    { src: felix, text: "Felix - Your care, Our passion" }
 ];
 
 // Custom Arrow components
@@ -88,7 +90,7 @@ export default function CaseStudy() {
                     clients
                 </Typography>
             </Box>
-            <Box py={5} sx={{ width: '100%', position: 'relative' }}>
+            <Box sx={{ width: '100%', position: 'relative', py: { xs: 1, md: 5, lg: 5 } }}>
                 <Slider {...settings}>
                     {clientImages.map((client, index) => {
                         const isCenter = isCenterSlide(index, 5);
@@ -122,9 +124,10 @@ export default function CaseStudy() {
                                         alt={`Client ${index + 1}`}
                                         sx={{
                                             width: '100%',
+                                            height: { md: '350px', lg: '350px', xs: '400px' }, // Set a fixed height for all images
                                             borderRadius: '8px',
                                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                                            objectFit: 'contain', // Ensures proper aspect ratio
+                                            objectFit: 'cover', // Ensure images maintain aspect ratio and fill the height
                                             display: 'block', // Center align image in flexbox
                                         }}
                                     />

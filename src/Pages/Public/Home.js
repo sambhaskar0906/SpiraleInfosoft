@@ -9,9 +9,6 @@ import Group from '../../assest/Group.png';
 import Group1 from '../../assest/Group1.png';
 import Group2 from '../../assest/Vector.png';
 import OurServices from '../../Component/Public/OurServices';
-import Star from '../../assest/Star.png'
-import Boxicon from '../../assest/Boxicon.png'
-import pic from '../../assest/pic.png'
 import computer from '../../assest/computer.png'
 import object from '../../assest/OBJECTS.png'
 import OurWorking from '../../Component/Public/OurWorking';
@@ -28,6 +25,7 @@ import callshape1 from '../../assest/callshap1.webp'
 import callshape2 from '../../assest/callshap2.webp'
 import callshape3 from '../../assest/callshap3.webp'
 import { useNavigate } from 'react-router-dom';
+import ClientSlider from '../../Component/Public/ClientSlider';
 
 
 // Keyframes for the left image
@@ -77,36 +75,6 @@ const data = [
     }
 ];
 
-const values = [
-    {
-        id: 1,
-        image: Star,
-        description: 'At vero eos accusamus iusto odio dignis simos ducimus quiesy blanditiisy prae sentium on voluptatum deleniti atque',
-        BoxIcon: Boxicon,
-        Pic: pic,
-        picname: 'David D. Bourdeau',
-        picusername: '@davidboureau',
-    },
-    {
-        id: 2,
-        image: Star,
-        description: 'At vero eos accusamus iusto odio dignis simos ducimus quiesy blanditiisy prae sentium on voluptatum deleniti atque',
-        BoxIcon: Boxicon,
-        Pic: pic,
-        picname: 'David D. Bourdeau',
-        picusername: '@davidboureau',
-    },
-    {
-        id: 3,
-        image: Star,
-        description: 'At vero eos accusamus iusto odio dignis simos ducimus quiesy blanditiisy prae sentium on voluptatum deleniti atque',
-        BoxIcon: Boxicon,
-        Pic: pic,
-        picname: 'David D. Bourdeau',
-        picusername: '@davidboureau',
-    },
-];
-
 const Home = () => {
     const theme = useTheme();
     const navigate = useNavigate();
@@ -114,6 +82,16 @@ const Home = () => {
     const handleGetaQuote = () => {
         window.scrollTo(0, 0);
         navigate('/contact');
+    }
+
+    const handleSoftware = () => {
+        window.scrollTo(0, 0);
+        navigate('/software-development');
+    }
+
+    const handleGrow = () => {
+        window.scrollTo(0, 0);
+        navigate('/grow-bussiness');
     }
 
     return (
@@ -263,85 +241,7 @@ const Home = () => {
             <OurServices />
 
             {/* What Clients Value Most About Us */}
-            <Box sx={{ p: 2, px: { xs: 2, md: 14, lg: 14 }, }}>
-                <Box
-                    sx={{
-                        position: 'relative', // Position relative to stack on top of the overlay
-                        zIndex: 1, // Bring the content above the overlay
-                    }}
-                >
-                    <Typography
-                        variant="h6"
-                        fontWeight="bold"
-                        sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, mb: 2, textAlign: 'center' }}
-                    >
-                        What Clients Value Most About Us
-                    </Typography>
-                    <Typography variant="h5" fontWeight="bold" textAlign={'center'}>
-                        Driven success through trust, expertise, and custom web solutions
-                    </Typography>
-                    <Grid
-                        container
-                        spacing={2}
-                        sx={{ mt: { xs: 2, md: 4 }, }}
-                    >
-                        {values.map(({ id, image, description, BoxIcon, Pic, picname, picusername }) => (
-                            <Grid item xs={12} lg={4} sm={6} md={6} key={id}>
-                                <Box
-                                    sx={{
-                                        backgroundColor: theme.palette.primary.main,
-                                        borderRadius: 2,
-                                        p: 3,
-                                        boxShadow: 3,
-                                    }}
-                                >
-                                    <img
-                                        src={image}
-                                        alt={description}
-                                        style={{
-                                            width: '120px',
-                                            height: '20px',
-                                            borderRadius: 4,
-                                            marginBottom: 8,
-                                        }}
-                                    />
-                                    <Typography variant="body2" color="#fff" mb={2}>
-                                        {description}
-                                    </Typography>
-                                    <img
-                                        src={BoxIcon}
-                                        alt="Box Icon"
-                                        style={{
-                                            width: '100%',
-                                            borderRadius: 4,
-                                            marginBottom: 8,
-                                        }}
-                                    />
-                                    <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 2 }}>
-                                        <img
-                                            src={Pic}
-                                            alt={picname}
-                                            style={{
-                                                width: 60,
-                                                height: 60,
-                                                borderRadius: '50%',
-                                            }}
-                                        />
-                                        <Box>
-                                            <Typography variant="body2" color="#fff">
-                                                {picname}
-                                            </Typography>
-                                            <Typography variant="body2" color="#fff">
-                                                {picusername}
-                                            </Typography>
-                                        </Box>
-                                    </Stack>
-                                </Box>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-            </Box>
+            <ClientSlider />
 
             {/* Add the computer image at the bottom */}
             <Box
@@ -351,13 +251,11 @@ const Home = () => {
                     my: { xs: 5, md: 5 },
                 }}
             >
-                <Box
-
-                >
+                <Box>
                     <Grid
                         container
                         sx={{
-                            display: { xs: 'block', md: 'flex', '@media (max-width:950px)': { display: 'block' } } // Custom media query for 950px
+                            display: { xs: 'block', md: 'flex', '@media (max-width:950px)': { display: 'block' } }, alignItems: 'center' // Custom media query for 950px
                         }}
                     >
                         <Grid
@@ -405,6 +303,7 @@ const Home = () => {
                             </Typography>
                             <Button
                                 variant='outlined'
+                                onClick={handleSoftware}
                                 sx={{
                                     color: theme.palette.HeadingColor,
                                     my: 1,
@@ -427,7 +326,7 @@ const Home = () => {
                     my: { xs: 5, md: 5 },
                 }}
             >
-                <Box>
+                <Box sx={{ alignItems: 'center' }}>
                     <Grid
                         container
                         sx={{
@@ -462,6 +361,7 @@ const Home = () => {
                             </Typography>
                             <Button
                                 variant='outlined'
+                                onClick={handleGrow}
                                 sx={{
                                     color: theme.palette.HeadingColor,
                                     my: 1,
@@ -476,7 +376,7 @@ const Home = () => {
                             xs={12}
                             md={6}
                             sx={{
-                                textAlign: 'center'
+                                textAlign: 'center', py: 3
                             }}
                         >
                             <Box
@@ -502,7 +402,7 @@ const Home = () => {
                 }}
             >
                 <Box
-
+                    sx={{ alignItems: 'center' }}
                 >
                     <Grid
                         container

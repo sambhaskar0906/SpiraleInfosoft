@@ -8,13 +8,13 @@ const PrivacyPolicy = () => {
     const content = [
         {
             heading: 'Privacy Policy',
-            paragraph: 'Spirale Infosoft is one of the most trusted and reliable software development companies                     when it comes to the user’s personal information protection principles.',
-            paragraph1: "As we are an emerging company and expanding our fields which also requires a lot of client             interactions and conversations, we assure that the details or projects shared with us and our teams are end to end encrypted and there is no breaching and full authenticity, what one can expect from a genuine and a leading software development company.",
-            paragraph2: "We totally work under the guidance of experts and government rules and regulations. We                     take our client’s privacy seriously and there is no compromise with it",
+            paragraph: 'Spirale Infosoft is one of the most trusted and reliable software development companies when it comes to the user’s personal information protection principles.',
+            paragraph1: "As we are an emerging company and expanding our fields which also requires a lot of client interactions and conversations, we assure that the details or projects shared with us and our teams are end to end encrypted and there is no breaching and full authenticity, what one can expect from a genuine and a leading software development company.",
+            paragraph2: "We totally work under the guidance of experts and government rules and regulations. We take our client’s privacy seriously and there is no compromise with it",
         },
         {
             heading: 'No provision for third parties :',
-            paragraph: 'We always make sure that there is no breaching of information and personal details of clients or             their business from our side. In any of these situations, we ensure that the  client privacy is not                   compromised at any cost.',
+            paragraph: 'We always make sure that there is no breaching of information and personal details of clients or their business from our side. In any of these situations, we ensure that the  client privacy is not compromised at any cost.',
         },
         {
             heading: 'Lawful practices :',

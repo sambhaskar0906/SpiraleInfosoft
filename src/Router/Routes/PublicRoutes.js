@@ -23,6 +23,10 @@ import CrossPlateformApp from '../../Pages/DropDown/AppDevelopment/AppDevelopIte
 import Wordpress from '../../Pages/DropDown/CmsDevelopment/CmsDevelopItem/Wordpress'
 import UiUx from '../../Pages/DropDown/WebsiteDesigning/WebsiteDesignitem/UiUx'
 import PrivacyPolicy from '../../Pages/Public/PrivacyPolicy'
+import OurCalture from '../../Pages/Public/OurCalture'
+import Apply from '../../Pages/Public/Apply'
+import SoftwareDevelopement from '../../Pages/Public/SoftwareDevelopement'
+import GrowBussiness from '../../Pages/Public/GrowBussiness'
 
 
 const PublicRoutes = () => {
@@ -63,10 +67,22 @@ const PublicRoutes = () => {
 
                     {/* Api Services Development DropDown */}
                     <Route path='/services/api-service' element={<ApiService />} />
+
+                    {/* our Culuture */}
+                    <Route path='/ourCuluture' element={<OurCalture />} />
+
+                    {/* Apply */}
+                    <Route path='/apply' element={<Apply />} />
+
+                    {/* Software Development */}
+                    <Route path='/software-development' element={<SoftwareDevelopement />} />
+
+                    {/* Grow Bussiness */}
+                    <Route path='/grow-bussiness' element={<GrowBussiness />} />
                 </Route>
             </Routes>
 
-        </div>
+        </div >
     )
 }
 

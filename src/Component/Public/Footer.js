@@ -143,7 +143,7 @@ const Footer = () => {
                     {/* Enquiry Section */}
                     <Grid item xs={12} lg={4} sm={12} md={6}>
                         <Typography variant="h5" py={1}>
-                            Enquiry
+                            Support/Services
                         </Typography>
                         <Box py={1} width="100%">
                             <TextField

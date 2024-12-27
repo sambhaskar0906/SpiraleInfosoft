@@ -4,22 +4,21 @@ import Slider from '../../Component/Public/Slider';
 import Mission from '../../assest/Client/imgs/mission1.avif';
 import Vision from '../../assest/Client/imgs/vision1.jpg';
 import AboutImg from '../../assest/about.jpeg';
-import MissionImg from '../../assest/bgHome.webp'
+import MissionImg from '../../assest/Client/8.jpg'
 
 const About = () => {
     const theme = useTheme();
     return (
         <>
-
             {/* about header */}
             <Box sx={{
-                width: '100%', // Correct viewport width unit
+                width: '100%',
                 height: '40vh',
-                position: 'relative', // Make the parent Box relative to position overlay correctly
+                position: 'relative',
                 background: `url(${AboutImg})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover', // Ensure the image covers the box while maintaining its aspect ratio
-                backgroundPosition: 'center', // Center the background image
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -32,16 +31,13 @@ const About = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'rgba(0, 0, 0, 0.3)', // Semi-transparent black overlay
-                        zIndex: 1, // Ensure the overlay is on top of the background
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        zIndex: 1,
                     }}
                 />
-                {/* Content Box */}
-                <Box>
-                    <Typography variant="h2" fontWeight={'bold'} sx={{ color: theme.palette.info.light }}>
-                        About
-                    </Typography>
-                </Box>
+                <Typography variant="h3" textAlign="center" color="white" sx={{ zIndex: 2, fontWeight: 'bold' }}>
+                    About
+                </Typography>
             </Box>
             {/* what we do */}
             <Box sx={{ px: { xs: 2, md: 14, lg: 14 } }}>

@@ -4,6 +4,7 @@ import career from '../../assest/career-bg2.jpg';
 import team from '../../assest/team-work-img.jpg'
 import careerimg1 from '../../assest/careerimg2.jpg'
 import careerimg2 from '../../assest/careerimg2.jpg'
+import { useNavigate } from 'react-router-dom';
 
 const perks = [
     { title: "Flexible working\n hours", color: "red" },
@@ -16,6 +17,22 @@ const perks = [
 
 const Career = () => {
     const theme = useTheme();
+    const navigate = useNavigate();
+
+    const handleAbout = () => {
+        window.scrollTo(0, 0);
+        navigate('/about')
+    }
+
+    const handleCuluture = () => {
+        window.scrollTo(0, 0);
+        navigate('/ourCuluture')
+    }
+
+    const handleApply = () => {
+        window.scrollTo(0, 0);
+        navigate('/apply')
+    }
 
     return (
         <>
@@ -99,6 +116,7 @@ const Career = () => {
                         <Button
                             variant="contained"
                             color="primary"
+                            onClick={handleAbout}
                             sx={{
                                 position: 'absolute',
                                 bottom: -15,
@@ -122,6 +140,7 @@ const Career = () => {
                         <Button
                             variant="contained"
                             color="primary"
+                            onClick={handleCuluture}
                             sx={{
                                 position: 'absolute',
                                 bottom: -15,
@@ -167,7 +186,7 @@ const Career = () => {
                     </Grid>
 
                     <Grid item xs={12} md={2}>
-                        <Button variant='outlined' sx={{ color: '#fff', border: '1px solid #fff' }}>
+                        <Button onClick={handleApply} variant='outlined' sx={{ color: '#fff', border: '1px solid #fff' }}>
                             Apply Now
                         </Button>
                     </Grid>
