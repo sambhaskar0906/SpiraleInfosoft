@@ -13,7 +13,7 @@ import {
     Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo from "../../assest/TechLogo.png";
+import Logo from "../../assest/pvf7cj26.png";
 import menuData from "../../Component/Public/MenuData";
 import DropdownMenu from "../Public/DropDown";
 import AccordionMenu from "../Public/AccordionMenu";
@@ -202,9 +202,20 @@ const HomeAppBar = () => {
                     <Box
                         sx={{ width: drawerWidth, py: 2, height: "100vh", overflowY: "auto" }}
                     >
-                        <AccordionMenu menuData={menuData} onClose={handleDrawerToggle} />
+                        <AccordionMenu
+                            menuData={menuData.map((menu) => ({
+                                ...menu,
+                                action: () => {
+                                    handleDrawerToggle(); // Close the Drawer
+                                    window.location.href = menu.route; // Refresh the page
+                                    window.scrollTo(0, 0); // Scroll to the top
+                                },
+                            }))}
+                            onClose={handleDrawerToggle}
+                        />
                     </Box>
                 </Drawer>
+
             </Box>
 
             {/* Show More Button */}

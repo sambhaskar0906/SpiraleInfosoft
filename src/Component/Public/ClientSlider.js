@@ -37,7 +37,7 @@ const values = [
     {
         id: 4,
         image: Star,
-        description: 'The roots of BVG India Limited trace back to 1993 when Mr. Hanmantrao Ramdas Gaikwad, a visionary leader driven by an unshakeable.',
+        description: 'Felix Hospital takes its name from the Latin word "Felix," which means lucky, happy, and successful.',
         BoxIcon: Boxicon,
         picname: 'FELIX HOSPITAL',
         picusername: 'info@felixhospital.com',
@@ -46,7 +46,7 @@ const values = [
     {
         id: 5,
         image: Star,
-        description: 'The roots of BVG India Limited trace back to 1993 when Mr. Hanmantrao Ramdas Gaikwad, a visionary leader driven by an unshakeable.',
+        description: 'We are one of the key manufacturers of our qualified product lines in the aerospace and defence, energy and oil and gas industries.',
         BoxIcon: Boxicon,
         picname: 'AZAD ENGINEERING LIMITED',
         picusername: 'info@azad.in',
@@ -55,7 +55,7 @@ const values = [
     {
         id: 6,
         image: Star,
-        description: 'The roots of BVG India Limited trace back to 1993 when Mr. Hanmantrao Ramdas Gaikwad, a visionary leader driven by an unshakeable.',
+        description: 'Dr. J.S. Bahia, the founder and Managing Director of Amar Hospital, until the point of inflection happened in 1997.',
         BoxIcon: Boxicon,
         picname: 'AMAR HOSPITAL',
         picusername: 'customercare@amarhospital.com',
@@ -109,7 +109,7 @@ const ClientSlider = () => {
                     overflow: 'hidden',
                 }}
             >
-                {values.map(({ id, image, description, BoxIcon, Pic, picname, picusername, rating }) => (
+                {values.map(({ id, description, BoxIcon, Pic, picname, picusername, rating }) => (
                     <Box
                         key={id}
                         sx={{

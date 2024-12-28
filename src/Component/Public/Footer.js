@@ -12,6 +12,10 @@ const Footer = () => {
         window.location.href = '/';
     };
 
+    const handleClick = () => {
+        window.scrollTo(0, 0); // Scroll to the top of the page
+    };
+
     return (
         <>
             <Box
@@ -30,7 +34,7 @@ const Footer = () => {
                             About Company
                         </Typography>
                         <Typography variant="body2" py={2}>
-                            TCSPL(Tech Clock Solutions Pvt. Ltd.) is one of the most trusted and reliable software development companies based in Delhi NCR. We provide our finest services in website designing and development. We have dedicated teams of experts and developers to help you in maintenance and digital marketing services as well.
+                            TCSPL(TechCloak Solutions Pvt. Ltd.) is one of the most trusted and reliable software development companies based in Delhi NCR. We provide our finest services in website designing and development. We have dedicated teams of experts and developers to help you in maintenance and digital marketing services as well.
                         </Typography>
                         <Stack
                             direction="row"
@@ -95,6 +99,7 @@ const Footer = () => {
                                 <Link
                                     to={service.link}
                                     style={{ textDecoration: 'none', color: '#FFF' }}
+                                    onClick={handleClick}
                                 >
                                     {service.name}
                                 </Link>
@@ -186,7 +191,7 @@ const Footer = () => {
                 {/* Footer */}
                 <Box>
                     <Typography variant="body2" py={2} textAlign="center">
-                        Copyright @ 2023 TCSPL(Tech Clock Solutions Pvt. Ltd.) All Rights Reserved by{' '}
+                        Copyright @ 2023 TCSPL(TechCloak Solutions Pvt. Ltd.) All Rights Reserved by{' '}
                         <span
                             style={{ color: '#E99f2B', textDecoration: 'underline', cursor: 'pointer' }}
                             onClick={handleHome}

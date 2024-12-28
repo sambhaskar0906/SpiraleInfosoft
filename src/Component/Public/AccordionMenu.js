@@ -3,7 +3,7 @@ import { Remove, Add } from "@mui/icons-material";
 import { Box, Divider, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import menuData from "../Public/MenuData";
-import Logo from "../../assest/TechLogo.png";
+import Logo from "../../assest/pvf7cj26.png";
 
 const AccordionMenu = ({ onClose }) => {
     const [openMenus, setOpenMenus] = useState({});
@@ -19,6 +19,7 @@ const AccordionMenu = ({ onClose }) => {
     const handleNavigation = (route) => {
         if (route) {
             navigate(route); // Navigate to the specified route
+            window.scrollTo(0, 0);
             onClose(); // Close the drawer after navigation
         }
     };
