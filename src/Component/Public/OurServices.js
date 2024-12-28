@@ -89,7 +89,7 @@ const data1 = [
         icon: CastForEducationIcon,
         content: 'React.js',
         subContent:
-            'React native is a hot technology which is used to create cross platform applications with beautiful, fast and responsive UIs.',
+            'React.js is a popular JavaScript library developed by Facebook for building user interfaces, single-page applications',
         buttonText: 'Learn More',
         buttonIcon: ChevronRightIcon,
         route: '/services/web-development/reactjs',

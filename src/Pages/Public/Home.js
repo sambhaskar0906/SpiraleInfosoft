@@ -94,6 +94,11 @@ const Home = () => {
         navigate('/grow-bussiness');
     }
 
+    const handleBrand = () => {
+        window.scrollTo(0, 0);
+        navigate('/create-brands');
+    }
+
     return (
         <>
             <HomeBackground />
@@ -462,6 +467,7 @@ const Home = () => {
                                     my: 1,
                                     border: '2px solid #2196F3'
                                 }}
+                                onClick={handleBrand}
                             >
                                 Explore
                             </Button>

@@ -3,7 +3,7 @@ import React from 'react';
 import career from '../../assest/career-bg2.jpg';
 import team from '../../assest/team-work-img.jpg'
 import careerimg1 from '../../assest/careerimg2.jpg'
-import careerimg2 from '../../assest/careerimg2.jpg'
+import careerimg2 from '../../assest/Client/8.jpg'
 import { useNavigate } from 'react-router-dom';
 
 const perks = [

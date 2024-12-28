@@ -89,6 +89,10 @@ const HomeAppBar = () => {
         navigate('/contact');
     }
 
+    const logoUpto = () => {
+        window.scrollTo(0, 0);
+        navigate('/');
+    }
     return (
         <>
             <Box sx={{ display: "flex" }}>
@@ -127,7 +131,7 @@ const HomeAppBar = () => {
                                 src={Logo}
                                 alt="Logo"
                                 style={{ height: "50px", width: "180px", cursor: 'pointer' }}
-                                onClick={() => navigate('/')}
+                                onClick={logoUpto}
                             />
                         </Box>
 

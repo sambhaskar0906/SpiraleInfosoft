@@ -48,7 +48,7 @@ const values = [
         image: Star,
         description: 'We are one of the key manufacturers of our qualified product lines in the aerospace and defence, energy and oil and gas industries.',
         BoxIcon: Boxicon,
-        picname: 'AZAD ENGINEERING LIMITED',
+        picname: 'AZAD ENGINEERING',
         picusername: 'info@azad.in',
         rating: 3.6,
     },

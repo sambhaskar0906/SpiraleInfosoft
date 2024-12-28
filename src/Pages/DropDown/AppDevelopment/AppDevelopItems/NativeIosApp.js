@@ -9,36 +9,36 @@ const NativeIosApp = () => {
     const theme = useTheme();
 
     const content = {
-        title: "Native Ios Development Company in India",
+        title: "Native IOS Development Company in India",
         description: [
             "TCSPL is a well-known web development company, based in Noida. Our priority is to provide a great customer experience to our clients.",
-            "We, as a Native Ios development company, ensure that the services provided by us are high in quality and performance.",
+            "We, as a Native IOS development company, ensure that the services provided by us are high in quality and performance.",
             "From the very planning part to the final deployment and delivery, our team of experienced and dedicated developers stays in touch with our clients for better understanding and clarity about the purpose and needs of the project."
         ]
     };
 
     const content1 = {
-        title: "Native Ios Development Services",
+        title: "Native IOS Development Services",
         description: [
-            "Being a Native Ios development company, we provide you one of the best services in this field that are cost-efficient too. Our team of certified and well-experienced web developers have a great command over platforms like PHP, Laravel, React JS, and many more."
+            "Being a Native IOS development company, we provide you one of the best services in this field that are cost-efficient too. Our team of certified and well-experienced web developers have a great command over platforms like PHP, Laravel, React JS, and many more."
         ]
     };
 
     const content2 = {
-        title: "Why choose TCSPL for the Native Ios Development Services ?",
+        title: "Why choose TCSPL for the Native IOS Development Services ?",
         description: [
-            "Our Native Ios Development Company provides services including several phases of production and maintenance so that we can deliver the project on time with no complications."
+            "Our Native IOS Development Company provides services including several phases of production and maintenance so that we can deliver the project on time with no complications."
         ]
     };
 
     const services = [
 
         {
-            heading: "Custom Native Ios Development Services",
+            heading: "Custom Native IOS Development Services",
             description: "Our Native Ios development company and its team of talented and dedicated developers take care of each and every requirement and need of the client and their project. Knowing our client’s requirements, we provide them with well-suited solutions for their business."
         },
         {
-            heading: "Enterprise Native Ios Development Services",
+            heading: "Enterprise Native IOS Development Services",
             description: "To transform any regular business into an ecommerce business, their workflow and strategies are revised for better performance."
         },
         {

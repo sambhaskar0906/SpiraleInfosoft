@@ -27,6 +27,7 @@ import OurCalture from '../../Pages/Public/OurCalture'
 import Apply from '../../Pages/Public/Apply'
 import SoftwareDevelopement from '../../Pages/Public/SoftwareDevelopement'
 import GrowBussiness from '../../Pages/Public/GrowBussiness'
+import CreateBrands from '../../Pages/Public/CreateBrands'
 
 
 const PublicRoutes = () => {
@@ -79,6 +80,9 @@ const PublicRoutes = () => {
 
                     {/* Grow Bussiness */}
                     <Route path='/grow-bussiness' element={<GrowBussiness />} />
+
+                    {/* Create Brands */}
+                    <Route path='/create-brands' element={<CreateBrands />} />
                 </Route>
             </Routes>
 

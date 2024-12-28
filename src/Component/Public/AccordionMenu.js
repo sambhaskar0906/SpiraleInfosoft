@@ -24,6 +24,12 @@ const AccordionMenu = ({ onClose }) => {
         }
     };
 
+    const logoUpto = () => {
+        window.scrollTo(0, 0);
+        navigate('/')
+        onClose()
+    }
+
     const renderMenu = (menu, index) => (
         <Box key={index}>
             {/* Top-Level Menu Item */}
@@ -104,6 +110,7 @@ const AccordionMenu = ({ onClose }) => {
                         src={Logo}
                         alt="Logo"
                         style={{ height: "50px", width: "180px" }}
+                        onClick={logoUpto}
                     />
                 </Box>
             </Box>

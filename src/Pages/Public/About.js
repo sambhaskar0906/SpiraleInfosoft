@@ -86,7 +86,7 @@ const About = () => {
                         <Stack spacing={1}>
                             <Typography variant='h4' color='primary.main' fontWeight={'bold'}>A perfect fusion of technology <br /> and creativity</Typography>
                             <Typography variant='body2'>
-                                TCSPL is a leading software development and service providing company since 2009, offering a wide range of software development and maintenance services across the globe.
+                                TechCloak Solutions Pvt. Ltd. is a leading software development and service providing company since 2016, offering a wide range of software development and maintenance services across the globe.
                             </Typography>
                             <Typography variant='body2'>
                                 The company is based in Delhi NCR (Noida), and we have catered a number of happy and satisfied customers worldwide.
