@@ -109,7 +109,7 @@ const ClientSlider = () => {
                     overflow: 'hidden',
                 }}
             >
-                {values.map(({ id, description, BoxIcon, Pic, picname, picusername, rating }) => (
+                {values.map(({ id, description, BoxIcon, picname, picusername, rating }) => (
                     <Box
                         key={id}
                         sx={{
@@ -122,6 +122,10 @@ const ClientSlider = () => {
                                 borderRadius: 2,
                                 p: 3,
                                 boxShadow: 3,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'stretch', // Ensure it stretches to same height
+                                minHeight: '300px', // Ensure a minimum height, even for shorter content
                             }}
                         >
                             <Rating
