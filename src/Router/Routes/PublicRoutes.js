@@ -28,6 +28,7 @@ import Apply from '../../Pages/Public/Apply'
 import SoftwareDevelopement from '../../Pages/Public/SoftwareDevelopement'
 import GrowBussiness from '../../Pages/Public/GrowBussiness'
 import CreateBrands from '../../Pages/Public/CreateBrands'
+import Error from '../../Pages/Public/Error'
 
 
 const PublicRoutes = () => {
@@ -84,6 +85,8 @@ const PublicRoutes = () => {
                     {/* Create Brands */}
                     <Route path='/create-brands' element={<CreateBrands />} />
                 </Route>
+                {/* error page */}
+                <Route path='*' element={<Error />} />
             </Routes>
 
         </div >

@@ -84,15 +84,16 @@ const Contact = () => {
                                 {
                                     icon: CallIcon,
                                     title: 'Phone number',
-                                    content: '+91 01204995054',
+                                    content: '01205261995',
+                                    contect2: '9696974038', // Second mobile number
                                 },
                                 {
                                     icon: LocationOnIcon,
                                     title: 'Gujarat corporate office',
-                                    subtittles: ['office no. 47 & 48'], // Only one subtitle
-                                    contents: ['2nd floor girnar palace, aditiya circle, gidc-vapi, Gujarat pincode 396191'], // Only one content
+                                    subtittles: ['office no. 47 & 48'],
+                                    contents: ['2nd floor girnar palace, aditiya circle, gidc-vapi, Gujarat pincode 396191'],
                                     title1: 'Development center noida',
-                                    contents1: ['3rd floor, B complex sector-27 Noida(201301), uttar pradesh'], // Only one content for title1
+                                    contents1: ['3rd floor, B complex sector-27 Noida(201301), uttar pradesh'],
                                 },
                                 {
                                     icon: ChatBubbleOutlineIcon,
@@ -107,9 +108,9 @@ const Contact = () => {
                                         subtittles = [],
                                         contents = [],
                                         title1,
-                                        subtittles1 = [],
                                         contents1 = [],
                                         content,
+                                        contect2, // Add contect2 here
                                     },
                                     index
                                 ) => (
@@ -139,6 +140,18 @@ const Contact = () => {
                                                 </Typography>
                                             ))}
 
+                                            {/* Display mobile numbers */}
+                                            {content && (
+                                                <Typography py={0.3} variant="body2" fontSize={16} color="#FFF">
+                                                    {content}
+                                                </Typography>
+                                            )}
+                                            {contect2 && (
+                                                <Typography py={0.3} variant="body2" fontSize={16} color="#FFF">
+                                                    {contect2}
+                                                </Typography>
+                                            )}
+
                                             {/* Second Title, Subtitles, and Contents */}
                                             {title1 && (
                                                 <Typography variant="h5" color="#FFF" fontWeight="bold" mt={2}>
@@ -150,13 +163,6 @@ const Contact = () => {
                                                     {cont}
                                                 </Typography>
                                             ))}
-
-                                            {/* Single Content */}
-                                            {content && (
-                                                <Typography py={1} variant="body2" fontSize={16} color="#FFF">
-                                                    {content}
-                                                </Typography>
-                                            )}
                                         </Box>
                                     </Stack>
                                 )

@@ -533,7 +533,7 @@ const Home = () => {
                             Call us 24/7
                         </Typography>
                         <Typography variant="h4" color="#FFF" py={1}>
-                            +9101204995054
+                            01205261995
                         </Typography>
                         <Typography variant="h5" color="#FFF" py={1}>
                             Need Help? We will help you regarding your query.

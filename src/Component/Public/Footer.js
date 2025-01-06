@@ -44,14 +44,14 @@ const Footer = () => {
                             sx={{
                                 backgroundColor: '#CCCCCC',
                                 borderRadius: '20px',
-                            }}
+                            }}  
                         >
                             <Box>
                                 <Typography variant="h5" color="#000">
                                     Talk to Our Support
                                 </Typography>
                                 <Typography variant="h5" color="#000">
-                                    +9101204995054
+                                    01205261995
                                 </Typography>
                             </Box>
                             <Box
