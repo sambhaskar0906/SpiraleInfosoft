@@ -26,6 +26,9 @@ import callshape2 from '../../assest/callshap2.webp'
 import callshape3 from '../../assest/callshap3.webp'
 import { useNavigate } from 'react-router-dom';
 import ClientSlider from '../../Component/Public/ClientSlider';
+import ChooseUs from '../../Component/Public/ChooseUs';
+import Acchivement from '../../Component/Public/Acchivement';
+import LatestPost from '../../Component/Public/LatestPost';
 
 
 // Keyframes for the left image
@@ -107,7 +110,7 @@ const Home = () => {
                     <Typography variant='h5' fontWeight={'bold'} sx={{ color: theme.palette.info.light, mb: { xs: 1, md: 0, lg: 0 } }}>
                         Looking for a first-class career consultant?
                     </Typography>
-                    <Button size='small' variant='none' sx={{ marginLeft: { xs: '0px', md: 'auto', lg: 'auto' }, color: theme.palette.info.light, background: theme.palette.primary.main, display: 'flex', alignItems: 'center', borderRadius: '50px', px: { xs: 2, md: 1 }, py: { xs: 1, md: 1 } }} endIcon={<KeyboardArrowRightIcon />} onClick={handleGetaQuote}>get a quote</Button>
+                    <Button size='small' variant='contained' sx={{ marginLeft: { xs: '0px', md: 'auto', lg: 'auto' }, color: theme.palette.info.light, display: 'flex', alignItems: 'center', px: { xs: 2, md: 1 }, py: { xs: 1, md: 1 } }} endIcon={<KeyboardArrowRightIcon />} onClick={handleGetaQuote}>Schedule a free Consultation</Button>
                 </Stack>
             </Box>
 
@@ -245,8 +248,17 @@ const Home = () => {
             {/* Our services */}
             <OurServices />
 
+            {/* why choose us */}
+            <ChooseUs />
+
             {/* What Clients Value Most About Us */}
             <ClientSlider />
+
+            {/* our Acchivement */}
+            <Acchivement />
+
+            {/* Project we have done
+            <ProjectShowcase /> */}
 
             {/* Add the computer image at the bottom */}
             <Box
@@ -647,6 +659,9 @@ const Home = () => {
                     ))}
                 </Grid>
             </Box>
+
+            {/* Blog Posts Section */}
+           <LatestPost />
 
             {/* case Studt */}
             <Slider />

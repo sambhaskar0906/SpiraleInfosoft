@@ -13,7 +13,7 @@ const About = () => {
             {/* about header */}
             <Box sx={{
                 width: '100%',
-                height: '40vh',
+                height: '50vh',
                 position: 'relative',
                 background: `url(${AboutImg})`,
                 backgroundRepeat: 'no-repeat',
@@ -22,6 +22,8 @@ const About = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                flexDirection: 'column',  // Stack text vertically
+                textAlign: 'center',      // Ensure text is centered
             }}>
                 {/* Overlay Box */}
                 <Box
@@ -35,10 +37,31 @@ const About = () => {
                         zIndex: 1,
                     }}
                 />
-                <Typography variant="h3" textAlign="center" color="white" sx={{ zIndex: 2, fontWeight: 'bold' }}>
-                    About
+                <Typography variant="h3" color="white" sx={{
+                    zIndex: 2,
+                    fontWeight: 'bold',
+                    fontSize: '2rem',
+                    letterSpacing: '2px',
+                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)', // Shadow effect
+                    marginBottom: 2, // Space between the texts
+                    textTransform: 'uppercase', // Make the text uppercase for emphasis
+                }}>
+                    About us
+                </Typography>
+                <Typography variant="h5" color="white" sx={{
+                    zIndex: 2,
+                    fontWeight: 'bold',
+                    fontSize: '1rem',
+                    letterSpacing: '1px',
+                    textShadow: '1px 1px 3px rgba(0, 0, 0, 0.6)', // Shadow effect
+                    marginTop: 2, // More space between "About Us" and the second text
+                    maxWidth: '80%', // Limit width for readability
+                    margin: '0 auto', // Center the text block
+                }}>
+                    Coding the Future with Creativity, Precision, and Innovation
                 </Typography>
             </Box>
+
             {/* what we do */}
             <Box sx={{ px: { xs: 2, md: 14, lg: 14 } }}>
                 {/* what we do */}
@@ -84,32 +107,34 @@ const About = () => {
                     </Grid>
                     <Grid item sm={6} xs={12}>
                         <Stack spacing={1}>
-                            <Typography variant='h4' color='primary.main' fontWeight={'bold'}>A perfect fusion of technology <br /> and creativity</Typography>
-                            <Typography variant='body2'>
-                                TechCloak Solutions Pvt. Ltd. is a leading software development and service providing company since 2016, offering a wide range of software development and maintenance services across the globe.
+                            <Typography variant='h4' color='primary.main' fontWeight={'bold'} sx={{ marginTop: '20px !important' }}>
+                                Who We Are
                             </Typography>
                             <Typography variant='body2'>
-                                The company is based in Delhi NCR (Noida), and we have catered a number of happy and satisfied customers worldwide.
+                                Our mission is to provide quality technology solutions by providing a standard-designed website & app that can be customized to meet the as per your needs of the user.
                             </Typography>
                             <Typography variant='body2'>
-                                We provide solutions to our clients in a most cost effective, sustainable and scalable approach.
+                                We create tailored solutions from the ground up based on user requirements.
+                            </Typography>
+                            <Typography variant='body2'>
+                                We're dedicated to providing clients with the most cutting-edge technology so they can obtain the correct information from the right people at the right time.
                             </Typography>
                         </Stack>
                     </Grid>
                 </Grid>
                 {/* what we do */}
-                <Grid container spacing={4} sx={{ py: { xs: 2, md: 5 } }}>
-                    <Grid item sm={6} xs={12} my={2}>
+                <Grid container spacing={4} sx={{ py: { xs: 2, md: 5 }, my: 1 }}>
+                    <Grid item sm={6} xs={12}>
                         <Stack spacing={1}>
-                            <Typography variant='h4' color='primary.main' fontWeight={'bold'}>What we do?</Typography>
+                            <Typography variant='h4' color='primary.main' fontWeight={'bold'}>Our Company</Typography>
                             <Typography variant='body2'>
-                                Being a software development company, we offer the best services in web app development and maintenance. From the initial phases of user interface designing to the final deployment and not just that, we also provide maintenance and support services to our clients to make their experience of working with us more worthwhile.
+                                We offer a wide range of software development and maintenance services to our clients. From the initial phases of user interface designing to the final deployment and not just that, we also provide maintenance and support services to our clients to make their experience of working with us more worthwhile. We work on several market standard and advanced technologies as per the demand of the client’s project. We offer them the solution that suits their project and business model. Services provided by us are well-tailored and customized as per the requirements of the project.
                             </Typography>
                             <Typography variant='body2'>
-                                We work on several market standard and advanced technologies as per the demand of the client’s project. We offer them the solution that suits their project and business model.
+                                If you are searching for a software development company with a great team of expert developers and designers that can offer the best services, customized as per your requirements and business models, to get the best of it, feel free to contact us.
                             </Typography>
                             <Typography variant='body2'>
-                                Services provided by us are well-tailored and customized as per the requirements of the project.
+                                Our team will be there 24/7 to help you with any kind of queries and projects in software development and services.
                             </Typography>
                         </Stack>
                     </Grid>
@@ -146,7 +171,7 @@ const About = () => {
                                     }}
                                 >
                                     <Typography variant='h4' color='primary.main' fontWeight={'bold'} sx={{ color: 'white', p: 3, mt: 6 }}>
-                                        What we do?
+                                        Our Company
                                     </Typography>
                                 </Box>
                             </Box>
@@ -155,10 +180,11 @@ const About = () => {
                 </Grid>
                 {/* my teams */}
                 <Grid container spacing={4} sx={{ py: { xs: 2, md: 3 } }}>
+                    {/* Our team */}
                     <Grid item sm={6} xs={12}>
                         <Stack spacing={1}>
                             <Typography variant='h4' color='primary.main' fontWeight={'bold'}>
-                                Team of experts?
+                                Our Team
                             </Typography>
                             <Typography variant='body2'>
                                 Our team of developers is highly experienced and well certified in their respective fields. These developers and designers have exceptional knowledge and years of market exposure, which enables them to deliver some of the best software and IT solutions.
@@ -185,6 +211,41 @@ const About = () => {
                             </Typography>
                         </Stack>
                     </Grid>
+
+                    {/* what we do */}
+                    <Grid item sm={6} xs={12} my={1}>
+                        <Stack spacing={1}>
+                            <Typography variant='h4' color='primary.main' fontWeight={'bold'}>
+                                What We Do?
+                            </Typography>
+                            <Typography variant='body2'>
+                                Being a software development company, we offer the best services in web app development and maintenance. From the initial phases of user interface designing to the final deployment and not just that, we also provide maintenance and support services to our clients to make their experience of working with us more worthwhile.
+                            </Typography>
+                            <Typography variant='body2'>
+                                We work on several market standard and advanced technologies as per the demand of the client’s project. We offer them the solution that suits their project and business model.
+                                Services provided by us are well-tailored and customized as per the requirements of the project.
+                            </Typography>
+                        </Stack>
+                    </Grid>
+
+                    {/* Why Choose Us */}
+                    <Grid item sm={6} xs={12} my={1}>
+                        <Stack spacing={1}>
+                            <Typography variant='h4' color='primary.main' fontWeight={'bold'}>
+                                Why Choose Us
+                            </Typography>
+                            <Typography variant='body2'>
+                                TechCloak Solutions Pvt. Ltd. is a leading software development and service providing company since 2016, offering a wide range of software development and maintenance services across the globe.
+                            </Typography>
+                            <Typography variant='body2'>
+                                The company is based in Delhi NCR (Noida), and we have catered a number of happy and satisfied customers worldwide.
+                            </Typography>
+                            <Typography variant='body2'>
+                                We provide solutions to our clients in a most cost effective, sustainable and scalable approach.
+                            </Typography>
+                        </Stack>
+                    </Grid>
+
                     {/*  Services provided by us */}
                     <Grid item xs={12} sx={{ py: { xs: 2, md: 3 } }}>
                         <Stack spacing={1}>
@@ -203,6 +264,7 @@ const About = () => {
                         </Stack>
                     </Grid>
                 </Grid>
+
             </Box>
             {/* who we are */}
             <Box sx={{ px: { xs: 2, md: 14, lg: 14 } }}>
@@ -214,7 +276,7 @@ const About = () => {
                 </Typography>
 
                 {/* Grid for Mission, Vision, Goal */}
-                <Grid container spacing={2} py={2}>
+                <Grid container spacing={2} sx={{ py: { xs: 2, md: 5 } }}>
                     {/* Mission Section */}
                     <Grid item xs={12} sm={6} md={4}>
                         <Stack direction="row" alignItems="center" justifyContent="center" spacing={2}>
@@ -245,7 +307,7 @@ const About = () => {
                                 </Typography>
                             </Box>
                             <Box>
-                                <Divider orientation="vertical" sx={{ display: { md: 'block', xs: 'none' }, height: '320px', width: '1px', mx: 3, backgroundColor: '#999' }} flexItem />
+                                <Divider orientation="vertical" sx={{ display: { md: 'block', xs: 'none' }, height: '400px', width: '1px', mx: 3, backgroundColor: '#999' }} flexItem />
                             </Box>
                         </Stack>
                     </Grid>
@@ -280,7 +342,7 @@ const About = () => {
                                 </Typography>
                             </Box>
                             <Box>
-                                <Divider orientation="vertical" sx={{ display: { md: 'block', xs: 'none' }, height: '320px', width: '2px', mx: 3, backgroundColor: '#999' }} flexItem />
+                                <Divider orientation="vertical" sx={{ display: { md: 'block', xs: 'none' }, height: '400px', width: '1px', mx: 3, backgroundColor: '#999' }} flexItem />
                             </Box>
                         </Stack>
                     </Grid>

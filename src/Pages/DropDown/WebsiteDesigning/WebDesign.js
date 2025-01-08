@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Grid, useTheme, Stack } from '@mui/material';
-import WebDev from '../../../assest/DropDown/webdevelop.webp';
+import WebDev from '../../../assest/DropDown/webdesigning.png';
 import cms from '../../../assest/DropDown/cms.webp';
 import Slider from '../../../Component/Public/Slider';
 import OurServicesItem from '../../../Component/Public/OurServicesItem';
@@ -98,28 +98,30 @@ const WebDesign = () => {
     return (
         <>
             {/* Hero Section */}
-            <Box
-                sx={{
-                    position: 'relative',
-                    backgroundImage: `url(${WebDev})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    height: '40vh',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    '&::before': {
-                        content: '""',
+            <Box sx={{
+                width: '100%',
+                height: '50vh',
+                position: 'relative',
+                background: `url(${WebDev})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}>
+                {/* Overlay Box */}
+                <Box
+                    sx={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: 'rgba(207, 78, 74, 0.9)',
-                        zIndex: -1,
-                    },
-                }}
-            >
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        zIndex: 1,
+                    }}
+                />
                 <Typography variant="h3" textAlign="center" color="white" sx={{ zIndex: 2, fontWeight: 'bold' }}>
                     Website Designing
                 </Typography>

@@ -50,6 +50,7 @@ const menuData = [
     },
     { name: "Career", route: '/career' },
     { name: "Contact", route: '/contact' },
+    { name: "Blog", route: '/blog' },
 ];
 
 export default menuData;

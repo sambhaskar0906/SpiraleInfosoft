@@ -29,6 +29,7 @@ import SoftwareDevelopement from '../../Pages/Public/SoftwareDevelopement'
 import GrowBussiness from '../../Pages/Public/GrowBussiness'
 import CreateBrands from '../../Pages/Public/CreateBrands'
 import Error from '../../Pages/Public/Error'
+import Blog from '../../Pages/Public/Blog'
 
 
 const PublicRoutes = () => {
@@ -41,6 +42,7 @@ const PublicRoutes = () => {
                     <Route path='#' element={<Services />} />
                     <Route path='/career' element={<Career />} />
                     <Route path='/contact' element={<Contact />} />
+                    <Route path='/blog' element={<Blog />} />
                     <Route path='/privacy-policy' element={<PrivacyPolicy />} />
                     {/* web Development DropDown */}
                     <Route path='/services/web-development' element={<WebDevelop />} />

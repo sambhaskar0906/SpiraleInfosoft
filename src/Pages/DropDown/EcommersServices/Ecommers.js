@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Grid, useTheme, Stack } from '@mui/material';
-import WebDev from '../../../assest/DropDown/webdevelop.webp';
+import WebDev from '../../../assest/DropDown/eCOMMERS.png';
 import app from '../../../assest/DropDown/app.webp';
 import Slider from '../../../Component/Public/Slider';
 import OurServicesItem from '../../../Component/Public/OurServicesItem';
@@ -93,27 +93,36 @@ const Ecommers = () => {
             {/* Hero Section */}
             <Box
                 sx={{
+                    width: '100%',
+                    height: '50vh',
                     position: 'relative',
-                    backgroundImage: `url(${WebDev})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    height: '40vh',
+                    backgroundImage: `url(${WebDev})`, // Ensure the image path is correct
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover', // Ensures the image covers the area
+                    backgroundPosition: 'center center', // Centers the image both horizontally and vertically
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    '&::before': {
-                        content: '""',
+                }}
+            >
+                {/* Overlay for better text readability */}
+                <Box
+                    sx={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: '#A77DE0',
-                        zIndex: -1,
-                    },
-                }}
-            >
-                <Typography variant="h3" textAlign="center" color="white" sx={{ zIndex: 2, fontWeight: 'bold' }}>
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
+                        zIndex: 1,
+                    }}
+                />
+                <Typography
+                    variant="h3"
+                    textAlign="center"
+                    color="white"
+                    sx={{ zIndex: 2, fontWeight: 'bold' }}
+                >
                     eCommers Services
                 </Typography>
             </Box>

@@ -49,7 +49,7 @@ const OurCalture = () => {
             <Box
                 sx={{
                     position: 'relative',
-                    height: '60vh',
+                    height: '50vh',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

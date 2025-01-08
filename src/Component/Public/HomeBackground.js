@@ -129,30 +129,37 @@ const HomeBackground = () => {
                 <Box sx={{ my: { xs: 4, sm: 5, md: 6 } }}> {/* Responsive spacing */}
                     <Typography variant='h5' sx={{ fontWeight: 'bold', fontSize: { xs: '1rem', sm: '1.2rem', md: '1.3rem' } }} data-aos="fade-down"
                         data-aos-duration="2000">
-                        DESIGN SMARTER - NOT HARDER
+                        WORK SMART, DREAM BIG
                     </Typography>
                 </Box>
                 <Box sx={{ my: { xs: 4, sm: 5, md: 6 } }} data-aos="fade-right"
                     data-aos-duration="1000"> {/* Responsive spacing */}
-                    <Typography variant='h4' sx={{ fontSize: { xs: '1.2rem', sm: '1.4rem', md: '2rem' } }}>We don’t just develop</Typography>
-                    <Typography variant='h3' sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>Softwares</Typography>
-                    <Typography variant='h4' sx={{ fontSize: { xs: '1.2rem', sm: '1.4rem', md: '2rem' } }}>we transform visions into reality</Typography>
+                    <Typography variant='h4' sx={{ fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.8rem', fontWeight: 'bold' } }}>Your Partner for Reliable</Typography>
+                    <Typography variant='h3' sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.8rem', fontWeight: 'bold' } }}>Software</Typography>
+                    <Typography variant='h4' sx={{ fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.8rem', fontWeight: 'bold' } }}>Development in Delhi NCR
+                    </Typography>
                 </Box>
                 <Box sx={{ width: { xs: '90%', sm: '80%', md: '70%' }, mx: 'auto', textAlign: 'center', my: { xs: 4, sm: 5, md: 6 } }}> {/* Responsive width and spacing */}
-                    <Typography variant='h5' data-aos="fade-left"
+                    <Typography variant='h6' data-aos="fade-left"
                         data-aos-duration="2000">
-                        Creating solutions that inspire and elevate, we turn imaginations into innovation,
-                        Let’s make your ideas come to life with a smarter approach to design and development.
+                        {/* Creating solutions that inspire and elevate, we turn imaginations into innovation,
+                        Let’s make your ideas come to life with a smarter approach to design and development. */}
+                        Providing businesses with innovative tools and dependable technology, ensuring success with quality solutions that exceed expectations.
                     </Typography>
                 </Box>
                 <Stack direction='row' justifyContent='center' alignItems='center' spacing={{ xs: 2, sm: 3, md: 4 }} sx={{ my: { xs: 4, sm: 5, md: 6 } }}>
-                    <Box data-aos="fade-right"
-                        data-aos-duration="2000">
-                        <Button variant="contained" sx={{ backgroundColor: theme.palette.primary.deem }} onClick={handleLearnMore}>Learn More</Button>
-                    </Box>
                     <Box data-aos="fade-left"
                         data-aos-duration="2000">
-                        <Button variant="outlined" onClick={handleContact}>Contact Us</Button>
+                        <Button
+                            variant="contained"
+                            sx={{
+                                backgroundColor: theme.palette.primary.deem,
+                                fontSize: '16px',
+                            }}
+                            onClick={handleContact}
+                        >
+                            Contact Us
+                        </Button>
                     </Box>
                 </Stack>
             </Box>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, Grid, Stack, TextField, Typography, useTheme } from '@mui/material';
-import contact from '../../assest/contact.jpeg';
+import contact from '../../assest/contactus.png';
 import callshape1 from '../../assest/callshap1.webp';
 import CallIcon from '@mui/icons-material/Call';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -13,16 +13,36 @@ const Contact = () => {
         <>
             <Box
                 sx={{
-                    backgroundImage: `url(${contact})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    height: '40vh',
+                    width: '100%',
+                    height: '50vh',
+                    position: 'relative',
+                    backgroundImage: `url(${contact})`, // Ensure the image path is correct
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover', // Ensures the image covers the area
+                    backgroundPosition: 'center', // Centers the image both horizontally and vertically
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}
             >
-                <Typography variant="h3" color="white">
+                {/* Overlay for better text readability */}
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
+                        zIndex: 1,
+                    }}
+                />
+                <Typography
+                    variant="h3"
+                    textAlign="center"
+                    color="white"
+                    sx={{ zIndex: 2, fontWeight: 'bold' }}
+                >
                     Contact
                 </Typography>
             </Box>

@@ -51,7 +51,7 @@ const CreateBrands = () => {
         <div>
             <Box sx={{
                 width: '100%',
-                height: '40vh',
+                height: '50vh',
                 position: 'relative',
                 background: `url(${software})`,
                 backgroundRepeat: 'no-repeat',

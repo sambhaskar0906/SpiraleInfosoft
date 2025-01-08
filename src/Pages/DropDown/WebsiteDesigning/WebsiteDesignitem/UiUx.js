@@ -87,7 +87,7 @@ const UiUx = () => {
                     backgroundImage: `url(${WebDev})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    height: '40vh',
+                    height: '50vh',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

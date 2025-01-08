@@ -51,12 +51,41 @@ const ContactBar = ({ isVisible }) => (
                 spacing={2}
                 sx={{ marginLeft: "auto", color: "#fff" }}
             >
-                <FacebookIcon />
-                <InstagramIcon />
-                <TwitterIcon />
-                <LinkedInIcon />
+                <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "inherit" }}
+                >
+                    <FacebookIcon />
+                </a>
+                <a
+                    href="https://www.instagram.com/techcloaksolutions/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "inherit" }}
+                >
+                    <InstagramIcon />
+                </a>
+                <a
+                    href="https://x.com/techcloaks"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "inherit" }}
+                >
+                    <TwitterIcon />
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/yogesh-dubey-6b2b98344/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "inherit" }}
+                >
+                    <LinkedInIcon />
+                </a>
             </Stack>
         </Stack>
+
     </Box>
 );
 
