@@ -1,34 +1,115 @@
-import { Box, Typography, Button, Grid, useTheme } from '@mui/material';
 import React from 'react';
+import { Box, Typography, Button, Grid, useTheme, Stack } from '@mui/material';
 import BlogImg from '../../assest/DropDown/Blog.png';
+import blog1 from '../../assest/blog1.jpg';
+import { FaRegHandPointRight } from "react-icons/fa";
 
 const blogData = {
     title: "Blog",
-    headerContent: "Welcome to Our Blog",
-    paragraphs: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque metus ac turpis vulputate, ut elementum ligula tincidunt. Proin quis orci a nisl fermentum placerat. Integer vehicula, sapien id pretium vehicula, purus ligula scelerisque erat, eu iaculis augue nunc eget metus.",
-        "Sed non dapibus nulla. Aenean sit amet metus vitae mi tincidunt tincidunt vel et augue. Donec at nulla id eros bibendum commodo. Nam posuere tortor nec quam lacinia, at dictum magna faucibus.",
-        "Curabitur eget libero nec sapien fermentum tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Ut vehicula, nunc a viverra cursus, lorem mauris consequat orci, vitae bibendum purus lorem a nisi."
-    ],
     buttonText: "Explore More",
-    blogPosts: [
-        {
-            img: BlogImg,
-            title: "How to Start a Blog",
-            excerpt: "Learn the basics of starting a successful blog from scratch.",
-        },
-        {
-            img: BlogImg,
-            title: "Top Blogging Tips",
-            excerpt: "Discover the top tips to grow your blog and reach a wider audience.",
-        },
-        {
-            img: BlogImg,
-            title: "Content Creation Strategies",
-            excerpt: "Explore effective strategies for creating engaging content.",
-        }
-    ]
+    blogIntro: "In the rapidly evolving digital landscape, businesses are increasingly turning to custom applications to meet their unique needs and stay competitive. As we move into 2025, certain features have become essential for any custom application to deliver value, scalability, and user satisfaction. Here are the key features every custom application should include in 2025:",
+    heading: "Conclusion",
+    description: "As businesses navigate the challenges and opportunities of 2025, having a robust custom application with these key features is critical. By prioritizing AI integration, cybersecurity, scalability, and user-centric design, your application can deliver exceptional value and keep your business ahead of the competition. Investing in these features today ensures long-term success in an increasingly digital world.",
 };
+
+// Unique content2 data
+const content2 = [
+    {
+        title: "1. Artificial Intelligence and Machine Learning",
+        description: ["AI and ML have transformed the way applications operate, providing personalized user experiences, predictive analytics, and automation. Custom applications in 2025 must incorporate:"]
+    },
+    {
+        title: "2. Cloud Integration",
+        description: ["With the increasing reliance on cloud-based services, applications must be designed to leverage the cloud for scalability, reliability, and cost-efficiency. Key benefits include:"]
+    },
+    {
+        title: "3. Cross-Platform Compatibility",
+        description: ["In 2025, users expect applications to work seamlessly across devices and platforms. Ensure your custom application includes:"]
+    },
+    {
+        title: "4. Enhanced Cybersecurity Features",
+        description: ["With the rise in cyber threats, robust security measures are non-negotiable. Applications should include:"]
+    },
+    {
+        title: "5. User-Centric Design (UX/UI)",
+        description: ["User experience remains a cornerstone of application success. A custom application must:"]
+    },
+    {
+        title: "6. Real-Time Analytics and Reporting",
+        description: ["Businesses need insights to make informed decisions. Custom applications should provide:"]
+    },
+    {
+        title: "7. Integration with IoT (Internet of Things)",
+        description: ["As IoT adoption grows, custom applications should support integration with IoT devices. This allows:"]
+    },
+    {
+        title: "8. Scalability and Flexibility",
+        description: ["Custom applications must evolve with business needs. Ensure your application:"]
+    },
+    {
+        title: "9. Offline Functionality",
+        description: ["Users expect applications to work even without an internet connection. Include:"]
+    },
+    {
+        title: "10. Sustainability Features",
+        description: ["In 2025, sustainability is a growing priority. Custom applications should:"]
+    },
+    // Add remaining unique features (up to 10) similarly
+];
+
+// Unique services1 data
+const services1 = [
+    [
+        { description: "Chatbots and Virtual Assistants for enhanced customer support." },
+        { description: "Predictive Analytics to anticipate user behavior and improve decision-making." },
+        { description: "Automation Tools to streamline repetitive tasks and boost efficiency." }
+    ],
+    [
+        { description: "Seamless Data Syncing across devices." },
+        { description: "Scalable Infrastructure to handle fluctuating workloads." },
+        { description: "Enhanced Security through cloud service providers’ advanced protocols." }
+    ],
+    [
+        { description: "Responsive Design to adapt to various screen sizes." },
+        { description: "Support for Multiple Operating Systems, such as iOS, Android, and Windows." },
+        { description: "Progressive Web App (PWA) Capabilities for app-like experiences on browsers." }
+    ],
+    [
+        { description: "Data Encryption to protect sensitive information." },
+        { description: "Multi-Factor Authentication (MFA) to enhance login security." },
+        { description: "Regular Security Updates to address vulnerabilities promptly." }
+    ],
+    [
+        { description: "Prioritize Intuitive Navigation for ease of use." },
+        { description: "Offer Customizable Dashboards tailored to user preferences." },
+        { description: "Focus on Accessibility to ensure inclusivity for users with disabilities." }
+    ],
+    [
+        { description: "Dashboards with Real-Time Data for instant updates." },
+        { description: "Customizable Reports to meet specific business requirements." },
+        { description: "Integration with BI Tools for advanced analytics." }
+    ],
+    [
+        { description: "Data Collection from IoT Devices to improve operations." },
+        { description: "Remote Monitoring for enhanced control." },
+        { description: "Automated Processes based on IoT data inputs." }
+    ],
+    [
+        { description: "Supports Modular Development for easy updates." },
+        { description: "Handles Increased User Load as the business grows." },
+        { description: "Allows for Feature Expansion without extensive redevelopment." }
+    ],
+    [
+        { description: "Offline Data Access with syncing capabilities when reconnected." },
+        { description: "Caching Mechanisms for uninterrupted user experience." },
+    ],
+    [
+        { description: "Optimize Energy Consumption for efficient resource use." },
+        { description: "Promote Paperless Processes to reduce environmental impact." },
+        { description: "Integrate with Sustainable Technologies, such as green cloud services." }
+    ],
+    // Add remaining unique services for each feature (up to 10) similarly
+];
 
 const Blog = () => {
     const theme = useTheme();
@@ -40,16 +121,15 @@ const Blog = () => {
                     width: '100%',
                     height: '50vh',
                     position: 'relative',
-                    backgroundImage: `url(${BlogImg})`, // Ensure the image path is correct
+                    backgroundImage: `url(${BlogImg})`,
                     backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover', // Ensures the image covers the area
-                    backgroundPosition: 'center', // Centers the image both horizontally and vertically
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}
             >
-                {/* Overlay for better text readability */}
                 <Box
                     sx={{
                         position: 'absolute',
@@ -57,7 +137,7 @@ const Blog = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
                         zIndex: 1,
                     }}
                 />
@@ -73,15 +153,56 @@ const Blog = () => {
 
             {/* Blog Content */}
             <Box sx={{ px: { xs: 2, md: 14 }, py: 6 }}>
-                <Typography variant="h4" sx={{ mb: 3, fontWeight: 'bold', textAlign: 'center' }}>
-                    <span>Welcome to </span>
-                    <span style={{ color: '#ff4156' }}>Our Blog</span>
+                <Typography variant="h4" sx={{ mb: 5, fontWeight: 'bold', textAlign: 'center' }}>
+                    <span>Key Features Every Custom </span>
+                    <span style={{ color: '#ff4156' }}>Application </span>
+                    <span>Should Include in 2025</span>
                 </Typography>
-                {blogData.paragraphs.map((para, index) => (
-                    <Typography key={index} variant="body2" sx={{ mb: 4, lineHeight: 1.8, textAlign: 'justify' }}>
-                        {para}
-                    </Typography>
+                <Grid container spacing={3} sx={{ mb: 6 }}>
+                    <Grid item xs={12} md={6}>
+                        <img src={blog1} alt="Blog" style={{ width: '100%', height: '350px', borderRadius: 8 }} />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Typography variant="h6" sx={{ fontWeight: 'medium' }}>
+                            {blogData.blogIntro}
+                        </Typography>
+                    </Grid>
+                </Grid>
+
+                {content2.map((content, index) => (
+                    <Box key={index} sx={{ mt: 5 }}>
+                        <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 3, color: theme.palette.hoverAction.hoverDropdown, py: 1 }}>
+                            {content.title}
+                        </Typography>
+                        {content.description.map((desc, idx) => (
+                            <Typography key={idx} variant="body2" py={0.5} mb={3}>
+                                {desc}
+                            </Typography>
+                        ))}
+                        <Box component="ul" sx={{ p: 0, m: 0, listStyleType: 'none' }}>
+                            {services1[index].map((service, idx) => (
+                                <Stack direction={'row'} spacing={2} key={idx} mb={2}>
+                                    <Box>
+                                        <FaRegHandPointRight fontSize={15} />
+                                    </Box>
+                                    <Typography variant="body2">
+                                        {service.description}
+                                    </Typography>
+                                </Stack>
+                            ))}
+                        </Box>
+                    </Box>
                 ))}
+
+                <Box my={2}>
+                    <Typography variant='h4' mb={2}>
+                        {blogData.heading}
+                    </Typography>
+                    <Typography variant='body2'>
+                        {blogData.description}
+                    </Typography>
+                </Box>
+
                 <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
                     <Button
                         variant="contained"

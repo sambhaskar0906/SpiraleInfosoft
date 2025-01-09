@@ -11,15 +11,8 @@ import Group2 from '../../assest/Vector.png';
 import OurServices from '../../Component/Public/OurServices';
 import computer from '../../assest/computer.png'
 import object from '../../assest/OBJECTS.png'
-import OurWorking from '../../Component/Public/OurWorking';
-import AndroidIcon from '@mui/icons-material/Android';
-import LaptopWindowsIcon from '@mui/icons-material/LaptopWindows';
-import AppleIcon from '@mui/icons-material/Apple';
-import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
-import TwentyFourMpIcon from '@mui/icons-material/TwentyFourMp';
 import Slider from '../../Component/Public/Slider'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import technologybgimg from '../../assest/technologyimg.webp'
 import Callus from '../../assest/callus.webp'
 import callshape1 from '../../assest/callshap1.webp'
 import callshape2 from '../../assest/callshap2.webp'
@@ -253,9 +246,6 @@ const Home = () => {
 
             {/* What Clients Value Most About Us */}
             <ClientSlider />
-
-            {/* our Acchivement */}
-            <Acchivement />
 
             {/* Project we have done
             <ProjectShowcase /> */}
@@ -601,67 +591,11 @@ const Home = () => {
                 </Grid>
             </Box>
 
-            {/* Our Working process */}
-            <OurWorking />
-
-            {/* Technology index */}
-            <Box sx={{
-                position: 'relative', // Make the box relative for the overlay
-                backgroundImage: `url(${technologybgimg})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundAttachment: 'fixed', // Fix the background image during scroll
-                height: 'auto',
-                px: { xs: 5, md: 10, lg: 15 },
-                py: { xs: 2, md: 5 },
-            }}>
-                {/* Overlay Box */}
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: 'rgba(39, 76, 135, 0.9)',
-                    }}
-                />
-
-                <Box textAlign={'center'} sx={{ position: 'relative', zIndex: 2 }}> {/* Bring text above the overlay */}
-                    <Typography variant='h5' color="#E99f2B" py={1}>
-                        Technology index
-                    </Typography>
-                    <Typography variant='h4' color='#FFF' py={1}>
-                        Get the best IT solutions and<br /> services for any technology or<br /> systems
-                    </Typography>
-                </Box>
-                <Grid container spacing={5} justifyContent="center" textAlign="center" py={3} sx={{ position: 'relative', zIndex: 2 }}>
-                    {[
-                        { icon: <AndroidIcon />, label: 'Android' },
-                        { icon: <LaptopWindowsIcon />, label: 'Web' },
-                        { icon: <AppleIcon />, label: 'Ios' },
-                        { icon: <ViewCarouselIcon />, label: 'Design' },
-                        { icon: <TwentyFourMpIcon />, label: 'API' },
-                        { icon: <AndroidIcon />, label: 'Android' }
-                    ].map((item, index) => (
-                        <Grid
-                            item
-                            key={index}
-                            xs={12} sm={6} md={3} lg={2}
-                        >
-                            <Box sx={{ border: '1px solid #fff', px: 4, py: 3, borderRadius: 1 }}>
-                                {React.cloneElement(item.icon, { sx: { height: '60px', width: '60px', color: '#FFF' } })}
-                                <Typography variant="h5" color="#FFF">
-                                    {item.label}
-                                </Typography>
-                            </Box>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
-
             {/* Blog Posts Section */}
-           <LatestPost />
+            <LatestPost />
+
+            {/* our Acchivement */}
+            <Acchivement />
 
             {/* case Studt */}
             <Slider />
