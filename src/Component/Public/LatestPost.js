@@ -1,31 +1,39 @@
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box, Button, Typography } from "@mui/material";
 import BlogImg from '../../assest/Blog.avif';
+import BlogImg1 from '../../assest/BlogImg/mobile.jpg';
+import BlogImg2 from '../../assest/BlogImg/blogimg2.jpg';
 
 // Blog Data
 const blogData = {
     blogPosts: [
         {
-            img: BlogImg,
-            title: "How to Start a Blog",
-            excerpt: "Learn the basics of starting a successful blog from scratch.",
+            img: BlogImg1,
+            title: "Mobile Application Development",
+            excerpt: "In today’s digital age, mobile applications have become an integral part of our daily lives.",
+            link: "/mobile-application-blog",
         },
         {
-            img: BlogImg,
-            title: "Top Blogging Tips",
-            excerpt: "Discover the top tips to grow your blog and reach a wider audience.",
+            img: BlogImg2,
+            title: "10 Essential Tips for Creating",
+            excerpt: "Explore tips for creating scalable software solutions.",
+            link: "/essentail-tipes-blog",
         },
         {
             img: BlogImg,
             title: "Content Creation Strategies",
             excerpt: "Explore effective strategies for creating engaging content.",
+            link: "/blog/content-strategies",
         },
     ],
 };
 
 const LatestPost = () => {
+    const navigate = useNavigate();
+
     // Slider settings
     const settings = {
         infinite: true,
@@ -36,18 +44,23 @@ const LatestPost = () => {
         autoplaySpeed: 3000,
         responsive: [
             {
-                breakpoint: 960, // for medium screens
+                breakpoint: 960,
                 settings: {
                     slidesToShow: 2,
                 },
             },
             {
-                breakpoint: 600, // for small screens
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
                 },
             },
         ],
+    };
+
+    const handleReadMore = (link) => {
+        window.scrollTo(0, 0); // Scroll to the top
+        navigate(link); // Navigate to the link
     };
 
     return (
@@ -97,7 +110,7 @@ const LatestPost = () => {
                                     objectFit: 'cover',
                                 }}
                             />
-                            <Box sx={{ p: 3 }}>
+                            <Box sx={{ p: 2 }}>
                                 <Typography
                                     variant="h6"
                                     sx={{ fontWeight: 'bold', mb: 1, color: '#1e88e5' }}
@@ -113,6 +126,7 @@ const LatestPost = () => {
                                 <Button
                                     variant="contained"
                                     size="small"
+                                    onClick={() => handleReadMore(post.link)} // Call the handler
                                     sx={{
                                         backgroundColor: '#1565c0',
                                         color: '#fff',

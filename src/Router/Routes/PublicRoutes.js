@@ -30,6 +30,8 @@ import GrowBussiness from '../../Pages/Public/GrowBussiness'
 import CreateBrands from '../../Pages/Public/CreateBrands'
 import Error from '../../Pages/Public/Error'
 import Blog from '../../Pages/Public/Blog'
+import MobileApplications from '../../Pages/BlogPages/MobileApplications'
+import EssentialTips from '../../Pages/BlogPages/EssentialTips'
 
 
 const PublicRoutes = () => {
@@ -86,6 +88,11 @@ const PublicRoutes = () => {
 
                     {/* Create Brands */}
                     <Route path='/create-brands' element={<CreateBrands />} />
+
+                    {/* blog page */}
+                    <Route path='/mobile-application-blog' element={<MobileApplications />} />
+                    <Route path='/essentail-tipes-blog' element={<EssentialTips />} />
+
                 </Route>
                 {/* error page */}
                 <Route path='*' element={<Error />} />

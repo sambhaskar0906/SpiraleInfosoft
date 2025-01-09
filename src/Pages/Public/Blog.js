@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, Grid, useTheme, Stack } from '@mui/material';
 import BlogImg from '../../assest/DropDown/Blog.png';
-import blog1 from '../../assest/blog1.jpg';
+import blog1 from '../../assest/BlogImg/blogimg.jpg';
 import { FaRegHandPointRight } from "react-icons/fa";
 
 const blogData = {
@@ -16,7 +16,16 @@ const blogData = {
 const content2 = [
     {
         title: "1. Artificial Intelligence and Machine Learning",
-        description: ["AI and ML have transformed the way applications operate, providing personalized user experiences, predictive analytics, and automation. Custom applications in 2025 must incorporate:"]
+        description: [
+            "AI and ML have transformed the way applications operate, providing personalized user experiences, predictive analytics, and automation. ",
+            <a
+                href="/custom-applications"
+                style={{ color: '#007BFF', textDecoration: 'none', whiteSpace: 'nowrap' }}
+            >
+                Custom applications
+            </a>,
+            " in 2025 must incorporate:"
+        ]
     },
     {
         title: "2. Cloud Integration",
@@ -176,6 +185,7 @@ const Blog = () => {
                                 overflow: 'hidden',
                                 borderRadius: '16px',
                                 boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Soft shadow for depth
+                                position: 'relative', // Enables positioning for the overlay
                             }}
                         >
                             <img
@@ -185,6 +195,17 @@ const Blog = () => {
                                     width: '100%',
                                     height: '100%',
                                     objectFit: 'cover', // Ensures image fills the area without distortion
+                                }}
+                            />
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%',
+                                    backgroundColor: 'rgba(0, 0, 0, 0.4)', // Semi-transparent overlay
+                                    borderRadius: '16px', // Matches the border radius of the image container
                                 }}
                             />
                         </div>
@@ -209,6 +230,7 @@ const Blog = () => {
                         </Typography>
                     </Grid>
                 </Grid>
+
 
                 {content2.map((content, index) => (
                     <Box key={index} sx={{ mt: 5 }}>
