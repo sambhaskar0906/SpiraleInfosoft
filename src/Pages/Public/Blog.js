@@ -153,17 +153,58 @@ const Blog = () => {
 
             {/* Blog Content */}
             <Box sx={{ px: { xs: 2, md: 14 }, py: 6 }}>
-                <Typography variant="h4" sx={{ mb: 5, fontWeight: 'bold', textAlign: 'center' }}>
+                <Typography
+                    variant="h4"
+                    sx={{
+                        mb: 5,
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        color: '#333',
+                        letterSpacing: 1.2,
+                    }}
+                >
                     <span>Key Features Every Custom </span>
                     <span style={{ color: '#ff4156' }}>Application </span>
                     <span>Should Include in 2025</span>
                 </Typography>
-                <Grid container spacing={3} sx={{ mb: 6 }}>
+
+                <Grid container spacing={3} sx={{ mb: 6, alignItems: 'center' }}>
                     <Grid item xs={12} md={6}>
-                        <img src={blog1} alt="Blog" style={{ width: '100%', height: '350px', borderRadius: 8 }} />
+                        <div
+                            style={{
+                                height: '350px',
+                                overflow: 'hidden',
+                                borderRadius: '16px',
+                                boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Soft shadow for depth
+                            }}
+                        >
+                            <img
+                                src={blog1}
+                                alt="Blog"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover', // Ensures image fills the area without distortion
+                                }}
+                            />
+                        </div>
                     </Grid>
+
                     <Grid item xs={12} md={6}>
-                        <Typography variant="h6" sx={{ fontWeight: 'medium' }}>
+                        <Typography
+                            variant="h6"
+                            sx={{
+                                fontWeight: 'medium',
+                                lineHeight: 1.6,
+                                color: '#555',
+                                background: 'linear-gradient(to right, #fff, #f9f9f9)',
+                                padding: 2,
+                                borderRadius: 4,
+                                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
+                                height: '350px', // Same height as the image
+                                overflow: 'auto', // Allows scrolling if content exceeds the height
+                            }}
+                        >
                             {blogData.blogIntro}
                         </Typography>
                     </Grid>
@@ -171,11 +212,11 @@ const Blog = () => {
 
                 {content2.map((content, index) => (
                     <Box key={index} sx={{ mt: 5 }}>
-                        <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 3, color: theme.palette.hoverAction.hoverDropdown, py: 1 }}>
+                        <Typography variant="h4" sx={{ fontWeight: 'bold', mt: 3, color: theme.palette.hoverAction.hoverDropdown, py: 1 }}>
                             {content.title}
                         </Typography>
                         {content.description.map((desc, idx) => (
-                            <Typography key={idx} variant="body2" py={0.5} mb={3}>
+                            <Typography key={idx} variant="h5" py={0.5} mb={3}>
                                 {desc}
                             </Typography>
                         ))}
@@ -185,7 +226,7 @@ const Blog = () => {
                                     <Box>
                                         <FaRegHandPointRight fontSize={15} />
                                     </Box>
-                                    <Typography variant="body2">
+                                    <Typography variant="h5">
                                         {service.description}
                                     </Typography>
                                 </Stack>
@@ -194,11 +235,11 @@ const Blog = () => {
                     </Box>
                 ))}
 
-                <Box my={2}>
-                    <Typography variant='h4' mb={2}>
+                <Box sx={{ my: { xs: 2, md: 5 } }}>
+                    <Typography variant='h4' mb={2} fontWeight={'bold'}>
                         {blogData.heading}
                     </Typography>
-                    <Typography variant='body2'>
+                    <Typography variant='h5'>
                         {blogData.description}
                     </Typography>
                 </Box>

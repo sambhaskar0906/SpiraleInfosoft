@@ -76,7 +76,7 @@ const ContactBar = ({ isVisible }) => (
                     <TwitterIcon />
                 </a>
                 <a
-                    href="https://www.linkedin.com/in/yogesh-dubey-6b2b98344/"
+                    href="https://www.linkedin.com/in/aprajita-mishra-6b2b98344/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: "inherit" }}

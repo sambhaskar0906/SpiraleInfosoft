@@ -92,13 +92,13 @@ const ClientSlider = () => {
     };
 
     return (
-        <Box sx={{ p: 2, px: { xs: 2, md: 14, lg: 14 } }}>
+        <Box sx={{ p: 2, px: { xs: 2, md: 14, lg: 14 }, my: { xs: 2, md: 6 } }}>
             <Typography
                 variant="h6"
                 fontWeight="bold"
                 sx={{ fontSize: { xs: '1.8rem', md: '2.4rem' }, mb: 2, textAlign: 'center' }}
             >
-                What Clients Value Most About Us
+                Why Clients Speak Highly of Us
             </Typography>
             <Typography variant="h5" fontWeight="bold" textAlign="center" mb={4}>
                 Driven success through trust, expertise, and custom web solutions
