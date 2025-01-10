@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, Typography, Button, Grid, useTheme, Stack } from '@mui/material';
+import { Box, Typography, Grid, useTheme, Stack } from '@mui/material';
 import BlogImg from '../../assest/DropDown/Blog.png';
 import blog1 from '../../assest/BlogImg/blogimg.jpg';
 import { FaRegHandPointRight } from "react-icons/fa";
+import LatestPost from '../../Component/Public/LatestPost';
 
 const blogData = {
     title: "Blog",
-    buttonText: "Explore More",
     blogIntro: "In the rapidly evolving digital landscape, businesses are increasingly turning to custom applications to meet their unique needs and stay competitive. As we move into 2025, certain features have become essential for any custom application to deliver value, scalability, and user satisfaction. Here are the key features every custom application should include in 2025:",
     heading: "Conclusion",
     description: "As businesses navigate the challenges and opportunities of 2025, having a robust custom application with these key features is critical. By prioritizing AI integration, cybersecurity, scalability, and user-centric design, your application can deliver exceptional value and keep your business ahead of the competition. Investing in these features today ensures long-term success in an increasingly digital world.",
@@ -265,17 +265,8 @@ const Blog = () => {
                         {blogData.description}
                     </Typography>
                 </Box>
-
-                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        sx={{ px: 4, py: 1.5, fontSize: '1rem', textTransform: 'none', borderRadius: 2 }}
-                    >
-                        {blogData.buttonText}
-                    </Button>
-                </Box>
             </Box>
+            <LatestPost />
         </div>
     );
 };

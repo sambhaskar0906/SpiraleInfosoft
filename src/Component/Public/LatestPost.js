@@ -42,6 +42,7 @@ const LatestPost = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        arrows: false, // Hide next and previous buttons
         responsive: [
             {
                 breakpoint: 960,

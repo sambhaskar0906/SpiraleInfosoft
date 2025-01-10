@@ -17,8 +17,6 @@ import Logo from "../../assest/pvf7cj26.png";
 import menuData from "../../Component/Public/MenuData";
 import DropdownMenu from "../Public/DropDown";
 import AccordionMenu from "../Public/AccordionMenu";
-import AOS from "aos";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { CloseOutlined } from "@mui/icons-material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -91,14 +89,12 @@ const ContactBar = ({ isVisible }) => (
 
 const HomeAppBar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [showMore, setShowMore] = useState(false);
     const [isContactVisible, setIsContactVisible] = useState(true);
     const theme = useTheme();
     const isMobileView = useMediaQuery("(max-width:965px)");
     const navigate = useNavigate();
 
     const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
-    const handleShowMoreToggle = () => setShowMore((prev) => !prev);
 
     // Handle scroll to toggle ContactBar visibility
     useEffect(() => {
@@ -107,10 +103,6 @@ const HomeAppBar = () => {
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    useEffect(() => {
-        AOS.init({ duration: 500 }); // Initialize AOS with default duration
     }, []);
 
     const handleGetaQuote = () => {
@@ -251,7 +243,7 @@ const HomeAppBar = () => {
 
             </Box>
 
-            {/* Show More Button */}
+            {/* Show More Button
             {showMore && (
                 <Box>
                     <Toolbar />
@@ -280,7 +272,7 @@ const HomeAppBar = () => {
                     </Box >
                 </Box>
 
-            )}
+            )} */}
         </>
     );
 };
