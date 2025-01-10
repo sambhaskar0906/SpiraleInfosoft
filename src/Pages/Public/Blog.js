@@ -84,7 +84,7 @@ const Blog = () => {
                     px: { xs: 2, md: 14 },
                     mt: { xs: 2, md: 4 },
                     display: 'flex',
-                    justifyContent: 'center',
+                    flexDirection: 'column',
                     alignItems: 'center',
                 }}
             >
@@ -106,25 +106,6 @@ const Blog = () => {
                             '&.Mui-focused': {
                                 boxShadow: `0 0 10px ${theme.palette.primary.main}`,
                             },
-                            '& .MuiInputAdornment-root': {
-                                transition: 'transform 0.3s ease, color 0.3s ease',
-                                '& i': {
-                                    color: theme.palette.primary.light,
-                                },
-                                '&:hover i, &.Mui-focused i': {
-                                    color: theme.palette.primary.dark,
-                                    transform: 'scale(1.2)',
-                                },
-                            },
-                        },
-                        '& .MuiOutlinedInput-notchedOutline': {
-                            borderColor: 'transparent',
-                        },
-                        '&:hover .MuiOutlinedInput-notchedOutline': {
-                            borderColor: theme.palette.primary.light,
-                        },
-                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                            borderColor: theme.palette.primary.main,
                         },
                         '& input::placeholder': {
                             color: theme.palette.text.secondary,
@@ -153,48 +134,98 @@ const Blog = () => {
                         ),
                     }}
                 />
+
+                {filteredBlogs.length === 0 && (
+                    <Box
+                        sx={{
+                            mt: 2,
+                            color: theme.palette.text.secondary,
+                            fontSize: '1rem',
+                            fontStyle: 'italic',
+                        }}
+                    >
+                        No results found for your search.
+                    </Box>
+                )}
             </Box>
 
-
             {/* Blog Content */}
-            <Box sx={{ px: { xs: 2, md: 14 }, py: 4 }}>
+            <Box sx={{ px: { xs: 2, md: 14 }, py: 4, backgroundColor: '#f9f9f9' }}>
                 <Grid container spacing={4}>
                     {filteredBlogs.slice(0, visibleBlogs).map((blog) => (
                         <Grid item xs={12} sm={6} md={4} key={blog.id}>
                             <Card
                                 sx={{
                                     height: '100%',
+                                    borderRadius: 2,
+                                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
                                     transition: 'transform 0.3s, box-shadow 0.3s',
-                                    '&:hover': { transform: 'scale(1.05)', boxShadow: 3 },
+                                    '&:hover': {
+                                        transform: 'scale(1.05)',
+                                        boxShadow: '0 6px 24px rgba(0, 0, 0, 0.15)',
+                                    },
+                                    overflow: 'hidden',
                                 }}
                             >
                                 <CardMedia
                                     component="img"
                                     image={blog.image}
                                     alt={blog.title}
-                                    sx={{ height: 200 }}
+                                    sx={{
+                                        height: 200,
+                                        transition: 'opacity 0.3s',
+                                        '&:hover': {
+                                            opacity: 0.9,
+                                        },
+                                    }}
                                 />
-                                <CardContent>
+                                <CardContent sx={{ position: 'relative', backgroundColor: '#fff' }}>
                                     <Chip
                                         label={blog.category}
                                         sx={{
                                             mb: 2,
-                                            backgroundColor: theme.palette.primary.main,
-                                            color: 'white',
-                                            fontWeight: 'bold',
+                                            backgroundColor: 'linear-gradient(45deg, #ff6f61, #ff8e53)',
+                                            fontSize: 12,
+                                            textTransform: 'uppercase',
+                                            letterSpacing: 1,
+                                            borderRadius: 1,
                                         }}
                                     />
-                                    <Typography variant="h6" fontWeight="bold" gutterBottom>
+                                    <Typography
+                                        variant="h6"
+                                        fontWeight="bold"
+                                        gutterBottom
+                                        sx={{
+                                            color: 'text.primary',
+                                            fontSize: '1.1rem',
+                                            lineHeight: 1.5,
+                                        }}
+                                    >
                                         {blog.title}
                                     </Typography>
-                                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                                    <Typography
+                                        variant="body2"
+                                        color="text.secondary"
+                                        sx={{
+                                            mb: 2,
+                                            fontSize: '0.95rem',
+                                            lineHeight: 1.6,
+                                        }}
+                                    >
                                         {blog.description}
                                     </Typography>
                                     <Button
                                         variant="contained"
-                                        color="primary"
                                         size="small"
-                                        sx={{ textTransform: 'none' }}
+                                        sx={{
+                                            textTransform: 'none',
+                                            backgroundColor: '#ff6f61',
+                                            '&:hover': { backgroundColor: '#ff8e53' },
+                                            fontWeight: 'bold',
+                                            fontSize: '0.85rem',
+                                            px: 2,
+                                            py: 0.5,
+                                        }}
                                         href={blog.link}
                                     >
                                         Read More
@@ -208,15 +239,26 @@ const Blog = () => {
                     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
                         <Button
                             variant="contained"
-                            color="primary"
                             onClick={handleLoadMore}
-                            sx={{ textTransform: 'none' }}
+                            sx={{
+                                textTransform: 'none',
+                                fontWeight: 'bold',
+                                backgroundColor: '#ff6f61',
+                                color: '#fff',
+                                px: 3,
+                                py: 1,
+                                fontSize: '1rem',
+                                '&:hover': {
+                                    backgroundColor: '#ff8e53',
+                                },
+                            }}
                         >
-                            Load More
+                            Explore More
                         </Button>
                     </Box>
                 )}
             </Box>
+
         </div>
     );
 };
