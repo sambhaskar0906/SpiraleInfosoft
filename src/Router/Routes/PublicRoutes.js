@@ -32,6 +32,7 @@ import Error from '../../Pages/Public/Error'
 import Blog from '../../Pages/Public/Blog'
 import MobileApplications from '../../Pages/BlogPages/MobileApplications'
 import EssentialTips from '../../Pages/BlogPages/EssentialTips'
+import KeyFeatures from '../../Pages/BlogPages/KeyFeatures'
 
 
 const PublicRoutes = () => {
@@ -90,8 +91,9 @@ const PublicRoutes = () => {
                     <Route path='/create-brands' element={<CreateBrands />} />
 
                     {/* blog page */}
-                    <Route path='/mobile-application-blog' element={<MobileApplications />} />
-                    <Route path='/essentail-tipes-blog' element={<EssentialTips />} />
+                    <Route path='/blog/mobile-application-blog' element={<MobileApplications />} />
+                    <Route path='/blog/essentail-tipes-blog' element={<EssentialTips />} />
+                    <Route path='/blog/key-features-blog' element={<KeyFeatures />} />
 
                 </Route>
                 {/* error page */}

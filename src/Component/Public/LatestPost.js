@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box, Button, Typography } from "@mui/material";
-import BlogImg from '../../assest/Blog.avif';
+import BlogImg from '../../assest/BlogImg/blogimg.jpg';
 import BlogImg1 from '../../assest/BlogImg/mobile.jpg';
 import BlogImg2 from '../../assest/BlogImg/blogimg2.jpg';
 
@@ -14,19 +14,19 @@ const blogData = {
             img: BlogImg1,
             title: "Mobile Application Development",
             excerpt: "In today’s digital age, mobile applications have become an integral part of our daily lives.",
-            link: "/mobile-application-blog",
+            link: "/blog/mobile-application-blog",
         },
         {
             img: BlogImg2,
             title: "10 Essential Tips for Creating",
             excerpt: "Explore tips for creating scalable software solutions.",
-            link: "/essentail-tipes-blog",
+            link: "/blog/essentail-tipes-blog",
         },
         {
             img: BlogImg,
-            title: "Content Creation Strategies",
-            excerpt: "Explore effective strategies for creating engaging content.",
-            link: "/blog/content-strategies",
+            title: "Key Features",
+            excerpt: " Here are the key features every custom application should include in 2025:",
+            link: "/blog/key-features-blog",
         },
     ],
 };

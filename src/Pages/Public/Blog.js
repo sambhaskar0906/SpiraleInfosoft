@@ -1,142 +1,53 @@
-import React from 'react';
-import { Box, Typography, Grid, useTheme, Stack } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, Grid, Card, CardMedia, CardContent, Button, Chip, useTheme, TextField } from '@mui/material';
 import BlogImg from '../../assest/DropDown/Blog.png';
-import blog1 from '../../assest/BlogImg/blogimg.jpg';
-import { FaRegHandPointRight } from "react-icons/fa";
-import LatestPost from '../../Component/Public/LatestPost';
+import image from '../../assest/BlogImg/blogimg.jpg';
+import blog1 from '../../assest/BlogImg/blogimg2.jpg';
+import blog2 from '../../assest/BlogImg/mobile.jpg';
 
-const blogData = {
-    title: "Blog",
-    blogIntro: "In the rapidly evolving digital landscape, businesses are increasingly turning to custom applications to meet their unique needs and stay competitive. As we move into 2025, certain features have become essential for any custom application to deliver value, scalability, and user satisfaction. Here are the key features every custom application should include in 2025:",
-    heading: "Conclusion",
-    description: "As businesses navigate the challenges and opportunities of 2025, having a robust custom application with these key features is critical. By prioritizing AI integration, cybersecurity, scalability, and user-centric design, your application can deliver exceptional value and keep your business ahead of the competition. Investing in these features today ensures long-term success in an increasingly digital world.",
-};
-
-// Unique content2 data
-const content2 = [
-    {
-        title: "1. Artificial Intelligence and Machine Learning",
-        description: [
-            "AI and ML have transformed the way applications operate, providing personalized user experiences, predictive analytics, and automation. ",
-            <a
-                href="/custom-applications"
-                style={{ color: '#007BFF', textDecoration: 'none', whiteSpace: 'nowrap' }}
-            >
-                Custom applications
-            </a>,
-            " in 2025 must incorporate:"
-        ]
-    },
-    {
-        title: "2. Cloud Integration",
-        description: ["With the increasing reliance on cloud-based services, applications must be designed to leverage the cloud for scalability, reliability, and cost-efficiency. Key benefits include:"]
-    },
-    {
-        title: "3. Cross-Platform Compatibility",
-        description: ["In 2025, users expect applications to work seamlessly across devices and platforms. Ensure your custom application includes:"]
-    },
-    {
-        title: "4. Enhanced Cybersecurity Features",
-        description: ["With the rise in cyber threats, robust security measures are non-negotiable. Applications should include:"]
-    },
-    {
-        title: "5. User-Centric Design (UX/UI)",
-        description: ["User experience remains a cornerstone of application success. A custom application must:"]
-    },
-    {
-        title: "6. Real-Time Analytics and Reporting",
-        description: ["Businesses need insights to make informed decisions. Custom applications should provide:"]
-    },
-    {
-        title: "7. Integration with IoT (Internet of Things)",
-        description: ["As IoT adoption grows, custom applications should support integration with IoT devices. This allows:"]
-    },
-    {
-        title: "8. Scalability and Flexibility",
-        description: ["Custom applications must evolve with business needs. Ensure your application:"]
-    },
-    {
-        title: "9. Offline Functionality",
-        description: ["Users expect applications to work even without an internet connection. Include:"]
-    },
-    {
-        title: "10. Sustainability Features",
-        description: ["In 2025, sustainability is a growing priority. Custom applications should:"]
-    },
-    // Add remaining unique features (up to 10) similarly
-];
-
-// Unique services1 data
-const services1 = [
-    [
-        { description: "Chatbots and Virtual Assistants for enhanced customer support." },
-        { description: "Predictive Analytics to anticipate user behavior and improve decision-making." },
-        { description: "Automation Tools to streamline repetitive tasks and boost efficiency." }
-    ],
-    [
-        { description: "Seamless Data Syncing across devices." },
-        { description: "Scalable Infrastructure to handle fluctuating workloads." },
-        { description: "Enhanced Security through cloud service providers’ advanced protocols." }
-    ],
-    [
-        { description: "Responsive Design to adapt to various screen sizes." },
-        { description: "Support for Multiple Operating Systems, such as iOS, Android, and Windows." },
-        { description: "Progressive Web App (PWA) Capabilities for app-like experiences on browsers." }
-    ],
-    [
-        { description: "Data Encryption to protect sensitive information." },
-        { description: "Multi-Factor Authentication (MFA) to enhance login security." },
-        { description: "Regular Security Updates to address vulnerabilities promptly." }
-    ],
-    [
-        { description: "Prioritize Intuitive Navigation for ease of use." },
-        { description: "Offer Customizable Dashboards tailored to user preferences." },
-        { description: "Focus on Accessibility to ensure inclusivity for users with disabilities." }
-    ],
-    [
-        { description: "Dashboards with Real-Time Data for instant updates." },
-        { description: "Customizable Reports to meet specific business requirements." },
-        { description: "Integration with BI Tools for advanced analytics." }
-    ],
-    [
-        { description: "Data Collection from IoT Devices to improve operations." },
-        { description: "Remote Monitoring for enhanced control." },
-        { description: "Automated Processes based on IoT data inputs." }
-    ],
-    [
-        { description: "Supports Modular Development for easy updates." },
-        { description: "Handles Increased User Load as the business grows." },
-        { description: "Allows for Feature Expansion without extensive redevelopment." }
-    ],
-    [
-        { description: "Offline Data Access with syncing capabilities when reconnected." },
-        { description: "Caching Mechanisms for uninterrupted user experience." },
-    ],
-    [
-        { description: "Optimize Energy Consumption for efficient resource use." },
-        { description: "Promote Paperless Processes to reduce environmental impact." },
-        { description: "Integrate with Sustainable Technologies, such as green cloud services." }
-    ],
-    // Add remaining unique services for each feature (up to 10) similarly
+const blogs = [
+    { id: 1, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Emerging Trends in Technology', image: image, link: '/blog/key-features-blog' },
+    { id: 2, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Software Development Best Practices', image: blog1, link: '/blog/essentail-tipes-blog' },
+    { id: 3, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Mobile Technology', image: blog2, link: '/blog/mobile-application-blog' },
+    { id: 4, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Technology', image: image, link: '/blog/key-features-blog' },
+    { id: 5, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Technology', image: blog1, link: '/blog/essentail-tipes-blog' },
+    { id: 6, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Technology', image: blog2, link: '/blog/mobile-application-blog' },
+    { id: 7, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Technology', image: image, link: '/blog/key-features-blog' },
+    { id: 8, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Technology', image: blog1, link: '/blog/essentail-tipes-blog' },
+    { id: 9, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Technology', image: blog2, link: '/blog/mobile-application-blog' },
 ];
 
 const Blog = () => {
     const theme = useTheme();
+    const [filter, setFilter] = useState('');
+    const [visibleBlogs, setVisibleBlogs] = useState(6);
+
+    const filteredBlogs = blogs.filter((blog) =>
+        blog.title.toLowerCase().includes(filter.toLowerCase()) ||
+        blog.category.toLowerCase().includes(filter.toLowerCase())
+    );
+
+    const handleLoadMore = () => {
+        setVisibleBlogs((prev) => prev + 3);
+    };
+
     return (
         <div>
             {/* Blog Header */}
             <Box
                 sx={{
                     width: '100%',
-                    height: '50vh',
+                    height: '60vh',
                     position: 'relative',
                     backgroundImage: `url(${BlogImg})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     display: 'flex',
+                    flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    textAlign: 'center',
                 }}
             >
                 <Box
@@ -146,127 +57,166 @@ const Blog = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        backgroundColor: 'rgba(0, 0, 0, 0.6)',
                         zIndex: 1,
                     }}
                 />
                 <Typography
                     variant="h3"
-                    textAlign="center"
                     color="white"
-                    sx={{ zIndex: 2, fontWeight: 'bold' }}
+                    sx={{ zIndex: 2, fontWeight: 'bold', mb: 1, px: 2 }}
                 >
-                    {blogData.title}
+                    Welcome to{' '}
+                    <Box
+                        component="span"
+                        sx={{
+                            color: 'yellow',
+                        }}
+                    >
+                        Our Blog
+                    </Box>
                 </Typography>
             </Box>
+
+            {/* Blog Filter */}
+            <Box
+                sx={{
+                    px: { xs: 2, md: 14 },
+                    mt: { xs: 2, md: 4 },
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <TextField
+                    fullWidth
+                    variant="outlined"
+                    placeholder="Search blogs by title or category..."
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                    sx={{
+                        mb: 2,
+                        background: 'linear-gradient(135deg, #f5f7fa, #ffffff)',
+                        borderRadius: '30px',
+                        boxShadow: '3px 3px 8px rgba(0, 0, 0, 0.1), -3px -3px 8px rgba(255, 255, 255, 0.8)',
+                        transition: 'all 0.3s ease',
+                        '& .MuiOutlinedInput-root': {
+                            borderRadius: '30px',
+                            pl: '16px',
+                            '&.Mui-focused': {
+                                boxShadow: `0 0 10px ${theme.palette.primary.main}`,
+                            },
+                            '& .MuiInputAdornment-root': {
+                                transition: 'transform 0.3s ease, color 0.3s ease',
+                                '& i': {
+                                    color: theme.palette.primary.light,
+                                },
+                                '&:hover i, &.Mui-focused i': {
+                                    color: theme.palette.primary.dark,
+                                    transform: 'scale(1.2)',
+                                },
+                            },
+                        },
+                        '& .MuiOutlinedInput-notchedOutline': {
+                            borderColor: 'transparent',
+                        },
+                        '&:hover .MuiOutlinedInput-notchedOutline': {
+                            borderColor: theme.palette.primary.light,
+                        },
+                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                            borderColor: theme.palette.primary.main,
+                        },
+                        '& input::placeholder': {
+                            color: theme.palette.text.secondary,
+                            fontStyle: 'italic',
+                            fontSize: '0.95rem',
+                            opacity: 0.85,
+                        },
+                    }}
+                    InputProps={{
+                        startAdornment: (
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    mr: 1,
+                                    color: theme.palette.text.secondary,
+                                    '& i': {
+                                        fontSize: '1.2rem',
+                                        transition: 'transform 0.3s ease',
+                                    },
+                                }}
+                            >
+                                <i className="material-icons">search</i>
+                            </Box>
+                        ),
+                    }}
+                />
+            </Box>
+
 
             {/* Blog Content */}
-            <Box sx={{ px: { xs: 2, md: 14 }, py: 6 }}>
-                <Typography
-                    variant="h4"
-                    sx={{
-                        mb: 5,
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        color: '#333',
-                        letterSpacing: 1.2,
-                    }}
-                >
-                    <span>Key Features Every Custom </span>
-                    <span style={{ color: '#ff4156' }}>Application </span>
-                    <span>Should Include in 2025</span>
-                </Typography>
-
-                <Grid container spacing={3} sx={{ mb: 6, alignItems: 'center' }}>
-                    <Grid item xs={12} md={6}>
-                        <div
-                            style={{
-                                height: '350px',
-                                overflow: 'hidden',
-                                borderRadius: '16px',
-                                boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Soft shadow for depth
-                                position: 'relative', // Enables positioning for the overlay
-                            }}
-                        >
-                            <img
-                                src={blog1}
-                                alt="Blog"
-                                style={{
-                                    width: '100%',
+            <Box sx={{ px: { xs: 2, md: 14 }, py: 4 }}>
+                <Grid container spacing={4}>
+                    {filteredBlogs.slice(0, visibleBlogs).map((blog) => (
+                        <Grid item xs={12} sm={6} md={4} key={blog.id}>
+                            <Card
+                                sx={{
                                     height: '100%',
-                                    objectFit: 'cover', // Ensures image fills the area without distortion
+                                    transition: 'transform 0.3s, box-shadow 0.3s',
+                                    '&:hover': { transform: 'scale(1.05)', boxShadow: 3 },
                                 }}
-                            />
-                            <div
-                                style={{
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: 0,
-                                    width: '100%',
-                                    height: '100%',
-                                    backgroundColor: 'rgba(0, 0, 0, 0.4)', // Semi-transparent overlay
-                                    borderRadius: '16px', // Matches the border radius of the image container
-                                }}
-                            />
-                        </div>
-                    </Grid>
-
-                    <Grid item xs={12} md={6}>
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                fontWeight: 'medium',
-                                lineHeight: 1.6,
-                                color: '#555',
-                                background: 'linear-gradient(to right, #fff, #f9f9f9)',
-                                padding: 2,
-                                borderRadius: 4,
-                                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)',
-                                height: '350px', // Same height as the image
-                                overflow: 'auto', // Allows scrolling if content exceeds the height
-                            }}
-                        >
-                            {blogData.blogIntro}
-                        </Typography>
-                    </Grid>
-                </Grid>
-
-
-                {content2.map((content, index) => (
-                    <Box key={index} sx={{ mt: 5 }}>
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', mt: 3, color: theme.palette.hoverAction.hoverDropdown, py: 1 }}>
-                            {content.title}
-                        </Typography>
-                        {content.description.map((desc, idx) => (
-                            <Typography key={idx} variant="h5" py={0.5} mb={3}>
-                                {desc}
-                            </Typography>
-                        ))}
-                        <Box component="ul" sx={{ p: 0, m: 0, listStyleType: 'none' }}>
-                            {services1[index].map((service, idx) => (
-                                <Stack direction={'row'} spacing={2} key={idx} mb={2}>
-                                    <Box>
-                                        <FaRegHandPointRight fontSize={15} />
-                                    </Box>
-                                    <Typography variant="h5">
-                                        {service.description}
+                            >
+                                <CardMedia
+                                    component="img"
+                                    image={blog.image}
+                                    alt={blog.title}
+                                    sx={{ height: 200 }}
+                                />
+                                <CardContent>
+                                    <Chip
+                                        label={blog.category}
+                                        sx={{
+                                            mb: 2,
+                                            backgroundColor: theme.palette.primary.main,
+                                            color: 'white',
+                                            fontWeight: 'bold',
+                                        }}
+                                    />
+                                    <Typography variant="h6" fontWeight="bold" gutterBottom>
+                                        {blog.title}
                                     </Typography>
-                                </Stack>
-                            ))}
-                        </Box>
+                                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                                        {blog.description}
+                                    </Typography>
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        size="small"
+                                        sx={{ textTransform: 'none' }}
+                                        href={blog.link}
+                                    >
+                                        Read More
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
+                {visibleBlogs < filteredBlogs.length && (
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={handleLoadMore}
+                            sx={{ textTransform: 'none' }}
+                        >
+                            Load More
+                        </Button>
                     </Box>
-                ))}
-
-                <Box sx={{ my: { xs: 2, md: 5 } }}>
-                    <Typography variant='h4' mb={2} fontWeight={'bold'}>
-                        {blogData.heading}
-                    </Typography>
-                    <Typography variant='h5'>
-                        {blogData.description}
-                    </Typography>
-                </Box>
+                )}
             </Box>
-            <LatestPost />
         </div>
     );
 };
