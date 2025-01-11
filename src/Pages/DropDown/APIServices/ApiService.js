@@ -96,7 +96,7 @@ const ApiService = () => {
             <Box
                 sx={{
                     width: '100%',
-                    height: '50vh',
+                    height: '60vh',
                     position: 'relative',
                     backgroundImage: `url(${WebDev})`, // Ensure the image path is correct
                     backgroundRepeat: 'no-repeat',
@@ -123,7 +123,14 @@ const ApiService = () => {
                     variant="h3"
                     textAlign="center"
                     color="white"
-                    sx={{ zIndex: 2, fontWeight: 'bold' }}
+                    sx={{
+                        zIndex: 2, fontWeight: 'bold', animation: 'fadeIn 2s ease-in-out',
+                        '@keyframes fadeIn': {
+                            from: { opacity: 0 },
+                            to: { opacity: 1 },
+                        },
+                        letterSpacing: '0.05em',
+                    }}
                 >
                     API Services
                 </Typography>

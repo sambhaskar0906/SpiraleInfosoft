@@ -88,7 +88,7 @@ const ReactJs = () => {
                     backgroundImage: `url(${WebDev})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    height: '50vh',
+                    height: '60vh',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -104,7 +104,14 @@ const ReactJs = () => {
                     },
                 }}
             >
-                <Typography variant="h3" textAlign="center" color="white" sx={{ zIndex: 2, fontWeight: 'bold' }}>
+                <Typography variant="h3" textAlign="center" color="white" sx={{
+                    zIndex: 2, fontWeight: 'bold', animation: 'fadeIn 2s ease-in-out',
+                    '@keyframes fadeIn': {
+                        from: { opacity: 0 },
+                        to: { opacity: 1 },
+                    },
+                    letterSpacing: '0.05em',
+                }}>
                     ReactJs Development
                 </Typography>
             </Box>

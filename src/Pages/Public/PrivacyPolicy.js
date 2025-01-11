@@ -1,33 +1,46 @@
 import React from 'react';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography, useTheme, Divider } from '@mui/material';
+import SecurityIcon from '@mui/icons-material/Security';
+import GroupIcon from '@mui/icons-material/Group';
+import GavelIcon from '@mui/icons-material/Gavel';
+import LockIcon from '@mui/icons-material/Lock';
 
 const PrivacyPolicy = () => {
     const theme = useTheme();
 
-    // Content object
     const content = [
         {
+            icon: <SecurityIcon fontSize="large" color="primary" />,
             heading: 'Privacy Policy',
-            paragraph: 'Spirale Infosoft is one of the most trusted and reliable software development companies when it comes to the user’s personal information protection principles.',
-            paragraph1: "As we are an emerging company and expanding our fields which also requires a lot of client interactions and conversations, we assure that the details or projects shared with us and our teams are end to end encrypted and there is no breaching and full authenticity, what one can expect from a genuine and a leading software development company.",
-            paragraph2: "We totally work under the guidance of experts and government rules and regulations. We take our client’s privacy seriously and there is no compromise with it",
+            paragraphs: [
+                'TCSPL is one of the most trusted and reliable software development companies when it comes to protecting user’s personal information.',
+                'As we expand and engage with more clients, we ensure that all shared details and projects are end-to-end encrypted. Clients can trust us for full authenticity and zero data breaches.',
+                'We strictly follow government regulations and expert guidance to maintain our clients’ privacy with no compromises.',
+            ],
         },
         {
-            heading: 'No provision for third parties :',
-            paragraph: 'We always make sure that there is no breaching of information and personal details of clients or their business from our side. In any of these situations, we ensure that the  client privacy is not compromised at any cost.',
+            icon: <GroupIcon fontSize="large" color="success" />,
+            heading: 'No Provision for Third Parties',
+            paragraphs: [
+                'We ensure that there is no unauthorized sharing of client information or business details. In every situation, client privacy remains our top priority.',
+            ],
         },
         {
-            heading: 'Lawful practices :',
-            paragraph: 'Our company follows every applied and applicable law with other guidelines issued by the                     government for the protection of personal information of the client.',
+            icon: <GavelIcon fontSize="large" color="error" />,
+            heading: 'Lawful Practices',
+            paragraphs: [
+                'Our company complies with all relevant laws and government guidelines to protect client data and maintain ethical practices.',
+            ],
         },
         {
-            heading: 'Security measurements :',
-            paragraph: 'To maintain the privacy policies, we focus on educating the employees and improving the whole information management system.Everything should be under great guidance and supervision,so that there is no leakage of information.',
-            paragraph1: "The company always seeks for client feedback and room for any improvement. With the help of fetched and extracted data that has been provided by the visitor, sometimes in the form of cookies, we use that data to know more about the audience visiting our website, traffic rate, region/location also so that we can target our user base and can get to know more about them. We use cookies to know more about the visitor’s systems and devices that they use to visit our website.",
-            paragraph2: "By this piece of information, we enhance our website to provide a richer experience to our client.We use this information just to make a better connection and understanding.",
-            paragraph3: "The information provided by our visitors is safe and secure with us. But while sending us any of your personal details you must also be very responsible about it.",
-            paragraph4: "And as we have stated it already, we do not disclose or sell our dear client’s data and personal information to any third party, for any kind of unethical practices.",
-            paragraph5: "We take good care of our client’s personal information and also work for their better experience of using the website and the services provided by us.",
+            icon: <LockIcon fontSize="large" color="secondary" />,
+            heading: 'Security Measures',
+            paragraphs: [
+                'To uphold privacy policies, we educate our employees and enhance our information management system. This ensures that all data is handled securely and responsibly.',
+                'We use cookies to gather insights about website visitors, such as traffic rate, location, and device type. This helps us improve our services and tailor user experiences.',
+                'Rest assured, all visitor information is securely stored. However, clients should also take responsibility when sharing personal details.',
+                'We never disclose or sell client data to third parties for unethical practices. Maintaining trust and data security is our priority.',
+            ],
         },
     ];
 
@@ -37,52 +50,103 @@ const PrivacyPolicy = () => {
             <Box
                 sx={{
                     position: 'relative',
-                    height: '50vh',
+                    height: '60vh',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: '#070B30',
-                        zIndex: -1,
-                    },
+                    background: 'linear-gradient(to bottom, rgba(7,11,48,0.8), rgba(7,11,48,0.6)), url("/path-to-background-image.jpg")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    color: 'white',
+                    textShadow: '0px 4px 10px rgba(0, 0, 0, 0.5)',
                 }}
             >
-                <Typography variant="h3" textAlign="center" color="white" sx={{ zIndex: 2, fontWeight: 'bold' }}>
+                <Typography
+                    variant="h3"
+                    sx={{
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        animation: 'fadeIn 2s ease-in-out',
+                        '@keyframes fadeIn': {
+                            from: { opacity: 0 },
+                            to: { opacity: 1 },
+                        },
+                        letterSpacing: '0.05em',
+                    }}
+                >
                     Privacy Policy
                 </Typography>
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        bottom: '10%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        width: '100%',
+                        animation: 'bounce 2s infinite',
+                        '@keyframes bounce': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                    }}
+                >
+                    <Typography variant="body2" sx={{ color: 'white', opacity: 0.7 }}>
+                        Scroll down to learn more
+                    </Typography>
+                </Box>
             </Box>
 
             {/* Main Content */}
-            <Box sx={{ px: { xs: 5, md: 10, lg: 15 }, py: { xs: 2, md: 2 }, mt: 3 }}>
+            <Box sx={{ py: 6, px: { xs: 3, sm: 5, md: 10, lg: 15 } }}>
                 {content.map((item, index) => (
-                    <Box key={index} sx={{ mb: 4 }}>
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
-                            {item.heading}
-                        </Typography>
-                        <Typography variant="h5" sx={{ color: theme.palette.text.primary }}>
-                            {item.paragraph}
-                        </Typography>
-                        <Typography variant="h5" sx={{ color: theme.palette.text.primary, py: 1 }}>
-                            {item.paragraph1}
-                        </Typography>
-                        <Typography variant="h5" sx={{ color: theme.palette.text.primary }}>
-                            {item.paragraph2}
-                        </Typography>
-                        <Typography variant="h5" sx={{ color: theme.palette.text.primary, py: 1 }}>
-                            {item.paragraph3}
-                        </Typography>
-                        <Typography variant="h5" sx={{ color: theme.palette.text.primary }}>
-                            {item.paragraph4}
-                        </Typography>
-                        <Typography variant="h5" sx={{ color: theme.palette.text.primary, py: 1 }}>
-                            {item.paragraph5}
-                        </Typography>
+                    <Box
+                        key={index}
+                        sx={{
+                            mb: 6,
+                            py: 4,
+                            px: { xs: 3, md: 6 },
+                            backgroundColor: index % 2 === 0 ? theme.palette.background.paper : theme.palette.grey[100],
+                            borderRadius: 2,
+                            boxShadow: 3,
+                            position: 'relative',
+                            '&:hover': {
+                                boxShadow: 6,
+                                transform: 'scale(1.02)',
+                                transition: 'all 0.3s ease-in-out',
+                            },
+                            '&::before': {
+                                content: '""',
+                                position: 'absolute',
+                                top: '50%',
+                                left: '-20px',
+                                transform: 'translateY(-50%)',
+                                width: '4px',
+                                height: '50%',
+                                backgroundColor: theme.palette.primary.main,
+                            },
+                        }}
+                    >
+                        {/* Icon and Heading */}
+                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                            {item.icon}
+                            <Typography variant="h4" sx={{ fontWeight: 'bold', ml: 2 }}>
+                                {item.heading}
+                            </Typography>
+                        </Box>
+
+                        {/* Paragraphs */}
+                        {item.paragraphs.map((paragraph, pIndex) => (
+                            <Typography
+                                key={pIndex}
+                                variant="h5"
+                                sx={{ color: theme.palette.text.secondary, lineHeight: 1.8, mb: 2 }}
+                            >
+                                {paragraph}
+                            </Typography>
+                        ))}
+
+                        {/* Divider */}
+                        {index < content.length - 1 && <Divider sx={{ mt: 4 }} />}
                     </Box>
                 ))}
             </Box>

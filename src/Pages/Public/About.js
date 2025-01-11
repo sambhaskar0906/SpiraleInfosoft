@@ -20,7 +20,7 @@ const About = () => {
             {/* about header */}
             <Box sx={{
                 width: '100%',
-                height: '50vh',
+                height: '60vh',
                 position: 'relative',
                 background: `url(${AboutImg})`,
                 backgroundRepeat: 'no-repeat',
@@ -52,6 +52,12 @@ const About = () => {
                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)', // Shadow effect
                     marginBottom: 2, // Space between the texts
                     textTransform: 'uppercase', // Make the text uppercase for emphasis
+                    animation: 'fadeIn 2s ease-in-out',
+                    '@keyframes fadeIn': {
+                        from: { opacity: 0 },
+                        to: { opacity: 1 },
+                    },
+                    letterSpacing: '0.05em',
                 }}>
                     About us
                 </Typography>
@@ -64,6 +70,12 @@ const About = () => {
                     marginTop: 2, // More space between "About Us" and the second text
                     maxWidth: '80%', // Limit width for readability
                     margin: '0 auto', // Center the text block
+                    animation: 'fadeIn 2s ease-in-out',
+                    '@keyframes fadeIn': {
+                        from: { opacity: 0 },
+                        to: { opacity: 1 },
+                    },
+                    letterSpacing: '0.05em',
                 }}>
                     Coding the Future with Creativity, Precision, and Innovation
                 </Typography>

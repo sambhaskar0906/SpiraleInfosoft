@@ -6,6 +6,7 @@ import { Box, Button, Typography } from "@mui/material";
 import BlogImg from '../../assest/BlogImg/blogimg.jpg';
 import BlogImg1 from '../../assest/BlogImg/mobile.jpg';
 import BlogImg2 from '../../assest/BlogImg/blogimg2.jpg';
+import futureuiux from '../../assest/BlogImg/futureuiux.jpg';
 
 // Blog Data
 const blogData = {
@@ -27,6 +28,12 @@ const blogData = {
             title: "Key Features",
             excerpt: " Here are the key features every custom application should include in 2025:",
             link: "/blog/key-features-blog",
+        },
+        {
+            img: futureuiux,
+            title: "Future of UI/UX",
+            excerpt: "In this blog, we explore the game-changing UI/UX design trends that are set to define 2025",
+            link: "/blog/future-uiux",
         },
     ],
 };

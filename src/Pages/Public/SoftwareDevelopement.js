@@ -22,7 +22,7 @@ const SoftwareDevelopement = () => {
         <div>
             <Box sx={{
                 width: '100%',
-                height: '50vh',
+                height: '60vh',
                 position: 'relative',
                 background: `url(${software})`,
                 backgroundRepeat: 'no-repeat',
@@ -44,7 +44,14 @@ const SoftwareDevelopement = () => {
                         zIndex: 1,
                     }}
                 />
-                <Typography variant="h3" textAlign="center" color="white" sx={{ zIndex: 2, fontWeight: 'bold' }}>
+                <Typography variant="h3" textAlign="center" color="white" sx={{
+                    zIndex: 2, fontWeight: 'bold', animation: 'fadeIn 2s ease-in-out',
+                    '@keyframes fadeIn': {
+                        from: { opacity: 0 },
+                        to: { opacity: 1 },
+                    },
+                    letterSpacing: '0.05em',
+                }}>
                     Software Development
                 </Typography>
             </Box>

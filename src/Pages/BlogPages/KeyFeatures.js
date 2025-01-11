@@ -10,61 +10,131 @@ const blogData = {
     description: "As businesses navigate the challenges and opportunities of 2025, having a robust custom application with these key features is critical. By prioritizing AI integration, cybersecurity, scalability, and user-centric design, your application can deliver exceptional value and keep your business ahead of the competition. Investing in these features today ensures long-term success in an increasingly digital world.",
 };
 
-// Unique content2 data
+// Key features content
 const content2 = [
     {
         title: "1. Artificial Intelligence and Machine Learning",
         description: [
-            "AI and ML have transformed the way applications operate, providing personalized user experiences, predictive analytics, and automation. ",
-            <a
-                href="/custom-applications"
-                style={{ color: '#007BFF', textDecoration: 'none', whiteSpace: 'nowrap' }}
-            >
-                Custom applications
-            </a>,
-            " in 2025 must incorporate:"
-        ]
+            "AI and ML have transformed the way applications operate, providing personalized user experiences, predictive analytics, and automation. Custom applications in 2025 must incorporate:",
+        ],
     },
     {
         title: "2. Cloud Integration",
-        description: ["With the increasing reliance on cloud-based services, applications must be designed to leverage the cloud for scalability, reliability, and cost-efficiency. Key benefits include:"]
+        description: [
+            "With the increasing reliance on cloud-based services, applications must be designed to leverage the cloud for scalability, reliability, and cost-efficiency. Key benefits include:",
+        ],
     },
     {
         title: "3. Cross-Platform Compatibility",
-        description: ["In 2025, users expect applications to work seamlessly across devices and platforms. Ensure your custom application includes:"]
+        description: [
+            "In 2025, users expect applications to work seamlessly across devices and platforms. Ensure your custom application includes:",
+        ],
     },
     {
         title: "4. Enhanced Cybersecurity Features",
-        description: ["With the rise in cyber threats, robust security measures are non-negotiable. Applications should include:"]
+        description: [
+            "With the rise in cyber threats, robust security measures are non-negotiable. Applications should include:",
+        ],
     },
     {
         title: "5. User-Centric Design (UX/UI)",
-        description: ["User experience remains a cornerstone of application success. A custom application must:"]
+        description: [
+            "User experience remains a cornerstone of application success. A custom application must:",
+        ],
     },
     {
         title: "6. Real-Time Analytics and Reporting",
-        description: ["Businesses need insights to make informed decisions. Custom applications should provide:"]
+        description: [
+            "Businesses need insights to make informed decisions. Custom applications should provide:",
+        ],
     },
     {
         title: "7. Integration with IoT (Internet of Things)",
-        description: ["As IoT adoption grows, custom applications should support integration with IoT devices. This allows:"]
+        description: [
+            "As IoT adoption grows, custom applications should support integration with IoT devices. This allows:",
+        ],
     },
     {
         title: "8. Scalability and Flexibility",
-        description: ["Custom applications must evolve with business needs. Ensure your application:"]
+        description: [
+            "Custom applications must evolve with business needs. Ensure your application:",
+        ],
     },
     {
         title: "9. Offline Functionality",
-        description: ["Users expect applications to work even without an internet connection. Include:"]
+        description: [
+            "Users expect applications to work even without an internet connection. Include:",
+        ],
     },
     {
         title: "10. Sustainability Features",
-        description: ["In 2025, sustainability is a growing priority. Custom applications should:"]
+        description: [
+            "In 2025, sustainability is a growing priority. Custom applications should:",
+        ],
     },
 ];
 
+// Services data
 const services1 = [
-    // Add your services data here...
+    {
+        description: ["Chatbots and Virtual Assistants for enhanced customer support.",
+            "Predictive Analytics to anticipate user behavior and improve decision-making.",
+            "Automation Tools to streamline repetitive tasks and boost efficiency.",
+        ],
+    },
+    {
+        description: ["Seamless Data Syncing across devices.",
+            "Scalable Infrastructure to handle fluctuating workloads.",
+            "Enhanced Security through cloud service providers’ advanced protocols.",
+        ],
+    },
+    {
+        description: ["Responsive Design to adapt to various screen sizes.",
+            "Support for Multiple Operating Systems, such as iOS, Android, and Windows.",
+            "Progressive Web App (PWA) Capabilities for app-like experiences on browsers."
+        ],
+    },
+    {
+        description: ["Data Encryption to protect sensitive information.",
+            "Multi-Factor Authentication (MFA) to enhance login security.",
+            "Regular Security Updates to address vulnerabilities promptly.",
+        ],
+    },
+    {
+        description: ["Prioritize Intuitive Navigation for ease of use.",
+            "Offer Customizable Dashboards tailored to user preferences.",
+            "Focus on Accessibility to ensure inclusivity for users with disabilities.",
+        ],
+    },
+    {
+        description: ["Dashboards with Real-Time Data for instant updates.",
+            "Customizable Reports to meet specific business requirements.",
+            "Integration with BI Tools for advanced analytics.",
+        ],
+    },
+    {
+        description: ["Data Collection from IoT Devices to improve operations.",
+            "Remote Monitoring for enhanced control.",
+            "Automated Processes based on IoT data inputs."
+        ],
+    },
+    {
+        description: ["Supports Modular Development for easy updates.",
+            "Handles Increased User Load as the business grows.",
+            "Allows for Feature Expansion without extensive redevelopment."
+        ],
+    },
+    {
+        description: ["Offline Data Access with syncing capabilities when reconnected.",
+            "Caching Mechanisms for uninterrupted user experience."
+        ],
+    },
+    {
+        description: ["Optimize Energy Consumption for efficient resource use.",
+            "Promote Paperless Processes to reduce environmental impact.",
+            "Integrate with Sustainable Technologies, such as green cloud services."
+        ],
+    },
 ];
 
 const KeyFeatures = () => {
@@ -144,7 +214,15 @@ const KeyFeatures = () => {
 
                 {content2.map((content, index) => (
                     <Box key={index} sx={{ mt: 5 }}>
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', mt: 3, color: theme.palette.hoverAction.hoverDropdown, py: 1 }}>
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                fontWeight: 'bold',
+                                mt: 3,
+                                color: theme.palette.hoverAction.hoverDropdown,
+                                py: 1,
+                            }}
+                        >
                             {content.title}
                         </Typography>
                         {content.description.map((desc, idx) => (
@@ -153,14 +231,12 @@ const KeyFeatures = () => {
                             </Typography>
                         ))}
                         <Box component="ul" sx={{ p: 0, m: 0, listStyleType: 'none' }}>
-                            {services1[index]?.map((service, idx) => (
+                            {services1[index]?.description.map((service, idx) => (
                                 <Stack direction={'row'} spacing={2} key={idx} mb={2}>
                                     <Box>
                                         <FaRegHandPointRight fontSize={15} />
                                     </Box>
-                                    <Typography variant="h5">
-                                        {service.description}
-                                    </Typography>
+                                    <Typography variant="h5">{service}</Typography>
                                 </Stack>
                             ))}
                         </Box>
@@ -168,12 +244,10 @@ const KeyFeatures = () => {
                 ))}
 
                 <Box sx={{ my: { xs: 2, md: 5 } }}>
-                    <Typography variant='h4' mb={2} fontWeight={'bold'}>
+                    <Typography variant="h4" mb={2} fontWeight="bold">
                         {blogData.heading}
                     </Typography>
-                    <Typography variant='h5'>
-                        {blogData.description}
-                    </Typography>
+                    <Typography variant="h5">{blogData.description}</Typography>
                 </Box>
             </Box>
             <LatestPost />

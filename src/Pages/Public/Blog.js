@@ -4,17 +4,13 @@ import BlogImg from '../../assest/DropDown/Blog.png';
 import image from '../../assest/BlogImg/blogimg.jpg';
 import blog1 from '../../assest/BlogImg/blogimg2.jpg';
 import blog2 from '../../assest/BlogImg/mobile.jpg';
+import future from '../../assest/BlogImg/futureuiux.jpg';
 
 const blogs = [
     { id: 1, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Emerging Trends in Technology', image: image, link: '/blog/key-features-blog' },
     { id: 2, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Software Development Best Practices', image: blog1, link: '/blog/essentail-tipes-blog' },
     { id: 3, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Mobile Technology', image: blog2, link: '/blog/mobile-application-blog' },
-    { id: 4, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Technology', image: image, link: '/blog/key-features-blog' },
-    { id: 5, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Technology', image: blog1, link: '/blog/essentail-tipes-blog' },
-    { id: 6, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Technology', image: blog2, link: '/blog/mobile-application-blog' },
-    { id: 7, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Technology', image: image, link: '/blog/key-features-blog' },
-    { id: 8, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Technology', image: blog1, link: '/blog/essentail-tipes-blog' },
-    { id: 9, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Technology', image: blog2, link: '/blog/mobile-application-blog' },
+    { id: 4, title: 'Future UI/UX', description: 'In this blog, we explore the game-changing UI/UX design trends that are set to define 2025', category: 'Technology', image: future, link: '/blog/future-uiux' },
 ];
 
 const Blog = () => {
@@ -64,7 +60,14 @@ const Blog = () => {
                 <Typography
                     variant="h3"
                     color="white"
-                    sx={{ zIndex: 2, fontWeight: 'bold', mb: 1, px: 2 }}
+                    sx={{
+                        zIndex: 2, fontWeight: 'bold', mb: 1, px: 2, animation: 'fadeIn 2s ease-in-out',
+                        '@keyframes fadeIn': {
+                            from: { opacity: 0 },
+                            to: { opacity: 1 },
+                        },
+                        letterSpacing: '0.05em',
+                    }}
                 >
                     Welcome to{' '}
                     <Box
@@ -167,18 +170,47 @@ const Blog = () => {
                                     overflow: 'hidden',
                                 }}
                             >
-                                <CardMedia
-                                    component="img"
-                                    image={blog.image}
-                                    alt={blog.title}
+                                <Box
                                     sx={{
-                                        height: 200,
-                                        transition: 'opacity 0.3s',
-                                        '&:hover': {
-                                            opacity: 0.9,
-                                        },
+                                        position: 'relative',
+                                        display: 'inline-block', // Ensures the overlay only affects the image
                                     }}
-                                />
+                                >
+                                    <CardMedia
+                                        component="img"
+                                        image={blog.image}
+                                        alt={blog.title}
+                                        sx={{
+                                            height: 200,
+                                            transition: 'opacity 0.3s',
+                                            '&:hover': {
+                                                opacity: 0.9,
+                                            },
+                                        }}
+                                    />
+                                    <Box
+                                        sx={{
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            width: '100%',
+                                            height: '100%',
+                                            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Black overlay with 50% opacity
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            color: 'white', // Text color
+                                            opacity: 0,
+                                            transition: 'opacity 0.3s',
+                                            '&:hover': {
+                                                opacity: 1,
+                                            },
+                                        }}
+                                    >
+                                        <Typography variant="h6">{blog.title}</Typography>
+                                    </Box>
+                                </Box>
+
                                 <CardContent sx={{ position: 'relative', backgroundColor: '#fff' }}>
                                     <Chip
                                         label={blog.category}
