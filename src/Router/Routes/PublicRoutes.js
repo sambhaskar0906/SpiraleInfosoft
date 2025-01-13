@@ -34,6 +34,7 @@ import MobileApplications from '../../Pages/BlogPages/MobileApplications'
 import EssentialTips from '../../Pages/BlogPages/EssentialTips'
 import KeyFeatures from '../../Pages/BlogPages/KeyFeatures'
 import FutureUIUX from '../../Pages/BlogPages/FutureUIUX'
+import AIML from '../../Pages/BlogPages/AIML'
 
 
 const PublicRoutes = () => {
@@ -96,6 +97,7 @@ const PublicRoutes = () => {
                     <Route path='/blog/essentail-tipes-blog' element={<EssentialTips />} />
                     <Route path='/blog/key-features-blog' element={<KeyFeatures />} />
                     <Route path='/blog/future-uiux' element={<FutureUIUX />} />
+                    <Route path='/blog/AI-ML' element={<AIML />} />
 
                 </Route>
                 {/* error page */}

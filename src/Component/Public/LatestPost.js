@@ -7,6 +7,7 @@ import BlogImg from '../../assest/BlogImg/blogimg.jpg';
 import BlogImg1 from '../../assest/BlogImg/mobile.jpg';
 import BlogImg2 from '../../assest/BlogImg/blogimg2.jpg';
 import futureuiux from '../../assest/BlogImg/futureuiux.jpg';
+import Blogimg3 from '../../assest/BlogImg/AIML.jpg'
 
 // Blog Data
 const blogData = {
@@ -34,6 +35,12 @@ const blogData = {
             title: "Future of UI/UX",
             excerpt: "In this blog, we explore the game-changing UI/UX design trends that are set to define 2025",
             link: "/blog/future-uiux",
+        },
+        {
+            img: Blogimg3,
+            title: "AI and Machine Learning",
+            excerpt: "The field of software development is undergoing a transformative revolution driven by AI and ML.",
+            link: "/blog/AI-ML",
         },
     ],
 };
