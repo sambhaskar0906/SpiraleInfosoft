@@ -10,7 +10,7 @@ const blogs = [
     { id: 1, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Emerging Trends in Technology', image: image, link: '/blog/key-features-blog' },
     { id: 2, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Software Development Best Practices', image: blog1, link: '/blog/essentail-tipes-blog' },
     { id: 3, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Mobile Technology', image: blog2, link: '/blog/mobile-application-blog' },
-    { id: 4, title: 'Future UI/UX', description: 'In this blog, we explore the game-changing UI/UX design trends that are set to define 2025', category: 'Technology', image: future, link: '/blog/future-uiux' },
+    { id: 4, title: 'Future UI/UX', description: 'In this blog, we explore the game-changing UI/UX design trends that are set to define 2025', category: 'Design', image: future, link: '/blog/future-uiux' },
 ];
 
 const Blog = () => {

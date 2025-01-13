@@ -114,20 +114,45 @@ const LatestPost = () => {
                                 alt={post.title}
                                 sx={{
                                     width: '100%',
-                                    height: 220,
+                                    height: { xs: 180, md: 220 }, // Adjust height for responsiveness
                                     objectFit: 'cover',
                                 }}
                             />
-                            <Box sx={{ p: 2 }}>
+                            <Box
+                                sx={{
+                                    p: 2,
+                                    height: { xs: 160, md: 180 }, // Fixed height for content
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'space-between',
+                                }}
+                            >
                                 <Typography
                                     variant="h6"
-                                    sx={{ fontWeight: 'bold', mb: 1, color: '#1e88e5' }}
+                                    sx={{
+                                        fontWeight: 'bold',
+                                        mb: 1,
+                                        color: '#1e88e5',
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis', // Truncate long titles
+                                    }}
                                 >
                                     {post.title}
                                 </Typography>
                                 <Typography
                                     variant="body2"
-                                    sx={{ mb: 2, color: 'text.secondary', lineHeight: 1.6 }}
+                                    sx={{
+                                        mb: 2,
+                                        color: 'text.secondary',
+                                        lineHeight: 1.6,
+                                        height: '50px', // Ensure consistent height for excerpts
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        display: '-webkit-box',
+                                        WebkitBoxOrient: 'vertical',
+                                        WebkitLineClamp: 3, // Limit to 3 lines
+                                    }}
                                 >
                                     {post.excerpt}
                                 </Typography>
@@ -138,6 +163,7 @@ const LatestPost = () => {
                                     sx={{
                                         backgroundColor: '#1565c0',
                                         color: '#fff',
+                                        alignSelf: 'flex-start', // Align button to start
                                         '&:hover': {
                                             backgroundColor: '#0d47a1',
                                         },

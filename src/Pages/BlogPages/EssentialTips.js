@@ -196,8 +196,15 @@ const EssentailTipes = () => {
                             <Box component="ul" sx={{ p: 0, m: 0, listStyleType: 'none' }}>
                                 {typesData.map((type, idx) => (
                                     <Box key={idx} mb={2}>
-                                        <Stack direction="row" spacing={1.5} mb={1} alignItems={'center'}>
-                                            <FaRegHandPointRight fontSize={15} />
+                                        <Stack direction="row" spacing={1.5} mb={1} >
+                                            <Box
+                                                sx={{
+                                                    fontSize: { xs: 15, sm: 15, md: 15 },
+                                                    mt: '5px !important'
+                                                }}
+                                            >
+                                                <FaRegHandPointRight />
+                                            </Box>
                                             <Typography variant="h6" fontWeight="bold" sx={{ color: theme.palette.hoverAction.hoverDropdown, }}>
                                                 {type.title}
                                             </Typography>

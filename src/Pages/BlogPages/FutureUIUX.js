@@ -260,7 +260,14 @@ const FutureUIUX = () => {
                             </Typography>
                             {services1[index]?.description?.map((service, idx) => (
                                 <Stack direction="row" spacing={2} key={idx} mb={2}>
-                                    <FaRegHandPointRight fontSize={15} />
+                                    <Box
+                                        sx={{
+                                            fontSize: { xs: 15, sm: 15, md: 15 },
+                                            mt: '5px !important'
+                                        }}
+                                    >
+                                        <FaRegHandPointRight />
+                                    </Box>
                                     <Typography variant="h5">{service}</Typography>
                                 </Stack>
                             ))}
