@@ -7,7 +7,11 @@ const blogData = {
     blogIntro: "The field of software development is undergoing a transformative revolution driven by artificial intelligence (AI) and machine learning (ML). These cutting-edge technologies are not just influencing the way software is created but are also redefining the industry’s future. From enhancing productivity to enabling intelligent automation, AI and ML are making significant strides in shaping how developers design, build, and maintain software solutions. Let’s explore how these technologies are changing the game and revolutionizing the software development landscape.",
     heading: "Conclusion",
     description: "AI and machine learning are reshaping the software development landscape in profound ways. From automating repetitive tasks to enhancing user experiences and enabling intelligent project management, these technologies are driving efficiency, innovation, and quality. As the adoption of AI and ML continues to grow, the possibilities for software development are virtually limitless.",
-    description1: "At the forefront of this revolution, companies like TechCloak Solutions Pvt. Ltd. are leveraging AI and ML to deliver cutting-edge solutions that meet the evolving needs of businesses and users alike. By embracing these transformative technologies, the software industry is poised to achieve unprecedented levels of success and innovation.",
+    description1: (
+        <>
+            At the forefront of this revolution, companies like <strong>TechCloak Solutions Pvt. Ltd.</strong> are leveraging AI and ML to deliver cutting-edge solutions that meet the evolving needs of businesses and users alike. By embracing these transformative technologies, the software industry is poised to achieve unprecedented levels of success and innovation.
+        </>
+    ),
     description2: "As we move forward, the synergy between human creativity and artificial intelligence will undoubtedly pave the way for a smarter, more efficient, and more impactful future in software development.",
 };
 

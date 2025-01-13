@@ -13,33 +13,38 @@ const PrivacyPolicy = () => {
             icon: <SecurityIcon fontSize="large" color="primary" />,
             heading: 'Privacy Policy',
             paragraphs: [
-                'TCSPL is one of the most trusted and reliable software development companies when it comes to protecting user’s personal information.',
-                'As we expand and engage with more clients, we ensure that all shared details and projects are end-to-end encrypted. Clients can trust us for full authenticity and zero data breaches.',
-                'We strictly follow government regulations and expert guidance to maintain our clients’ privacy with no compromises.',
+                'TechCloak Solutions Pvt. Ltd. is one of the most trusted and reliable software development companies when it comes to the user’s personal information protection principles.',
+                'As we are an emerging company and expanding our fields, which also requires a lot of client interactions and conversations, we assure that the details or projects shared with us and our teams are end-to-end encrypted, ensuring no breaches and full authenticity—exactly what one can expect from a genuine and leading software development company.',
+                'We totally work under the guidance of experts and government rules and regulations. We take our client’s privacy seriously, and there is no compromise on it.',
             ],
         },
         {
             icon: <GroupIcon fontSize="large" color="success" />,
             heading: 'No Provision for Third Parties',
             paragraphs: [
-                'We ensure that there is no unauthorized sharing of client information or business details. In every situation, client privacy remains our top priority.',
+                'We always make sure that there is no breaching of information and personal details of clients or their business from our side. In any of these situations, we ensure that client privacy is not compromised at any cost.',
             ],
         },
         {
             icon: <GavelIcon fontSize="large" color="error" />,
             heading: 'Lawful Practices',
             paragraphs: [
-                'Our company complies with all relevant laws and government guidelines to protect client data and maintain ethical practices.',
+                'Our company follows every applied and applicable law along with other guidelines issued by the government for the protection of personal information of the client.',
             ],
         },
         {
             icon: <LockIcon fontSize="large" color="secondary" />,
             heading: 'Security Measures',
             paragraphs: [
-                'To uphold privacy policies, we educate our employees and enhance our information management system. This ensures that all data is handled securely and responsibly.',
-                'We use cookies to gather insights about website visitors, such as traffic rate, location, and device type. This helps us improve our services and tailor user experiences.',
-                'Rest assured, all visitor information is securely stored. However, clients should also take responsibility when sharing personal details.',
-                'We never disclose or sell client data to third parties for unethical practices. Maintaining trust and data security is our priority.',
+                'To maintain the privacy policies, we focus on educating employees and improving the entire information management system. Everything is carried out under great guidance and supervision to ensure there is no leakage of information.',
+                'The company always seeks client feedback and opportunities for improvement. With the help of fetched and extracted data that has been provided by the visitor—sometimes in the form of cookies—we use this data to better understand the audience visiting our website, traffic rates, and region/location, enabling us to target our user base more effectively. We use cookies to gather insights about the visitor’s systems and devices used to access our website.',
+                <>
+                    For any questions or concerns regarding our privacy practices, feel free to contact us at <strong>info@tcspl.com</strong>
+                </>,
+                'By utilizing this information, we enhance our website to provide a richer experience to our clients. This information is used solely to create a better connection and understanding.',
+                'The information provided by our visitors is safe and secure with us. However, while sending us any of your personal details, you must also take responsibility for ensuring its security.',
+                'As we have already stated, we do not disclose or sell our dear clients’ data and personal information to any third party for any unethical practices.',
+                'We take great care of our client’s personal information and continuously work to improve their experience when using our website and the services we provide.',
             ],
         },
     ];

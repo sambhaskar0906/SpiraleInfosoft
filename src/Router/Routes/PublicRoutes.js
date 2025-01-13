@@ -93,11 +93,11 @@ const PublicRoutes = () => {
                     <Route path='/create-brands' element={<CreateBrands />} />
 
                     {/* blog page */}
-                    <Route path='/blog/mobile-application-blog' element={<MobileApplications />} />
-                    <Route path='/blog/essentail-tipes-blog' element={<EssentialTips />} />
-                    <Route path='/blog/key-features-blog' element={<KeyFeatures />} />
-                    <Route path='/blog/future-uiux' element={<FutureUIUX />} />
-                    <Route path='/blog/AI-ML' element={<AIML />} />
+                    <Route path='/blog/mobile-application-development-blog' element={<MobileApplications />} />
+                    <Route path='/blog/10-essentail-tips-for-creating-a-scalable-software-solution' element={<EssentialTips />} />
+                    <Route path='/blog/key-features-every-custom-application' element={<KeyFeatures />} />
+                    <Route path='/blog/the-future-of-UI/UX-game-changing-trends' element={<FutureUIUX />} />
+                    <Route path='/blog/AI-and-Machine-Learning-are-changing-software-development' element={<AIML />} />
 
                 </Route>
                 {/* error page */}
