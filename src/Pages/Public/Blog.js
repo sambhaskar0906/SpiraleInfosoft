@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, Grid, Card, CardMedia, CardContent, Button, Chip, useTheme, TextField } from '@mui/material';
+import { Box, Typography, Grid, Card, CardMedia, CardContent, Button, Chip, useTheme, TextField, Stack } from '@mui/material';
 import BlogImg from '../../assest/DropDown/Blog.png';
 import image from '../../assest/BlogImg/blogimg.jpg';
 import blog1 from '../../assest/BlogImg/blogimg2.jpg';
@@ -9,12 +9,12 @@ import Blogimg3 from '../../assest/BlogImg/AIML.jpg'
 import Blogimg4 from '../../assest/BlogImg/blogimg4.jpg'
 
 const blogs = [
-    { id: 1, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Emerging Trends in Technology', image: image, link: '/blog/key-features-every-custom-application' },
-    { id: 2, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Software Development Best Practices', image: blog1, link: '/blog/10-essentail-tips-for-creating-a-scalable-software-solution' },
-    { id: 3, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Mobile Technology', image: blog2, link: '/blog/mobile-application-development-blog' },
-    { id: 4, title: 'Future UI/UX', description: 'In this blog, we explore the game-changing UI/UX design trends that are set to define 2025', category: 'Design', image: future, link: '/blog/the-future-of-UI/UX-game-changing-trends' },
-    { id: 5, title: 'AI and Machine Learning', description: 'The field of software development is undergoing a transformative revolution driven by AI and ML.', category: 'Design', image: Blogimg3, link: '/blog/AI-and-Machine-Learning-are-changing-software-development' },
-    { id: 6, title: 'Leverage AI and Automation', description: 'Here how you can effectively integrate AI and automation into your eCommerce business and reap the rewards.', category: 'Design', image: Blogimg4, link: '/blog/leverage-AI-and-automation-for-your-eCommerce-business' },
+    { id: 1, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Emerging Trends in Technology', image: image, date: 'Jan 14,2024', link: '/blog/key-features-every-custom-application' },
+    { id: 2, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Software Development Best Practices', image: blog1, date: 'Jan 14,2024', link: '/blog/10-essentail-tips-for-creating-a-scalable-software-solution' },
+    { id: 3, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Mobile Technology', image: blog2, date: 'Jan 14,2024', link: '/blog/mobile-application-development-blog' },
+    { id: 4, title: 'Future UI/UX', description: 'In this blog, we explore the game-changing UI/UX design trends that are set to define 2025', category: 'Design', image: future, date: 'Jan 14,2024', link: '/blog/the-future-of-UI/UX-game-changing-trends' },
+    { id: 5, title: 'AI and Machine Learning', description: 'The field of software development is undergoing a transformative revolution driven by AI and ML.', category: 'Design', image: Blogimg3, date: 'Jan 14,2024', link: '/blog/AI-and-Machine-Learning-are-changing-software-development' },
+    { id: 6, title: 'Leverage AI and Automation', description: 'Here how you can effectively integrate AI and automation into your eCommerce business and reap the rewards.', category: 'Design', image: Blogimg4, date: 'Jan 14,2024', link: '/blog/leverage-AI-and-automation-for-your-eCommerce-business' },
 ];
 
 const Blog = () => {
@@ -96,12 +96,13 @@ const Blog = () => {
                 }}
             >
                 <TextField
-                    fullWidth
                     variant="outlined"
                     placeholder="Search blogs by title or category..."
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
                     sx={{
+                        width: { xs: '100%', sm: '50%', md: '35%' }, // Adjust width for different screen sizes
+                        alignSelf: 'flex-end', // Align to the right side
                         mb: 2,
                         background: 'linear-gradient(135deg, #f5f7fa, #ffffff)',
                         borderRadius: '30px',
@@ -250,22 +251,27 @@ const Blog = () => {
                                     >
                                         {blog.description}
                                     </Typography>
-                                    <Button
-                                        variant="contained"
-                                        size="small"
-                                        sx={{
-                                            textTransform: 'none',
-                                            backgroundColor: '#ff6f61',
-                                            '&:hover': { backgroundColor: '#ff8e53' },
-                                            fontWeight: 'bold',
-                                            fontSize: '0.85rem',
-                                            px: 2,
-                                            py: 0.5,
-                                        }}
-                                        href={blog.link}
-                                    >
-                                        Read More
-                                    </Button>
+                                    <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
+                                        <Button
+                                            variant="contained"
+                                            size="small"
+                                            sx={{
+                                                textTransform: 'none',
+                                                backgroundColor: '#ff6f61',
+                                                '&:hover': { backgroundColor: '#ff8e53' },
+                                                fontWeight: 'bold',
+                                                fontSize: '0.85rem',
+                                                px: 2,
+                                                py: 0.5,
+                                            }}
+                                            href={blog.link}
+                                        >
+                                            Read More
+                                        </Button>
+                                        <Typography variant='body2' fontWeight={'bold'}>
+                                            {blog.date}
+                                        </Typography>
+                                    </Stack>
                                 </CardContent>
                             </Card>
                         </Grid>
