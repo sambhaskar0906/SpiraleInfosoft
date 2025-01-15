@@ -44,6 +44,7 @@ const HomeBackground = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%',
+        height: '90vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -62,11 +63,6 @@ const HomeBackground = () => {
     const handleContact = () => {
         window.scrollTo(0, 0);
         navigate('/contact');
-    }
-
-    const handleLearnMore = () => {
-        window.scrollTo(0, 0);
-        navigate('/about');
     }
 
     return (

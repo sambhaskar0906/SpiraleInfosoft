@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, useTheme, Grid, Dialog, IconButton } from '@mui/material';
+import { Box, Typography, useTheme, Grid, IconButton, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -9,28 +9,36 @@ import image1 from '../../assest/Culuture/image-1.jpg';
 import image2 from '../../assest/Culuture/image-2.jpg';
 import image3 from '../../assest/Culuture/image-3.jpg';
 import image4 from '../../assest/Culuture/image-4.jpg';
-import image5 from '../../assest/Culuture/image-5.webp';
 import image6 from '../../assest/Culuture/image-6.jpg';
+import image7 from '../../assest/Culuture/image-7.jpg';
+import image8 from '../../assest/Culuture/image-8.jpg';
+import image9 from '../../assest/Culuture/image-9.jpg';
+import image10 from '../../assest/Culuture/image-10.jpg';
 
-const OurCalture = () => {
+const OurCulture = () => {
     const theme = useTheme();
 
-    // Array of image objects
     const images = [
         { id: 1, src: image1, alt: 'Image 1' },
         { id: 2, src: image2, alt: 'Image 2' },
         { id: 3, src: image3, alt: 'Image 3' },
         { id: 4, src: image4, alt: 'Image 4' },
-        { id: 5, src: image5, alt: 'Image 5' },
-        { id: 6, src: image6, alt: 'Image 6' },
+        { id: 5, src: image6, alt: 'Image 5' },
+        { id: 6, src: image7, alt: 'Image 6' },
+        { id: 7, src: image8, alt: 'Image 7' },
+        { id: 8, src: image9, alt: 'Image 8' },
+        { id: 9, src: image10, alt: 'Image 9' },
     ];
 
-    const [open, setOpen] = useState(false); // For opening the popup
-    const [currentIndex, setCurrentIndex] = useState(0); // Track current image index
+    const [open, setOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [showMore, setShowMore] = useState(false);
 
     const handleOpen = (index) => {
-        setCurrentIndex(index);
-        setOpen(true);
+        if (index >= 0 && index < images.length) {
+            setCurrentIndex(index);
+            setOpen(true);
+        }
     };
 
     const handleClose = () => setOpen(false);
@@ -43,6 +51,8 @@ const OurCalture = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
+    const handleShowMore = () => setShowMore(true);
+
     return (
         <>
             {/* Hero Section */}
@@ -53,34 +63,31 @@ const OurCalture = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: '#070B30',
-                        zIndex: -1,
-                    },
+                    backgroundColor: '#070B30',
+                    color: 'white',
                 }}
             >
-                <Typography variant="h3" textAlign="center" color="white" sx={{
-                    zIndex: 2, fontWeight: 'bold', animation: 'fadeIn 2s ease-in-out',
-                    '@keyframes fadeIn': {
-                        from: { opacity: 0 },
-                        to: { opacity: 1 },
-                    },
-                    letterSpacing: '0.05em',
-                }}>
-                    Our culture
+                <Typography
+                    variant="h3"
+                    textAlign="center"
+                    sx={{
+                        fontWeight: 'bold',
+                        animation: 'fadeIn 2s ease-in-out',
+                        '@keyframes fadeIn': {
+                            from: { opacity: 0 },
+                            to: { opacity: 1 },
+                        },
+                        letterSpacing: '0.05em',
+                    }}
+                >
+                    Our Culture
                 </Typography>
             </Box>
 
             {/* Main Content */}
-            <Box sx={{ px: { xs: 5, md: 10, lg: 15 }, py: { xs: 2, md: 2 }, mt: 3 }}>
+            <Box sx={{ px: { xs: 3, md: 10, lg: 15 }, py: 4, mt: 3 }}>
                 <Grid container spacing={3}>
-                    {images.map((image, index) => (
+                    {(showMore ? images : images.slice(0, 8)).map((image, index) => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={image.id}>
                             <Box
                                 component="img"
@@ -88,71 +95,98 @@ const OurCalture = () => {
                                 alt={image.alt}
                                 sx={{
                                     width: '100%',
-                                    height: '250px', // Fixed height for all images
+                                    height: '250px',
                                     objectFit: 'cover',
                                     borderRadius: 2,
-                                    boxShadow: theme.shadows[2],
+                                    boxShadow: theme.shadows[3],
                                     cursor: 'pointer',
+                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    '&:hover': {
+                                        transform: 'scale(1.05)',
+                                        boxShadow: theme.shadows[6],
+                                    },
                                 }}
                                 onClick={() => handleOpen(index)}
                             />
                         </Grid>
                     ))}
                 </Grid>
+                {!showMore && (
+                    <Box sx={{ textAlign: 'center', mt: 4 }}>
+                        <Button
+                            variant="contained"
+                            onClick={handleShowMore}
+                            sx={{
+                                px: 4,
+                                py: 1.5,
+                                backgroundColor: theme.palette.primary.main,
+                                color: '#fff',
+                                fontSize: '1rem',
+                                fontWeight: 'bold',
+                                borderRadius: '20px',
+                                '&:hover': {
+                                    backgroundColor: theme.palette.primary.dark,
+                                },
+                            }}
+                        >
+                            View More
+                        </Button>
+                    </Box>
+                )}
             </Box>
 
-            {/* Image Popup */}
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                maxWidth="md"
-                fullWidth
-                sx={{ '& .MuiPaper-root': { position: 'relative' } }}
-            >
-                <IconButton
-                    onClick={handleClose}
-                    sx={{
-                        position: 'absolute',
-                        top: 10,
-                        right: 10,
-                        color: theme.palette.common.white,
-                        zIndex: 2,
-                    }}
-                >
-                    <CloseIcon />
-                </IconButton>
-
+            {/* Custom Image Popup */}
+            {open && (
                 <Box
                     sx={{
-                        position: 'relative',
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        backdropFilter: 'blur(5px)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        bgcolor: '#000',
+                        zIndex: 1300,
                     }}
                 >
+                    <IconButton
+                        onClick={handleClose}
+                        sx={{
+                            position: 'absolute',
+                            top: 20,
+                            right: 20,
+                            color: theme.palette.common.white,
+                        }}
+                    >
+                        <CloseIcon sx={{ fontSize: '2rem' }} />
+                    </IconButton>
+
                     {/* Previous Button */}
                     <IconButton
                         onClick={handlePrev}
                         sx={{
                             position: 'absolute',
-                            left: 10,
+                            left: 20,
                             color: theme.palette.common.white,
-                            zIndex: 2,
                         }}
                     >
-                        <ArrowBackIosIcon />
+                        <ArrowBackIosIcon sx={{ fontSize: '2rem' }} />
                     </IconButton>
 
                     {/* Current Image */}
                     <Box
                         component="img"
-                        src={images[currentIndex].src}
-                        alt={images[currentIndex].alt}
+                        src={images[currentIndex]?.src}
+                        alt={images[currentIndex]?.alt}
                         sx={{
-                            maxWidth: '100%',
-                            maxHeight: '80vh',
+                            maxWidth: '90%',
+                            maxHeight: '90%',
                             objectFit: 'contain',
+                            borderRadius: 2,
+                            boxShadow: theme.shadows[5],
                         }}
                     />
 
@@ -161,17 +195,16 @@ const OurCalture = () => {
                         onClick={handleNext}
                         sx={{
                             position: 'absolute',
-                            right: 10,
+                            right: 20,
                             color: theme.palette.common.white,
-                            zIndex: 2,
                         }}
                     >
-                        <ArrowForwardIosIcon />
+                        <ArrowForwardIosIcon sx={{ fontSize: '2rem' }} />
                     </IconButton>
                 </Box>
-            </Dialog>
+            )}
         </>
     );
 };
 
-export default OurCalture;
+export default OurCulture;

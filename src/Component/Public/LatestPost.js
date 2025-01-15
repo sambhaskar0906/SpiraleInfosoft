@@ -8,6 +8,7 @@ import BlogImg1 from '../../assest/BlogImg/mobile.jpg';
 import BlogImg2 from '../../assest/BlogImg/blogimg2.jpg';
 import futureuiux from '../../assest/BlogImg/futureuiux.jpg';
 import Blogimg3 from '../../assest/BlogImg/AIML.jpg'
+import Blogimg4 from '../../assest/BlogImg/blogimg4.jpg'
 
 // Blog Data
 const blogData = {
@@ -41,6 +42,12 @@ const blogData = {
             title: "AI and Machine Learning",
             excerpt: "The field of software development is undergoing a transformative revolution driven by AI and ML.",
             link: "/blog/AI-and-Machine-Learning-are-changing-software-development",
+        },
+        {
+            img: Blogimg4,
+            title: "Leverage AI and Automation",
+            excerpt: "Here's how you can effectively integrate AI and automation into your eCommerce business and reap the rewards.",
+            link: "/blog/leverage-AI-and-automation-for-your-eCommerce-business",
         },
     ],
 };

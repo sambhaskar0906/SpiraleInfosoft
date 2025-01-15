@@ -6,6 +6,7 @@ import blog1 from '../../assest/BlogImg/blogimg2.jpg';
 import blog2 from '../../assest/BlogImg/mobile.jpg';
 import future from '../../assest/BlogImg/futureuiux.jpg';
 import Blogimg3 from '../../assest/BlogImg/AIML.jpg'
+import Blogimg4 from '../../assest/BlogImg/blogimg4.jpg'
 
 const blogs = [
     { id: 1, title: 'Key Features', description: 'Here are the key features every custom application should include in 2025:', category: 'Emerging Trends in Technology', image: image, link: '/blog/key-features-every-custom-application' },
@@ -13,6 +14,7 @@ const blogs = [
     { id: 3, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Mobile Technology', image: blog2, link: '/blog/mobile-application-development-blog' },
     { id: 4, title: 'Future UI/UX', description: 'In this blog, we explore the game-changing UI/UX design trends that are set to define 2025', category: 'Design', image: future, link: '/blog/the-future-of-UI/UX-game-changing-trends' },
     { id: 5, title: 'AI and Machine Learning', description: 'The field of software development is undergoing a transformative revolution driven by AI and ML.', category: 'Design', image: Blogimg3, link: '/blog/AI-and-Machine-Learning-are-changing-software-development' },
+    { id: 6, title: 'Leverage AI and Automation', description: 'Here how you can effectively integrate AI and automation into your eCommerce business and reap the rewards.', category: 'Design', image: Blogimg4, link: '/blog/leverage-AI-and-automation-for-your-eCommerce-business' },
 ];
 
 const Blog = () => {

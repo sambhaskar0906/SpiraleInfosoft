@@ -35,6 +35,7 @@ import EssentialTips from '../../Pages/BlogPages/EssentialTips'
 import KeyFeatures from '../../Pages/BlogPages/KeyFeatures'
 import FutureUIUX from '../../Pages/BlogPages/FutureUIUX'
 import AIML from '../../Pages/BlogPages/AIML'
+import AIautomation from '../../Pages/BlogPages/AIautomation'
 
 
 const PublicRoutes = () => {
@@ -98,6 +99,7 @@ const PublicRoutes = () => {
                     <Route path='/blog/key-features-every-custom-application' element={<KeyFeatures />} />
                     <Route path='/blog/the-future-of-UI/UX-game-changing-trends' element={<FutureUIUX />} />
                     <Route path='/blog/AI-and-Machine-Learning-are-changing-software-development' element={<AIML />} />
+                    <Route path='/blog/leverage-AI-and-automation-for-your-eCommerce-business' element={<AIautomation />} />
 
                 </Route>
                 {/* error page */}
