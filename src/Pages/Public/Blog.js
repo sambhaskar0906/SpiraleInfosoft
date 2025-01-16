@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Typography, Grid, Card, CardMedia, CardContent, Button, Chip, useTheme, TextField, Stack } from '@mui/material';
-import BlogImg from '../../assest/DropDown/Blog.png';
+import BlogImg from '../../assest/Banner/Blog.png';
 import image from '../../assest/BlogImg/blogimg.jpg';
 import blog1 from '../../assest/BlogImg/blogimg2.jpg';
 import blog2 from '../../assest/BlogImg/mobile.jpg';
@@ -13,8 +13,8 @@ const blogs = [
     { id: 2, title: '10 Essential Tips for Creating', description: 'Explore tips for creating scalable software solutions.', category: 'Software Development Best Practices', image: blog1, date: 'Jan 14,2024', link: '/blog/10-essentail-tips-for-creating-a-scalable-software-solution' },
     { id: 3, title: 'Mobile Application Development', description: 'In today’s digital age, mobile applications have become an integral part of our daily lives.', category: 'Mobile Technology', image: blog2, date: 'Jan 14,2024', link: '/blog/mobile-application-development-blog' },
     { id: 4, title: 'Future UI/UX', description: 'In this blog, we explore the game-changing UI/UX design trends that are set to define 2025', category: 'Design', image: future, date: 'Jan 14,2024', link: '/blog/the-future-of-UI/UX-game-changing-trends' },
-    { id: 5, title: 'AI and Machine Learning', description: 'The field of software development is undergoing a transformative revolution driven by AI and ML.', category: 'Design', image: Blogimg3, date: 'Jan 14,2024', link: '/blog/AI-and-Machine-Learning-are-changing-software-development' },
-    { id: 6, title: 'Leverage AI and Automation', description: 'Here how you can effectively integrate AI and automation into your eCommerce business and reap the rewards.', category: 'Design', image: Blogimg4, date: 'Jan 14,2024', link: '/blog/leverage-AI-and-automation-for-your-eCommerce-business' },
+    { id: 5, title: 'AI and Machine Learning', description: 'The field of software development is undergoing a transformative revolution driven by AI and ML.', category: 'Artificial Intelligence Technology', image: Blogimg3, date: 'Jan 14,2024', link: '/blog/AI-and-Machine-Learning-are-changing-software-development' },
+    { id: 6, title: 'Leverage AI and Automation', description: 'Here how you can effectively integrate AI and automation into your eCommerce business and reap the rewards.', category: 'Ecommerce Technology', image: Blogimg4, date: 'Jan 14,2024', link: '/blog/leverage-AI-and-automation-for-your-eCommerce-business' },
 ];
 
 const Blog = () => {

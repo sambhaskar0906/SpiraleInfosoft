@@ -29,7 +29,7 @@ const menuData = [
                     { name: "Native Andiod App Development", route: "/services/app-development/native-android", icon: <FcAndroidOs style={{ color: '#4caf50' }} /> },
                     { name: "Native IOS App Development", route: "/services/app-development/native-ios", icon: <FaApple style={{ color: '#212121' }} /> },
                     { name: "Hybrid App Development", route: "/services/app-development/hybrid", icon: <FcTreeStructure style={{ color: 'blue' }} /> },
-                    { name: "Cross-Plateform App Development", route: "/services/app-development/cross-plateform", icon: <MdAppSettingsAlt style={{ color: '#f88336' }} /> },
+                    { name: "Cross-Platform App Development", route: "/services/app-development/cross-plateform", icon: <MdAppSettingsAlt style={{ color: '#f88336' }} /> },
                 ],
             },
             {

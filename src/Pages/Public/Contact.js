@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, Grid, Stack, TextField, Typography, useTheme } from '@mui/material';
-import contact from '../../assest/contactus.png';
+import contact from '../../assest/Banner/contactus.png';
 import callshape1 from '../../assest/callshap1.webp';
 import CallIcon from '@mui/icons-material/Call';
 import LocationOnIcon from '@mui/icons-material/LocationOn';

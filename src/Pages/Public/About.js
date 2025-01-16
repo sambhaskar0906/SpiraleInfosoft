@@ -3,7 +3,7 @@ import React from 'react';
 import Slider from '../../Component/Public/Slider';
 import Mission from '../../assest/Client/imgs/mission1.avif';
 import Vision from '../../assest/Client/imgs/vision1.jpg';
-import AboutImg from '../../assest/about.jpeg';
+import AboutImg from '../../assest/Banner/about.jpeg';
 import MissionImg from '../../assest/Client/8.jpg'
 import OurWorking from '../../Component/Public/OurWorking';
 import AndroidIcon from '@mui/icons-material/Android';

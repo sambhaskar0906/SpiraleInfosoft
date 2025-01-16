@@ -1,5 +1,5 @@
 import React from 'react'
-import software from '../../assest/software.webp';
+import software from '../../assest/Banner/software.webp';
 import { Box, Grid, Typography, useTheme } from '@mui/material';
 import Growimg from '../../assest/grow.jpg'
 import Slider from '../../Component/Public/Slider'

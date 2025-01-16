@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Grid, useTheme } from '@mui/material';
-import WebDev from '../../../../assest/DropDown/webdevelop.webp';
+import WebDev from '../../../../assest/Banner/hybridbanner.jpg';
 import cms from '../../../../assest/DropDown/cms.webp';
 import Slider from '../../../../Component/Public/Slider';
 import OurServicesItem from '../../../../Component/Public/OurServicesItem';
@@ -83,40 +83,50 @@ const HybridApp = () => {
             {/* Hero Section */}
             <Box
                 sx={{
+                    width: '100%',
+                    height: '60vh',
                     position: 'relative',
                     backgroundImage: `url(${WebDev})`,
+                    backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    height: '60vh',
+                    backgroundPosition: 'bottom center',
                     display: 'flex',
+                    flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    '&::before': {
-                        content: '""',
+                    textAlign: 'center',
+                }}
+            >
+                <Box
+                    sx={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: '#0A58CA',
-                        zIndex: -1,
-                    },
-                }}
-            >
-                <Typography variant="h3" textAlign="center" color="white" sx={{
-                    zIndex: 2, fontWeight: 'bold', animation: 'fadeIn 2s ease-in-out',
-                    '@keyframes fadeIn': {
-                        from: { opacity: 0 },
-                        to: { opacity: 1 },
-                    },
-                    letterSpacing: '0.05em',
-                }}>
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                        zIndex: 1,
+                    }}
+                />
+                <Typography
+                    variant="h3"
+                    color="white"
+                    sx={{
+                        zIndex: 2, fontWeight: 'bold', mb: 1, px: 2, animation: 'fadeIn 2s ease-in-out',
+                        '@keyframes fadeIn': {
+                            from: { opacity: 0 },
+                            to: { opacity: 1 },
+                        },
+                        letterSpacing: '0.05em',
+                    }}
+                >
                     Hybrid App Development
                 </Typography>
-            </Box>
+            </Box >
 
             {/* Main Content */}
-            <Box sx={{ px: { xs: 2, md: 10, lg: 15 }, py: { xs: 2, md: 2 }, mt: 3 }}>
+            <Box Box sx={{ px: { xs: 2, md: 10, lg: 15 }, py: { xs: 2, md: 2 }, mt: 3 }
+            }>
                 <Grid container spacing={8}>
                     {/* Left Section */}
                     <Grid item xs={12} md={8}>
