@@ -1,8 +1,9 @@
-const express = require('express');
-const { createMessage } = require('../Controller/MessageController');
+// routes/inquiryRoutes.js
+const express = require("express");
 const router = express.Router();
+const inquiryController = require("../Controller/MessageController");
 
-// POST route to handle form submissions
-router.post('/messages', createMessage);
+// POST route for creating an inquiry
+router.post("/inquiries", inquiryController.createInquiry);
 
 module.exports = router;
