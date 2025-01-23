@@ -1,12 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useTheme } from '@mui/material';
-import { Box, Button, Grid, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Grid, Stack, TextField, Typography, CircularProgress, Alert } from '@mui/material';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Link } from 'react-router-dom';
+import { MessageSlice, resetState } from "../../Slice/MessageSlice";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Footer = () => {
     const theme = useTheme();
+    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const dispatch = useDispatch();
+    const { loading, success, error } = useSelector((state) => state.support);
+
+    // Reset form data on success
+    useEffect(() => {
+        if (success) {
+            setFormData({ name: "", email: "", message: "" }); // Clear the form
+            setTimeout(() => {
+                dispatch(resetState()); // Reset Redux state after a delay
+            }, 3000);
+        }
+    }, [success, dispatch]);
+
+    // Formik setup
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            message: "",
+        },
+        validationSchema: Yup.object({
+            name: Yup.string().required("Name is required"),
+            email: Yup.string().email("Invalid email address").required("Email is required"),
+            message: Yup.string().required("Message is required"),
+        }),
+        onSubmit: (values, { resetForm }) => {
+            dispatch(MessageSlice(values));
+            resetForm(); // Clear the form fields after submission
+        },
+    });
 
     const handleHome = () => {
         window.location.href = '/';
@@ -44,7 +79,7 @@ const Footer = () => {
                             sx={{
                                 backgroundColor: '#CCCCCC',
                                 borderRadius: '20px',
-                            }}  
+                            }}
                         >
                             <Box>
                                 <Typography variant="h5" color="#000">
@@ -150,41 +185,81 @@ const Footer = () => {
                         <Typography variant="h5" py={1}>
                             Support/Services
                         </Typography>
-                        <Box py={1} width="100%">
-                            <TextField
-                                id="name"
-                                label="Name"
-                                variant="outlined"
-                                size="small"
-                                fullWidth
-                                sx={{ backgroundColor: '#fff' }}
-                            />
-                        </Box>
-                        <Box py={1} width="100%">
-                            <TextField
-                                id="email"
-                                label="Email"
-                                variant="outlined"
-                                size="small"
-                                fullWidth
-                                sx={{ backgroundColor: '#fff' }}
-                            />
-                        </Box>
-                        <Box py={1} width="100%">
-                            <TextField
-                                id="message"
-                                label="Your Message"
-                                multiline
-                                rows={4}
-                                fullWidth
-                                sx={{ backgroundColor: '#fff' }}
-                            />
-                        </Box>
-                        <Box textAlign="center" py={1}>
-                            <Button variant="contained" sx={{ borderRadius: '50px', backgroundColor: '#0071dc', py: 1 }}>
-                                Send Message
-                            </Button>
-                        </Box>
+
+                        <form onSubmit={formik.handleSubmit}>
+                            <Box py={1} width="100%">
+                                <TextField
+                                    id="name"
+                                    name="name"
+                                    label="Name"
+                                    variant="outlined"
+                                    size="small"
+                                    fullWidth
+                                    sx={{ backgroundColor: "#fff" }}
+                                    value={formik.values.name}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    error={formik.touched.name && Boolean(formik.errors.name)}
+                                    helperText={formik.touched.name && formik.errors.name}
+                                />
+                            </Box>
+
+                            <Box py={1} width="100%">
+                                <TextField
+                                    id="email"
+                                    name="email"
+                                    label="Email"
+                                    variant="outlined"
+                                    size="small"
+                                    fullWidth
+                                    sx={{ backgroundColor: "#fff" }}
+                                    value={formik.values.email}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    error={formik.touched.email && Boolean(formik.errors.email)}
+                                    helperText={formik.touched.email && formik.errors.email}
+                                />
+                            </Box>
+
+                            <Box py={1} width="100%">
+                                <TextField
+                                    id="message"
+                                    name="message"
+                                    label="Your Message"
+                                    multiline
+                                    rows={4}
+                                    fullWidth
+                                    sx={{ backgroundColor: "#fff" }}
+                                    value={formik.values.message}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    error={formik.touched.message && Boolean(formik.errors.message)}
+                                    helperText={formik.touched.message && formik.errors.message}
+                                />
+                            </Box>
+
+                            <Box textAlign="center" py={1}>
+                                <Button
+                                    type="submit"
+                                    variant="contained"
+                                    sx={{ borderRadius: "50px", backgroundColor: "#0071dc", py: 1 }}
+                                    disabled={loading}
+                                >
+                                    {loading ? <CircularProgress size={24} color="#ffffff" backgroundColor="#0071dc" /> : "Send Message"}
+                                </Button>
+                            </Box>
+
+                            {success && (
+                                <Alert severity="success" onClose={() => dispatch(resetState())}>
+                                    Message sent successfully!
+                                </Alert>
+                            )}
+                            {error && (
+                                <Alert severity="error" onClose={() => dispatch(resetState())}>
+                                    {error}
+                                </Alert>
+                            )}
+                        </form>
                     </Grid>
                 </Grid>
 

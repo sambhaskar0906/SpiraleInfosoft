@@ -125,7 +125,7 @@ const Contact = () => {
                                 {
                                     icon: ChatBubbleOutlineIcon,
                                     title: 'Contact Info',
-                                    content: 'info@tcspl.com',
+                                    content: 'info@tcspl.in',
                                 },
                             ].map(
                                 (

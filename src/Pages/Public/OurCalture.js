@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { Box, Typography, useTheme, Grid, IconButton, Button } from '@mui/material';
+import {
+    Box,
+    Typography,
+    useTheme,
+    IconButton,
+    Button,
+    Grid,
+} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Masonry from '@mui/lab/Masonry';
 
 // Import images
 import image1 from '../../assest/Culuture/image-1.jpg';
@@ -32,7 +40,6 @@ const OurCulture = () => {
 
     const [open, setOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [showMore, setShowMore] = useState(false);
 
     const handleOpen = (index) => {
         if (index >= 0 && index < images.length) {
@@ -51,10 +58,14 @@ const OurCulture = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
-    const handleShowMore = () => setShowMore(true);
-
     return (
-        <>
+        <Box
+            sx={{
+                background: 'linear-gradient(135deg, #1d3557, #457b9d)',
+                minHeight: '100vh',
+                pb: 5,
+            }}
+        >
             {/* Hero Section */}
             <Box
                 sx={{
@@ -65,6 +76,7 @@ const OurCulture = () => {
                     justifyContent: 'center',
                     backgroundColor: '#070B30',
                     color: 'white',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
                 }}
             >
                 <Typography
@@ -84,58 +96,75 @@ const OurCulture = () => {
                 </Typography>
             </Box>
 
-            {/* Main Content */}
-            <Box sx={{ px: { xs: 3, md: 10, lg: 15 }, py: 4, mt: 3 }}>
-                <Grid container spacing={3}>
-                    {(showMore ? images : images.slice(0, 8)).map((image, index) => (
-                        <Grid item xs={12} sm={6} md={4} lg={3} key={image.id}>
+            {/* Image Gallery */}
+            <Box sx={{ px: { xs: 2, md: 8, lg: 12 }, py: 6 }}>
+                <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
+                    {images.map((image, index) => (
+                        <Box
+                            key={image.id}
+                            onClick={() => handleOpen(index)}
+                            sx={{
+                                position: 'relative',
+                                cursor: 'pointer',
+                                overflow: 'hidden',
+                                borderRadius: '16px',
+                                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
+                                '&:hover': {
+                                    transform: 'scale(1.05)',
+                                    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.6)',
+                                },
+                                '&:hover .overlay': {
+                                    opacity: 1,
+                                },
+                            }}
+                        >
+                            {/* Image */}
                             <Box
                                 component="img"
                                 src={image.src}
                                 alt={image.alt}
+                                loading="lazy"
                                 sx={{
                                     width: '100%',
-                                    height: '250px',
-                                    objectFit: 'cover',
-                                    borderRadius: 2,
-                                    boxShadow: theme.shadows[3],
-                                    cursor: 'pointer',
-                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                                    '&:hover': {
-                                        transform: 'scale(1.05)',
-                                        boxShadow: theme.shadows[6],
-                                    },
+                                    height: 'auto',
+                                    borderRadius: '16px',
+                                    transition: 'transform 0.5s ease',
                                 }}
-                                onClick={() => handleOpen(index)}
                             />
-                        </Grid>
+
+                            {/* Hover Overlay */}
+                            <Box
+                                className="overlay"
+                                sx={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%',
+                                    background: 'rgba(0, 0, 0, 0.6)',
+                                    color: '#fff',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    opacity: 0,
+                                    transition: 'opacity 0.3s ease',
+                                    borderRadius: '16px',
+                                    fontSize: '1.2rem',
+                                    fontWeight: 'bold',
+                                    textAlign: 'center',
+                                }}
+                            >
+                                <Typography variant="h6">{image.alt}</Typography>
+                                <Typography variant="body2">Click to View</Typography>
+                            </Box>
+                        </Box>
                     ))}
-                </Grid>
-                {!showMore && (
-                    <Box sx={{ textAlign: 'center', mt: 4 }}>
-                        <Button
-                            variant="contained"
-                            onClick={handleShowMore}
-                            sx={{
-                                px: 4,
-                                py: 1.5,
-                                backgroundColor: theme.palette.primary.main,
-                                color: '#fff',
-                                fontSize: '1rem',
-                                fontWeight: 'bold',
-                                borderRadius: '20px',
-                                '&:hover': {
-                                    backgroundColor: theme.palette.primary.dark,
-                                },
-                            }}
-                        >
-                            View More
-                        </Button>
-                    </Box>
-                )}
+                </Masonry>
             </Box>
 
-            {/* Custom Image Popup */}
+            {/* Lightbox Modal */}
             {open && (
                 <Box
                     sx={{
@@ -144,21 +173,26 @@ const OurCulture = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                        backdropFilter: 'blur(5px)',
+                        backgroundColor: 'rgba(0, 0, 0, 0.9)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         zIndex: 1300,
+                        animation: 'fadeIn 0.5s ease',
+                        '@keyframes fadeIn': {
+                            from: { opacity: 0 },
+                            to: { opacity: 1 },
+                        },
                     }}
                 >
+                    {/* Close Button */}
                     <IconButton
                         onClick={handleClose}
                         sx={{
                             position: 'absolute',
                             top: 20,
                             right: 20,
-                            color: theme.palette.common.white,
+                            color: 'white',
                         }}
                     >
                         <CloseIcon sx={{ fontSize: '2rem' }} />
@@ -170,7 +204,7 @@ const OurCulture = () => {
                         sx={{
                             position: 'absolute',
                             left: 20,
-                            color: theme.palette.common.white,
+                            color: 'white',
                         }}
                     >
                         <ArrowBackIosIcon sx={{ fontSize: '2rem' }} />
@@ -184,9 +218,8 @@ const OurCulture = () => {
                         sx={{
                             maxWidth: '90%',
                             maxHeight: '90%',
-                            objectFit: 'contain',
-                            borderRadius: 2,
-                            boxShadow: theme.shadows[5],
+                            borderRadius: '16px',
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
                         }}
                     />
 
@@ -196,14 +229,14 @@ const OurCulture = () => {
                         sx={{
                             position: 'absolute',
                             right: 20,
-                            color: theme.palette.common.white,
+                            color: 'white',
                         }}
                     >
                         <ArrowForwardIosIcon sx={{ fontSize: '2rem' }} />
                     </IconButton>
                 </Box>
             )}
-        </>
+        </Box>
     );
 };
 

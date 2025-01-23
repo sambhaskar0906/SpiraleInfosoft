@@ -1,8 +1,9 @@
 import { Box, Divider, Grid, Stack, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import Slider from '../../Component/Public/Slider';
-import Mission from '../../assest/Client/imgs/mission1.avif';
+import Mission from '../../assest/webuild.jpg';
 import Vision from '../../assest/Client/imgs/vision1.jpg';
+import ourcompany from '../../assest/ourcompany.jpg';
 import AboutImg from '../../assest/Banner/about.jpeg';
 import MissionImg from '../../assest/Client/8.jpg'
 import OurWorking from '../../Component/Public/OurWorking';
@@ -159,7 +160,7 @@ const About = () => {
                     </Grid>
                     <Grid item sm={6} xs={12}>
                         <Box sx={{
-                            background: `url(${Vision})`,
+                            background: `url(${ourcompany})`,
                             backgroundSize: 'cover', // Ensure the background image covers the entire box
                             backgroundPosition: 'center', // Center the background image
                             position: 'relative',
