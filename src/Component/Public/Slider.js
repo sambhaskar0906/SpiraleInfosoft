@@ -13,7 +13,7 @@ import meditest from '../../assest/Client/meditest.jpg';
 import mediforte from '../../assest/Client/mediforte.jpg';
 import shree from '../../assest/Client/shree.jpg';
 import bvg from '../../assest/Client/bvg.avif';
-import puzzolana from '../../assest/Client/puzzolana.jpg';
+// import puzzolana from '../../assest/Client/puzzolana.jpg';
 import azad from '../../assest/Client/azad.png';
 import felix from '../../assest/Client/felix.jpg';
 
@@ -25,7 +25,7 @@ const clientImages = [
     { src: mediforte, text: "Mediforte Hospital - skill to heal Passion to care" },
     { src: shree, text: "Shree Medicine Hospital - Health & Care Center" },
     { src: bvg, text: "BVG - Huminity Ahead" },
-    { src: puzzolana, text: "Puzzolana - Delivering Excellence" },
+    // { src: puzzolana, text: "Puzzolana - Delivering Excellence" },
     { src: azad, text: "Azad - We Manufacture Complex" },
     { src: felix, text: "Felix - Your care, Our passion" }
 ];

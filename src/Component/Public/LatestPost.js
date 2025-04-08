@@ -192,9 +192,9 @@ const LatestPost = () => {
                                     >
                                         Read More
                                     </Button>
-                                    <Typography variant="body2" fontWeight={'bold'}>
+                                    {/* <Typography variant="body2" fontWeight={'bold'}>
                                         {post.date}
-                                    </Typography>
+                                    </Typography> */}
                                 </Stack>
                             </Box>
                         </Box>

@@ -111,16 +111,16 @@ const Contact = () => {
                                 {
                                     icon: CallIcon,
                                     title: 'Phone number',
-                                    content: '01205261995',
-                                    contect2: '9696974038', // Second mobile number
+                                    content: '+91 1204099066',
+                                    contect2: '+91 9696974038', // Second mobile number
                                 },
                                 {
                                     icon: LocationOnIcon,
-                                    title: 'Gujarat corporate office',
+                                    title: 'Corporate office',
                                     subtittles: ['office no. 47 & 48'],
                                     contents: ['2nd floor girnar palace, aditiya circle, gidc-vapi, Gujarat pincode 396191'],
                                     title1: 'Development center noida',
-                                    contents1: ['3rd floor, B complex sector-27 Noida(201301), uttar pradesh'],
+                                    contents1: ['B-25 sector-64 Noida(201307), uttar pradesh'],
                                 },
                                 {
                                     icon: ChatBubbleOutlineIcon,

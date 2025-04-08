@@ -258,7 +258,7 @@ const About = () => {
                                 TechCloak Solutions Pvt. Ltd. is a leading software development and service providing company since 2016, offering a wide range of software development and maintenance services across the globe.
                             </Typography>
                             <Typography variant='body2'>
-                                The company is based in Delhi NCR (Noida), and we have catered a number of happy and satisfied customers worldwide.
+                                The company is based in India, and we have catered a number of happy and satisfied customers worldwide.
                             </Typography>
                             <Typography variant='body2'>
                                 We provide solutions to our clients in a most cost effective, sustainable and scalable approach.

@@ -83,19 +83,28 @@ const OurServicesItem = () => {
                 Tag Cloud
             </Typography>
             {buttonGroups.map((group, index) => (
-                <Stack key={index} direction="row" spacing={2} sx={{ flexWrap: 'wrap', mt: 2 }}>
+                <Stack
+                    key={index}
+                    direction="row"
+                    spacing={2}
+                    flexWrap="wrap"
+                    useFlexGap
+                    sx={{ mt: 2 }}
+                >
                     {group.map((tag, idx) => (
                         <Button
                             key={idx}
-                            component={Link} // Use Link for buttons
-                            to={tag.link} // Add the tag link
-                            onClick={scrollToTop} // Trigger scroll to top on button click
+                            component={Link}
+                            to={tag.link}
+                            onClick={scrollToTop}
                             variant="contained"
                             sx={{
                                 backgroundColor: theme.palette.hoverAction.hoverDropdown,
                                 borderRadius: '10px',
-                                py: 1,
+                                px: 2,
+                                mb: 1, // Add margin bottom for better spacing in wrap
                                 textDecoration: 'none',
+                                minWidth: '100px', // optional: keep button size consistent
                             }}
                         >
                             {tag.label}
@@ -103,6 +112,7 @@ const OurServicesItem = () => {
                     ))}
                 </Stack>
             ))}
+
         </Box>
     );
 };

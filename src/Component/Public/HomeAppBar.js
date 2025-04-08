@@ -41,7 +41,7 @@ const ContactBar = ({ isVisible }) => (
             <Stack direction="row" spacing={1} color="#fff" alignItems="center">
                 <CallIcon />
                 <Typography variant="body2" fontWeight="bold" color="#fff">
-                    +91 9696974038
+                    +91 1204099066
                 </Typography>
             </Stack>
             <Stack

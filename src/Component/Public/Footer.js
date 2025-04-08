@@ -69,7 +69,7 @@ const Footer = () => {
                             About Company
                         </Typography>
                         <Typography variant="body2" py={2}>
-                            TCSPL(TechCloak Solutions Pvt. Ltd.) is one of the most trusted and reliable software development companies based in Delhi NCR. We provide our finest services in website designing and development. We have dedicated teams of experts and developers to help you in maintenance and digital marketing services as well.
+                            TCSPL(TechCloak Solutions Pvt. Ltd.) is one of the most trusted and reliable software development companies based in India. We provide our finest services in website designing and development. We have dedicated teams of experts and developers to help you in maintenance and digital marketing services as well.
                         </Typography>
                         <Stack
                             direction="row"
@@ -86,7 +86,7 @@ const Footer = () => {
                                     Talk to Our Support
                                 </Typography>
                                 <Typography variant="h5" color="#000">
-                                    01205261995
+                                    +91 1204099066
                                 </Typography>
                             </Box>
                             <Box
@@ -266,7 +266,7 @@ const Footer = () => {
                 {/* Footer */}
                 <Box>
                     <Typography variant="body2" py={2} textAlign="center">
-                        Copyright @ 2023 TCSPL(TechCloak Solutions Pvt. Ltd.) All Rights Reserved by{' '}
+                        Copyright @ 2025 TCSPL(TechCloak Solutions Pvt. Ltd.) All Rights Reserved by{' '}
                         <span
                             style={{ color: '#E99f2B', textDecoration: 'underline', cursor: 'pointer' }}
                             onClick={handleHome}

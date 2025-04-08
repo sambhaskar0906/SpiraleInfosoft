@@ -132,7 +132,7 @@ const HomeBackground = () => {
                     data-aos-duration="1000"> {/* Responsive spacing */}
                     <Typography variant='h4' sx={{ fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.8rem', fontWeight: 'bold' } }}>Your Partner for Reliable</Typography>
                     <Typography variant='h3' sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.8rem', fontWeight: 'bold' } }}>Software</Typography>
-                    <Typography variant='h4' sx={{ fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.8rem', fontWeight: 'bold' } }}>Development in Delhi NCR
+                    <Typography variant='h4' sx={{ fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.8rem', fontWeight: 'bold' } }}>Development in India
                     </Typography>
                 </Box>
                 <Box sx={{ width: { xs: '90%', sm: '80%', md: '70%' }, mx: 'auto', textAlign: 'center', my: { xs: 4, sm: 5, md: 6 } }}> {/* Responsive width and spacing */}

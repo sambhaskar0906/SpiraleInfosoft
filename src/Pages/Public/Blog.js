@@ -268,9 +268,9 @@ const Blog = () => {
                                         >
                                             Read More
                                         </Button>
-                                        <Typography variant='body2' fontWeight={'bold'}>
+                                        {/* <Typography variant='body2' fontWeight={'bold'}>
                                             {blog.date}
-                                        </Typography>
+                                        </Typography> */}
                                     </Stack>
                                 </CardContent>
                             </Card>

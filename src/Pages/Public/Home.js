@@ -114,10 +114,10 @@ const Home = () => {
                 </Typography>
                 <Box sx={{ px: { xs: 2, md: 5 }, py: 2 }}>
                     <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{ color: '#FFF' }}>
-                        TCSPL is the most trusted and reliable Software Development Company in Delhi NCR. Our years of experience and the best team of experts and developers, enables us to offer some of the finest and prime services to our clients. The team of experts and developers is highly experienced and well certified. Till date, we have catered to a good number of happy and satisfied clients, by meeting all their requirements and expectations.
+                        TCSPL is the most trusted and reliable Software Development Company in India. Our years of experience and the best team of experts and developers, enables us to offer some of the finest and prime services to our clients. The team of experts and developers is highly experienced and well certified. Till date, we have catered to a good number of happy and satisfied clients, by meeting all their requirements and expectations.
                     </Typography>
                     <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{ color: '#FFF' }}>
-                        We provide best suited and custom solutions to our clients as per their business models and requirements. The services we offer to our clients are custom made, so that we can get the best results possible. We provide the best software development services in Noida. Our team of experts and developers is evolving each day with new trends and technologies in the market, which allows us to stand out and lead the market.
+                        We provide best suited and custom solutions to our clients as per their business models and requirements. The services we offer to our clients are custom made, so that we can get the best results possible. We provide the best software development services in India. Our team of experts and developers is evolving each day with new trends and technologies in the market, which allows us to stand out and lead the market.
                     </Typography>
                     <Typography variant='body2' fontWeight={'0'} fontSize={'1rem'} sx={{ color: '#FFF' }}>
                         With our company and our services in IT, you can take your business to the new heights and dominate the market by targeting the actual audience with the help of our Ecommerce services, getting them hooked and engaged through our attractive and user friendly UI UX designs. For more scalability and versatility of the web app you can also integrate different platforms and business systems with the help of our API development services.
@@ -535,7 +535,7 @@ const Home = () => {
                             Call us 24/7
                         </Typography>
                         <Typography variant="h4" color="#FFF" py={1}>
-                            01205261995
+                            +91 1204099066
                         </Typography>
                         <Typography variant="h5" color="#FFF" py={1}>
                             Need Help? We will help you regarding your query.

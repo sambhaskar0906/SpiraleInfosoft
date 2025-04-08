@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, Grid, useTheme } from '@mui/material';
 
 const achievements = [
-    { id: 1, title: 35, description: 'years of Experties', suffix: '' },
-    { id: 2, title: 750, description: 'IT Professionals', suffix: '+' },
-    { id: 3, title: 4000, description: 'Success Stories', suffix: 'K' },
-    { id: 4, title: 30, description: 'Industries Covered', suffix: '+' },
+    { id: 1, title: 9, description: 'years of Experties', suffix: '' },
+    { id: 2, title: 100, description: 'IT Professionals', suffix: '+' },
+    { id: 3, title: 1000, description: 'Success Stories', suffix: 'K' },
+    { id: 4, title: 10, description: 'Industries Covered', suffix: '+' },
 ];
 
 const Achievement = () => {
@@ -64,7 +64,7 @@ const Achievement = () => {
                                 textAlign: 'center',
                                 p: 2,
                                 borderBottom: {
-                                    xs: index < 2 ? `2px solid ${theme.palette.divider}` : 'none',
+                                    xs: index !== achievements.length - 1 ? `2px solid ${theme.palette.divider}` : 'none',
                                     md: 'none',
                                 },
                                 mx: { xs: 2 }, // Adds left and right margins
