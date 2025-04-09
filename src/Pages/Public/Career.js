@@ -5,7 +5,6 @@ import team from '../../assest/team-work-img.jpg'
 import careerimg1 from '../../assest/careerimg2.jpg'
 import careerimg2 from '../../assest/Client/8.jpg'
 import { useNavigate } from 'react-router-dom';
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 const perks = [
     { title: "Flexible working\n hours", color: "red" },
@@ -19,7 +18,6 @@ const perks = [
 const Career = () => {
     const theme = useTheme();
     const navigate = useNavigate();
-    const is1320OrLess = useMediaQuery('(max-width:1320px)');
 
     const handleAbout = () => {
         window.scrollTo(0, 0);
@@ -124,7 +122,7 @@ const Career = () => {
 
             {/* Journey at Paramount */}
             <Grid container spacing={10} sx={{ py: { xs: 2, md: 3, lg: 5 }, px: { xs: 2, lg: 15, md: 10 }, alignItems: 'center' }}>
-                <Grid item xs={12} sm={12} md={6} lg={is1320OrLess ? 6 : 3} textAlign={'-webkit-center'}>
+                <Grid item xs={12} sm={12} md={6} lg={3} textAlign={'-webkit-center'}>
                     <Box position="relative" width="280px" height="220px">
                         <img src={careerimg1} width="100%" height="100%" style={{ borderRadius: '20px' }} />
                         <Button
@@ -148,7 +146,7 @@ const Career = () => {
                         </Button>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={is1320OrLess ? 6 : 3} textAlign={'-webkit-center'}>
+                <Grid item xs={12} sm={12} md={6} lg={3} textAlign={'-webkit-center'}>
                     <Box position="relative" width="280px" height="220px">
                         <img src={careerimg2} width="100%" height="100%" style={{ borderRadius: '20px' }} />
                         <Button
