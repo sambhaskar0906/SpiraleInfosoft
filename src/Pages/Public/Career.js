@@ -2,8 +2,8 @@ import { Box, Button, Container, Grid, Paper, Typography, useTheme } from '@mui/
 import React from 'react';
 import career from '../../assest/Banner/Carrer.png';
 import team from '../../assest/team-work-img.jpg'
-import careerimg1 from '../../assest/careerimg2.jpg'
-import careerimg2 from '../../assest/Client/8.jpg'
+import careerimg1 from '../../assest/BlogImg/blogimg2.jpg'
+import careerimg2 from '../../assest/BlogImg/blogimg4.jpg'
 import { useNavigate } from 'react-router-dom';
 
 const perks = [
@@ -121,60 +121,128 @@ const Career = () => {
             </Grid>
 
             {/* Journey at Paramount */}
-            <Grid container spacing={10} sx={{ py: { xs: 2, md: 3, lg: 5 }, px: { xs: 2, lg: 15, md: 10 }, alignItems: 'center' }}>
-                <Grid item xs={12} sm={12} md={6} lg={3} textAlign={'-webkit-center'}>
-                    <Box position="relative" width="280px" height="220px">
-                        <img src={careerimg1} width="100%" height="100%" style={{ borderRadius: '20px' }} />
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            onClick={handleAbout}
+            <Grid
+                container
+                spacing={4}
+                sx={{
+                    py: { xs: 2, md: 3, lg: 5 },
+                    px: { xs: 2, md: 10, lg: 15 },
+                    alignItems: 'center',
+                    flexDirection: { xs: 'column', md: 'row' },
+                }}
+            >
+                {/* Image 1 - About Us */}
+                <Grid item xs={12} md={6} lg={3} textAlign="center">
+                    <Box
+                        position="relative"
+                        sx={{
+                            width: '100%',
+                            maxWidth: 280,
+                            height: 220,
+                            mx: 'auto',
+                            borderRadius: '20px',
+                        }}
+                    >
+                        <img
+                            src={careerimg1}
+                            alt="career1"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                borderRadius: '20px',
+                            }}
+                        />
+                        <Box
                             sx={{
                                 position: 'absolute',
-                                bottom: -15,
+                                bottom: 10,
                                 left: '50%',
                                 transform: 'translateX(-50%)',
-                                borderRadius: '10px',
-                                px: 7,
-                                fontSize: '13px',
-                                py: 2,
-                                whiteSpace: 'nowrap',
-                                backgroundColor: theme.palette.ButtonColor
+                                zIndex: 1,
                             }}
                         >
-                            About us
-                        </Button>
+                            <Button
+                                variant="contained"
+                                onClick={handleAbout}
+                                sx={{
+                                    position: 'absolute',
+                                    bottom: -30,
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    borderRadius: '10px',
+                                    px: 5,
+                                    py: 2,
+                                    fontSize: '13px',
+                                    whiteSpace: 'nowrap',
+                                    backgroundColor: theme.palette.ButtonColor
+                                }}
+                            >
+                                About us
+                            </Button>
+                        </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={3} textAlign={'-webkit-center'}>
-                    <Box position="relative" width="280px" height="220px">
-                        <img src={careerimg2} width="100%" height="100%" style={{ borderRadius: '20px' }} />
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            onClick={handleCuluture}
+
+                {/* Image 2 - Our Culture */}
+                <Grid item xs={12} md={6} lg={3} textAlign="center">
+                    <Box
+                        position="relative"
+                        sx={{
+                            width: '100%',
+                            maxWidth: 280,
+                            height: 220,
+                            mx: 'auto',
+                            borderRadius: '20px',
+                        }}
+                    >
+                        <img
+                            src={careerimg2}
+                            alt="career2"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                borderRadius: '20px',
+                            }}
+                        />
+                        <Box
                             sx={{
                                 position: 'absolute',
-                                bottom: -15,
+                                bottom: 10,
                                 left: '50%',
                                 transform: 'translateX(-50%)',
-                                borderRadius: '10px',
-                                px: 7,
-                                py: 2,
-                                fontSize: '13px',
-                                whiteSpace: 'nowrap',
-                                backgroundColor: theme.palette.ButtonColor
+                                zIndex: 1,
                             }}
                         >
-                            Our culture
-                        </Button>
+                            <Button
+                                variant="contained"
+                                onClick={handleCuluture}
+                                sx={{
+                                    position: 'absolute',
+                                    bottom: -30,
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    borderRadius: '10px',
+                                    px: 5,
+                                    py: 2,
+                                    fontSize: '13px',
+                                    whiteSpace: 'nowrap',
+                                    backgroundColor: theme.palette.ButtonColor
+                                }}
+                            >
+                                Our culture
+                            </Button>
+                        </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={6}>
+
+                {/* Content Section */}
+                <Grid item xs={12} lg={6}>
                     <Typography variant="h4" fontWeight="bold" mb={2}>
                         Journey at TCSPL
                     </Typography>
-                    <Typography variant='h5'>
+                    <Typography variant="h5">
                         We understand the importance of work-life balance. Our flexible work arrangements ensure that you can excel at both your professional and personal pursuits. Take advantage of our continuous learning initiatives, workshops, and mentorship programs to enhance your skillset. Experience the energy of a team that is driven by innovation and creativity. Our culture encourages open communication, idea sharing, and a strong sense of camaraderie.
                     </Typography>
                 </Grid>
