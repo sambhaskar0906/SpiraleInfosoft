@@ -19,7 +19,7 @@ const perks = [
 const Career = () => {
     const theme = useTheme();
     const navigate = useNavigate();
-    const is1290OrLess = useMediaQuery('(max-width:1290px)');
+    const is1290OrLess = useMediaQuery('(max-width:1310px)');
 
     const handleAbout = () => {
         window.scrollTo(0, 0);
