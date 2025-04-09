@@ -27,7 +27,7 @@ const sendEmail = async (inquiry) => {
                 </span>
                 <p style="color: #000">We will get back to you shortly.</p>
                 <p style="color: #000">Best regards,</p>
-                <p style="color: #000"><strong>TCSPL</strong></p>
+                <p style="color: #000"><strong>Support Team TCSPL</strong></p>
               </div>
             `,
         };
